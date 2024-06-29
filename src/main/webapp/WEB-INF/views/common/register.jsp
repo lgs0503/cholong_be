@@ -2,28 +2,79 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
     <header>
-        <script type="text/javascript" src="/js/common.js"></script>
-        <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+        <link rel="stylesheet" href="/resources/static/css/reset.css"/>
+        <link rel="stylesheet" href="/resources/static/css/common.css"/>
+        <script type="text/javascript" src="/resources/static/js/common.js"></script>
+        <script type="text/javascript" src="/resources/static/js/jquery-3.7.1.min.js"></script>
         <script type="text/javascript">
             $(document).ready(() => {
 
 
             });
+
+            /** 약관 모두 체크 **/
+            const registerAllCheck = () => {
+                const checked = $("#regiAllChk").is(":checked");
+                const chkList = $("input[name=regiChkList]");
+
+                if (checked) {
+                    chkList.prop("checked", true);
+                } else {
+                    chkList.prop("checked", false);
+                }
+            }
+
+            const register = () => {
+                if (confirm("저장하시겠습니까?")) {
+                    if (validationCheck()) {
+                        jqueryAjax("", "POST", () => {
+
+                        }, null);
+                    }
+                }
+            }
+
+            const validationCheck = () => {
+
+                if ($("#userId").val() == null) {
+                    alert("아이디를 입력해주세요.");
+                    $("#userId").focus();
+                    return false;
+                }
+
+                if ($("#password").val() == null) {
+                    alert("비밀번호를 입력해주세요.");
+                    $("#password").focus();
+                    return false;
+                }
+
+
+                return true;
+            }
+
+            const openAddressPopup = () => {
+
+            }
+
+            const openPhoneCheckPopup = () => {
+
+            }
         </script>
     </header>
     <body>
-            <h1>회원가입</h1>
+        <div class="register-form">
+            <h1 class="menu-title">회원가입</h1>
             <fieldset>
                 <section>
-                    <h2>약관동의</h2>
+                    <h2 class="menu-sub-title">약관동의</h2>
                     <div>
                         <div>
                             <label>회원가입 약관에 모두 동의합니다</label>
-                            <input type="checkbox"/>
+                            <input id="regiAllChk" type="checkbox" onchange="registerAllCheck()"/>
                         </div>
                         <div>
                             <label>이용약관 동의 <strong>(필수)</strong></label>
-                            <input type="checkbox"/>
+                            <input id="regiChk1" name="regiChkList" type="checkbox"/>
                         </div>
                         <div>
                             <textarea readonly>제1조(목적) 이 약관은 업체 회사(전자상거래 사업자)가 운영하는 업체 사이버 몰(이하 “몰”이라 한다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 한다)를 이용함에 있어 사이버 몰과 이용자의 권리․의무 및 책임사항을 규정함을 목적으로 합니다.
@@ -266,7 +317,7 @@
                         </div>
                         <div>
                             <label>개인정보 수집 및 이용 동의 <strong>(필수)</strong></label>
-                            <input type="checkbox"/>
+                            <input id="regiChk2" name="regiChkList" type="checkbox"/>
                         </div>
                         <div>
                             <textarea readonly>개인정보처리방침
@@ -409,53 +460,53 @@
                     </div>
                 </section>
                 <section>
-                    <h2>기본정보        <span>필수입력사항</span></h2>
+                    <h2 class="menu-sub-title">기본정보        <span>필수입력사항</span></h2>
                     <div>
                         <label>아이디</label>
-                        <input type="text" placeholder="아이디"/>
+                        <input id="userId" type="text" placeholder="아이디"/>
                     </div>
                     <div>
                         <label>비밀번호</label>
-                        <input type="password"/>
+                        <input id="password" type="password"/>
                     </div>
                     <div>
                         <label>비밀번호 확인</label>
-                        <input type="password"/>
+                        <input id="passwordChk" type="password"/>
                     </div>
                     <div>
                         <label>이름</label>
-                        <input type="text"/>
+                        <input id="name" type="text"/>
                     </div>
                     <div>
                         <label>닉네임</label>
-                        <input type="text"/>
+                        <input id="nickName" type="text"/>
                     </div>
                     <div>
                         <label>주소</label>
                         <div>
-                            <input type="text" placeholder="우편번호"/><button>주소검색</button>
+                            <input id="zipCode" type="text" placeholder="우편번호"/><button>주소검색</button>
                         </div>
                         <div>
-                            <input type="text" placeholder="기본주소"/>
+                            <input id="address" type="text" placeholder="기본주소"/>
                         </div>
                         <div>
-                            <input type="text" placeholder="상세주소"/>
+                            <input id="addressDtl" type="text" placeholder="상세주소"/>
                         </div>
                     </div>
                     <div>
                         <label>주소</label>
-                        <select>
+                        <select id="gender">
                             <option value="1">남자</option>
                             <option value="2">여자</option>
                         </select>
                     </div>
                     <div>
                         <label>생년월일</label>
-                        <input type="date"/>
+                        <input id="birthday" type="date"/>
                     </div>
                     <div>
                         <label>연락처 </label>
-                        <select>
+                        <select id="phoneNum1">
                             <option value="010">010</option>
                             <option value="011">011</option>
                             <option value="016">016</option>
@@ -464,17 +515,17 @@
                             <option value="019">019</option>
                         </select>
                         <b>-</b>
-                        <input type="text"/>
+                        <input id="phoneNum2" type="text"/>
                         <b>-</b>
-                        <input type="text"/>
+                        <input id="phoneNum3" type="text"/>
                         <button>본인확인</button>
                     </div>
                     <div>
                         <label>이메일</label>
-                        <input type="text">
+                        <input id="email1" type="text">
                         <b>@</b>
-                        <input type="text">
-                        <select>
+                        <input id="email2" type="text">
+                        <select id="email3">
                             <option value="">선택하세요</option>
                             <option value="직">직접입력</option>
                             <option value="naver.com">naver.com</option>
@@ -488,14 +539,14 @@
                     </div>
                 </section>
                 <section>
-                    <h2>수신여부</h2>
+                    <h2 class="menu-sub-title">수신여부</h2>
                     <div>
                         <label> SMS 수신동의 </label>
-                        <input type="checkbox" checked/>동의함
+                        <input id="smsYn" type="checkbox" checked/>동의함
                     </div>
                     <div>
                         <label>메일 수신동의 </label>
-                        <input type="checkbox" checked/>동의함
+                        <input id="emailYn" type="checkbox" checked/>동의함
                     </div>
                 </section>
             </fieldset>
@@ -503,5 +554,6 @@
                 <button>회원가입</button>
                 <button>취소</button>
             </aside>
+        </div>
     </body>
 </html>
