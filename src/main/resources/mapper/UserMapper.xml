@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cholong.cholong_be.api.common.mapper.UserMapper">
+    <select id="getUserList" parameterType="userVO" resultType="userVO">
+        SELECT
+            IDX,
+            USER_ID,
+            PASSWORD,
+            KOR_NAME,
+            ENG_NAME,
+            NICK_NAME,
+            ZIP_CODE,
+            ADDRESS,
+            ADDRESS_DTL,
+            GENDER,
+            BIRTHDAY,
+            PHONE_NUM,
+            EMAIL,
+            USE_YN,
+            FILE_NO,
+            REMARK,
+            CREATE_USER,
+            UPDATE_DATE,
+            UPDATE_USER,
+            CREATE_DATE
+        FROM USER_INFO
+        <where>
+            <if test="idx != null and idx != ''">
+                AND IDX = #{idx}
+            </if>
+            <if test="userId != null and userId != ''">
+                AND USER_ID = #{userId}
+            </if>
+        </where>
+    </select>
+
+    <select id="getUser" parameterType="int" resultType="userVO">
+        SELECT
+            IDX,
+            USER_ID,
+            PASSWORD,
+            KOR_NAME,
+            ENG_NAME,
+            NICK_NAME,
+            ZIP_CODE,
+            ADDRESS,
+            ADDRESS_DTL,
+            GENDER,
+            BIRTHDAY,
+            PHONE_NUM,
+            EMAIL,
+            USE_YN,
+            FILE_NO,
+            REMARK,
+            CREATE_USER,
+            UPDATE_DATE,
+            UPDATE_USER,
+            CREATE_DATE
+        FROM USER_INFO
+        WHERE IDX = #{idx}
+    </select>
+
+    <insert id="addUser" parameterType="userVO">
+        INSERT
+        INTO    USER_INFO
+        (
+            IDX,
+            USER_ID,
+            PASSWORD,
+            KOR_NAME,
+            ENG_NAME,
+            NICK_NAME,
+            ZIP_CODE,
+            ADDRESS,
+            ADDRESS_DTL,
+            GENDER,
+            BIRTHDAY,
+            PHONE_NUM,
+            EMAIL,
+            USE_YN,
+            FILE_NO,
+            REMARK
+            <if test="createUser != null and idx != ''">
+                ,CREATE_USER
+            </if>
+        )
+        VALUES
+        (
+            #{idx},
+            #{userId},
+            #{password},
+            #{korName},
+            #{engName},
+            #{nickName},
+            #{zipCode},
+            #{address},
+            #{addressDtl},
+            #{gender},
+            #{birthday},
+            #{phoneNum},
+            #{email},
+            #{useYn},
+            #{fileNo},
+            #{remark}
+            <if test="createUser != null and idx != ''">
+                ,#{createUser}
+            </if>
+        )
+    </insert>
+
+    <update id="updateUser" parameterType="userVO">
+        UPDATE  USER_INFO
+        SET     PASSWORD = #{password},
+                KOR_NAME = #{korName},
+                ENG_NAME = #{engName},
+                NICK_NAME = #{nickName},
+                ZIP_CODE = #{zipCode},
+                ADDRESS = #{address},
+                ADDRESS_DTL = #{addressDtl},
+                GENDER = #{gender},
+                BIRTHDAY = #{birthDay},
+                PHONE_NUM = #{phoneNum},
+                EMAIL = #{email},
+                USE_YN = #{useYN},
+                FILE_NO = #{fileNo},
+                REMARK = #{remark},
+                UPDATE_USER = #{updateUser},
+                UPDATE_DATE = SYSDATE
+        <where>
+            <if test="idx != null and idx != ''">
+                AND IDX = #{idx}
+            </if>
+            <if test="userId != null and userId != ''">
+                AND USER_ID = #{userId}
+            </if>
+        </where>
+    </update>
+
+    <delete id="deleteUser" parameterType="java.util.ArrayList">
+        DELETE
+        FROM    USER_INFO
+        WHERE   IDX IN
+        <foreach item="item" collection="deleteList" separator="," open="(" close=")">
+            #{item}
+        </foreach>
+    </delete>
+</mapper>

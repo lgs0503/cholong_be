@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cholong.cholong_be.api.sample.mapper.SampleMapper">
+    <select id="getSampleList" parameterType="sampleVO" resultType="sampleVO">
+        SELECT
+            COL1,
+            COL2
+        FROM TEST
+        <where>
+            <if test="col1 != null and col1 != ''">
+                AND COL1 = #{col1}
+            </if>
+            <if test="col2 != null and col2 != ''">
+                AND COL2 = #{col2}
+            </if>
+        </where>
+    </select>
+
+    <select id="getSample" parameterType="int" resultType="sampleVO">
+        SELECT
+            COL1,
+            COL2
+        FROM TEST
+        <where>
+            <if test="col1 != null and col1 != ''">
+                AND COL1 = #{col1}
+            </if>
+        </where>
+    </select>
+
+    <insert id="addSample" parameterType="sampleVO">
+        INSERT
+        INTO    TEST
+        (
+            COL1,
+            COL2
+        )
+        VALUES
+        (
+            #{col1},
+            #{col2}
+        )
+    </insert>
+
+    <update id="updateSample" parameterType="sampleVO">
+        UPDATE  TEST
+        SET     COL2    =   #{col2}
+        WHERE   COL1    =   #{col1}
+    </update>
+
+    <delete id="deleteSample" parameterType="java.util.ArrayList">
+        DELETE
+        FROM    TEST
+        WHERE   COL1 IN
+        <foreach item="item" collection="deleteList" separator="," open="(" close=")">
+            #{item}
+        </foreach>
+    </delete>
+</mapper>
