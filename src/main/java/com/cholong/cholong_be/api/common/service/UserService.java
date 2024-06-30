@@ -16,4 +16,6 @@ public interface UserService {
     int updateUser(UserVO userVO);
 
     int deleteUser(ArrayList<Integer> deleteList);
+
+    int userIdDuplicateChk(String userId);
 }

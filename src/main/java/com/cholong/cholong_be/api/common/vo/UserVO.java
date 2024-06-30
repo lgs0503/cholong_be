@@ -1,10 +1,15 @@
 package com.cholong.cholong_be.api.common.vo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.apache.ibatis.annotations.ConstructorArgs;
 import org.apache.ibatis.type.Alias;
 
 @Data
 @Alias("UserVO")
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserVO {
 
     private long idx;
@@ -23,7 +28,8 @@ public class UserVO {
     private String useYn;
     private long fileNo;
     private String remark;
-
+    private String smsYn;
+    private String mailYn;
 
     private String createUser;
     private String createDate;

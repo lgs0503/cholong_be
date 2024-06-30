@@ -20,6 +20,8 @@
             USE_YN,
             FILE_NO,
             REMARK,
+            SMS_YN,
+            MAIL_YN,
             CREATE_USER,
             UPDATE_DATE,
             UPDATE_USER,
@@ -53,6 +55,8 @@
             USE_YN,
             FILE_NO,
             REMARK,
+            SMS_YN,
+            MAIL_YN,
             CREATE_USER,
             UPDATE_DATE,
             UPDATE_USER,
@@ -69,7 +73,6 @@
             USER_ID,
             PASSWORD,
             KOR_NAME,
-            ENG_NAME,
             NICK_NAME,
             ZIP_CODE,
             ADDRESS,
@@ -80,29 +83,32 @@
             EMAIL,
             USE_YN,
             FILE_NO,
-            REMARK
+            SMS_YN,
+            MAIL_YN,
+            CREATE_DATE
             <if test="createUser != null and idx != ''">
                 ,CREATE_USER
             </if>
         )
         VALUES
         (
-            #{idx},
+            USER_INFO_SEQ.NEXTVAL,
             #{userId},
             #{password},
             #{korName},
-            #{engName},
             #{nickName},
             #{zipCode},
             #{address},
             #{addressDtl},
             #{gender},
-            #{birthday},
+            TO_CHAR(TO_DATE(#{birthday}), 'YYYYMMDD'),
             #{phoneNum},
             #{email},
-            #{useYn},
+            'Y',
             #{fileNo},
-            #{remark}
+            #{smsYn},
+            #{mailYn},
+            SYSDATE
             <if test="createUser != null and idx != ''">
                 ,#{createUser}
             </if>
@@ -145,4 +151,11 @@
             #{item}
         </foreach>
     </delete>
+
+    <select id="userIdDuplicateChk" parameterType="String" resultType="int">
+        SELECT
+            COUNT(*) AS CNT
+        FROM USER_INFO
+        WHERE USER_ID = #{userId}
+    </select>
 </mapper>

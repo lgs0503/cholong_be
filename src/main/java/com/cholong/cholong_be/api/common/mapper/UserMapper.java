@@ -19,4 +19,6 @@ public interface UserMapper {
     int updateUser(UserVO userVO);
 
     int deleteUser(@Param("deleteList") ArrayList<Integer> deleteList);
+
+    int userIdDuplicateChk(@Param("userId") String userId);
 }

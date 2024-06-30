@@ -1,0 +1,160 @@
+/** css 변수 **/
+:root {
+    --color-dark-blue: #00072D;
+    --color-dark-light-blue: #001C55;
+    --color-blue: #0A2472;
+    --color-light-dark-blue: #2E4052;
+    --color-light-blue: #A6E1FA;
+
+    --color-tea-green: #BDD9BF;
+    --color-charcoal: #2E4052;
+    --color-sunglow: #FFC857;
+    --color-dark-purple: #412234;
+    --color-form-background-color: #f7f8ff;
+}
+/** 로그인 css **/
+
+
+/** 회원가입 css **/
+.register-form{
+    padding: 60px 100px 150px 100px;
+    font-size: 14px;
+    background-color: var(--color-form-background-color);
+}
+.register-form > .register-title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--color-charcoal);
+}
+.register-form > fieldset {
+    width: 100%;
+    padding: 30px 0;
+}
+.register-form > fieldset > section:first-child {
+    border-top: 1px solid var(--color-dark-blue);
+}
+.register-form > fieldset > section {
+    border-left: 1px solid var(--color-dark-blue);
+    border-right: 1px solid var(--color-dark-blue);
+}
+.register-form > fieldset > section > .register-sub-title {
+    padding : 10px;
+    border-bottom: 1px solid var(--color-dark-blue);
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--color-light-dark-blue);
+}
+.register-form > fieldset > section > div > .register-row {
+    padding : 10px;
+    border-bottom: 1px solid var(--color-dark-blue);
+    background-color: white;
+}
+.register-form > fieldset > section > div > div > textarea{
+    width: 100%;
+    height: 200px;
+    padding: 30px;
+}
+.register-form > fieldset > section > div > .register-row > .register-input-label {
+    width: 130px;
+    display: inline-block;
+}
+
+.regi-address-form {
+    display:inline-block;
+    width: calc(100% - 140px);
+}
+.regi-address-row {
+    margin-bottom: 10px;
+}
+.regi-address-row:last-child {
+    margin-bottom: 0;
+}
+/** 레이아웃 css **/
+
+
+
+/** 공통 css **/
+
+input[type='checkbox']{
+    display: none;
+}
+strong{
+    color:red;
+}
+input {
+    padding : 5px;
+}
+select {
+    padding : 5px;
+}
+button {
+    border: none;
+    padding : 5px 13px;
+    font-weight: bold;
+    background-color: var(--color-light-dark-blue);
+    color: white;
+}
+button:hover {
+    background-color: var(--color-sunglow);
+    cursor: pointer;
+    color:black;
+}
+
+.width50 {width: 50px;}
+.width60 {width: 60px;}
+.width70 {width: 70px;}
+.width80 {width: 80px;}
+.width90 {width: 90px;}
+.width100 { width: 100px;}
+.width110 { width: 110px;}
+.width120 { width: 120px;}
+.width130 { width: 130px;}
+.width140 { width: 140px;}
+.width150 { width: 150px;}
+.width160 { width: 160px;}
+.width170 { width: 170px;}
+.width180 { width: 180px;}
+.width190 { width: 190px;}
+.width200 { width: 200px;}
+.width210 { width: 210px;}
+.width220 { width: 220px;}
+.width230 { width: 230px;}
+.width240 { width: 240px;}
+.width240 { width: 240px;}
+.width100p { width: 100%;}
+.display-block { display: block; }
+.display-inline-block { display: inline-block; }
+.float-right { float:right; }
+.vertical-align-top{ vertical-align: top;}
+
+/* (체크박스, 텍스트) 정렬 맞추기 */
+.checkbox_label, .radio_label{
+    display: inline-block;
+}
+
+/* 체크박스 디자인 */
+.checkbox_icon::before,
+.radio_icon::before{
+    content:'';
+    display: inline-block;
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    border: 1px solid #9da3a5;
+    box-sizing:border-box;
+    position: relative;
+    cursor: pointer;
+}
+.radio_icon::before {
+    border-radius: 50px;
+}
+/* checked */
+.checkbox_label input:checked + .checkbox_icon::before,
+.radio_label input:checked + .radio_icon::before{
+    background: url(https://intranet.adef.co.kr/asset/images/ic_check.png) var(--color-light-dark-blue)
+    no-repeat center;
+    border:none;
+}

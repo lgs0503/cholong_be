@@ -4,10 +4,7 @@ import com.cholong.cholong_be.api.common.service.UserService;
 import com.cholong.cholong_be.api.common.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
@@ -54,5 +51,11 @@ public class UserController {
     @RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
     public Integer deleteUser(@RequestBody ArrayList<Integer> deleteList) {
         return userService.deleteUser(deleteList);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/userIdDuplicateChk", method = RequestMethod.GET)
+    public Integer userIdDuplicateChk(@RequestParam(value = "userId") String userId) {
+        return userService.userIdDuplicateChk(userId);
     }
 }
