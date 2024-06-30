@@ -158,4 +158,11 @@
         FROM USER_INFO
         WHERE USER_ID = #{userId}
     </select>
+
+    <select id="getPassword" parameterType="String" resultType="String">
+        SELECT
+            PASSWORD
+        FROM USER_INFO
+        WHERE USER_ID = #{userId}
+    </select>
 </mapper>

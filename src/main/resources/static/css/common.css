@@ -13,7 +13,38 @@
     --color-form-background-color: #f7f8ff;
 }
 /** 로그인 css **/
-
+.login-form {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--color-form-background-color);
+}
+.login-form > .login-title{
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--color-charcoal);
+    margin-bottom: 30px;
+}
+.login-form > fieldset{
+    padding: 40px 20px 20px 20px;
+    border: 1px solid var(--color-dark-blue);
+    text-align: center;
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+.login-form > fieldset > input {
+    width: 250px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.login-form > fieldset > button {
+    width: 250px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
 
 /** 회원가입 css **/
 .register-form{
@@ -85,6 +116,7 @@ strong{
 }
 input {
     padding : 5px;
+    color: var(--color-charcoal);
 }
 select {
     padding : 5px;

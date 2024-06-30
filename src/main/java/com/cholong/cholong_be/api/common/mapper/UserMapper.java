@@ -21,4 +21,6 @@ public interface UserMapper {
     int deleteUser(@Param("deleteList") ArrayList<Integer> deleteList);
 
     int userIdDuplicateChk(@Param("userId") String userId);
+
+    String getPassword(@Param("userId") String userId);
 }

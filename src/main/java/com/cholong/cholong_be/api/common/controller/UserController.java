@@ -2,6 +2,7 @@ package com.cholong.cholong_be.api.common.controller;
 
 import com.cholong.cholong_be.api.common.service.UserService;
 import com.cholong.cholong_be.api.common.vo.UserVO;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +28,12 @@ public class UserController {
     public ModelAndView registerPage() {
 
         return new ModelAndView("common/register");
+    }
+
+    @RequestMapping("/findIdPasswordPage")
+    public ModelAndView findIdPasswordPage() {
+
+        return new ModelAndView("common/findIdPassword");
     }
 
     @ResponseBody
@@ -57,5 +64,12 @@ public class UserController {
     @RequestMapping(value = "/userIdDuplicateChk", method = RequestMethod.GET)
     public Integer userIdDuplicateChk(@RequestParam(value = "userId") String userId) {
         return userService.userIdDuplicateChk(userId);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public boolean login(@RequestBody UserVO userVO) {
+
+        return userService.login(userVO);
     }
 }

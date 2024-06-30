@@ -2,7 +2,9 @@ package com.cholong.cholong_be.api.common.service;
 
 import com.cholong.cholong_be.api.common.mapper.UserMapper;
 import com.cholong.cholong_be.api.common.vo.UserVO;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.parameters.P;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -61,5 +63,14 @@ public class UserServiceServiceImpl implements UserService {
     @Override
     public int userIdDuplicateChk(String userId) {
         return userMapper.userIdDuplicateChk(userId);
+    }
+
+    @Override
+    public boolean login(UserVO userVO) {
+
+        return  passwordEncoder.matches(
+                userVO.getPassword(),
+                userMapper.getPassword(userVO.getUserId())
+        );
     }
 }

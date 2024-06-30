@@ -1,6 +1,7 @@
 package com.cholong.cholong_be.api.common.service;
 
 import com.cholong.cholong_be.api.common.vo.UserVO;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,4 +19,6 @@ public interface UserService {
     int deleteUser(ArrayList<Integer> deleteList);
 
     int userIdDuplicateChk(String userId);
+
+    boolean login(UserVO userVO);
 }

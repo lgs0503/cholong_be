@@ -382,7 +382,7 @@
                             </label>
                         </div>
                         <div class="register-row">
-                            <label class="register-input-label">메일 수신동의 </label>
+                            <label class="register-input-label">메일 수신동의</label>
                             <label class="checkbox_label">
                                 <input id="mailYn" type="checkbox" checked/>
                                 <span class="checkbox_icon"></span>
