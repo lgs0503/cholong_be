@@ -2,9 +2,7 @@ package com.cholong.cholong_be.api.common.service;
 
 import com.cholong.cholong_be.api.common.mapper.UserMapper;
 import com.cholong.cholong_be.api.common.vo.UserVO;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.parameters.P;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +20,6 @@ public class UserServiceServiceImpl implements UserService {
             UserMapper userMapper,
             PasswordEncoder passwordEncoder
     ) {
-
         this.userMapper = userMapper;
         this.passwordEncoder = passwordEncoder;
     }
@@ -33,8 +30,8 @@ public class UserServiceServiceImpl implements UserService {
     }
 
     @Override
-    public UserVO getUser(int idx) {
-        return userMapper.getUser(idx);
+    public UserVO getUser(UserVO userVO) {
+        return userMapper.getUser(userVO);
     }
 
     @Override
@@ -72,5 +69,15 @@ public class UserServiceServiceImpl implements UserService {
                 userVO.getPassword(),
                 userMapper.getPassword(userVO.getUserId())
         );
+    }
+
+    @Override
+    public String getId(UserVO userVO) {
+        return userMapper.getId(userVO);
+    }
+
+    @Override
+    public int updatePassword(UserVO userVO) {
+        return userMapper.updatePassword(userVO);
     }
 }

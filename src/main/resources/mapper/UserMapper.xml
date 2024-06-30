@@ -34,10 +34,16 @@
             <if test="userId != null and userId != ''">
                 AND USER_ID = #{userId}
             </if>
+            <if test="email != null and email != ''">
+                AND EMAIL = #{email}
+            </if>
+            <if test="korName != null and korName != ''">
+                AND KOR_NAME = #{korName}
+            </if>
         </where>
     </select>
 
-    <select id="getUser" parameterType="int" resultType="userVO">
+    <select id="getUser" parameterType="userVO" resultType="userVO">
         SELECT
             IDX,
             USER_ID,
@@ -62,7 +68,20 @@
             UPDATE_USER,
             CREATE_DATE
         FROM USER_INFO
-        WHERE IDX = #{idx}
+        <where>
+            <if test="idx != null and idx != ''">
+                AND IDX = #{idx}
+            </if>
+            <if test="userId != null and userId != ''">
+                AND USER_ID = #{userId}
+            </if>
+            <if test="email != null and email != ''">
+                AND EMAIL = #{email}
+            </if>
+            <if test="korName != null and korName != ''">
+                AND KOR_NAME = #{korName}
+            </if>
+        </where>
     </select>
 
     <insert id="addUser" parameterType="userVO">
@@ -155,14 +174,37 @@
     <select id="userIdDuplicateChk" parameterType="String" resultType="int">
         SELECT
             COUNT(*) AS CNT
-        FROM USER_INFO
-        WHERE USER_ID = #{userId}
+        FROM    USER_INFO
+        WHERE   USER_ID = #{userId}
     </select>
 
     <select id="getPassword" parameterType="String" resultType="String">
         SELECT
             PASSWORD
-        FROM USER_INFO
-        WHERE USER_ID = #{userId}
+        FROM    USER_INFO
+        WHERE   USER_ID = #{userId}
     </select>
+
+    <select id="getId" parameterType="userVO" resultType="String">
+        SELECT
+            USER_ID
+        FROM    USER_INFO
+        WHERE   KOR_NAME = #{korName}
+        AND     EMAIL = #{email}
+    </select>
+
+    <update id="updatePassword" parameterType="userVO">
+        UPDATE  USER_INFO
+        SET     PASSWORD = #{password},
+                UPDATE_USER = 'ADMIN',
+                UPDATE_DATE = SYSDATE
+        <where>
+            <if test="idx != null and idx != ''">
+                AND IDX = #{idx}
+            </if>
+            <if test="userId != null and userId != ''">
+                AND USER_ID = #{userId}
+            </if>
+        </where>
+    </update>
 </mapper>

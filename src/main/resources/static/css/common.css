@@ -13,7 +13,9 @@
     --color-form-background-color: #f7f8ff;
 }
 /** 로그인 css **/
-.login-form {
+/** 아이디 비밀번호 찾기 css **/
+.login-form,
+.find-id-pw-form {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -21,29 +23,38 @@
     flex-direction: column;
     background-color: var(--color-form-background-color);
 }
-.login-form > .login-title{
+.login-form > .login-title,
+.find-id-pw-form > .find-id-pw-title{
     font-size: 25px;
     font-weight: bold;
     color: var(--color-charcoal);
     margin-bottom: 30px;
 }
-.login-form > fieldset{
+.login-form > fieldset,
+.find-id-pw-form > fieldset{
     padding: 40px 20px 20px 20px;
     border: 1px solid var(--color-dark-blue);
     text-align: center;
-    width: 300px;
+    width: 310px;
     margin-bottom: 20px;
     background-color: white;
 }
-.login-form > fieldset > input {
+.login-form > fieldset > input,
+.find-id-pw-form > fieldset > input{
     width: 250px;
     padding: 10px;
     margin-bottom: 10px;
 }
-.login-form > fieldset > button {
+.login-form > fieldset > button,
+.find-id-pw-form > fieldset > button{
     width: 250px;
     padding: 10px;
     margin-bottom: 10px;
+}
+.find-result-text {
+    margin-bottom: 20px;
+    text-align: left;
+    line-height: 30px;
 }
 
 /** 회원가입 css **/
@@ -102,6 +113,7 @@
 .regi-address-row:last-child {
     margin-bottom: 0;
 }
+
 /** 레이아웃 css **/
 
 
@@ -156,8 +168,11 @@ button:hover {
 .width240 { width: 240px;}
 .width240 { width: 240px;}
 .width100p { width: 100%;}
+
 .display-block { display: block; }
+.display-none { display: none; }
 .display-inline-block { display: inline-block; }
+
 .float-right { float:right; }
 .vertical-align-top{ vertical-align: top;}
 

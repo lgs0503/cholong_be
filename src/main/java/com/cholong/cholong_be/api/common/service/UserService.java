@@ -10,7 +10,7 @@ public interface UserService {
 
     List<UserVO> getUserList(UserVO userVO);
 
-    UserVO getUser(int idx);
+    UserVO getUser(UserVO userVO);
 
     int addUser(UserVO userVO);
 
@@ -21,4 +21,8 @@ public interface UserService {
     int userIdDuplicateChk(String userId);
 
     boolean login(UserVO userVO);
+
+    String getId(UserVO userVO);
+
+    int updatePassword(UserVO userVO);
 }

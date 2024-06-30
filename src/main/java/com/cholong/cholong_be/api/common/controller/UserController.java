@@ -1,8 +1,8 @@
 package com.cholong.cholong_be.api.common.controller;
 
+import com.cholong.cholong_be.api.common.service.SendEmailService;
 import com.cholong.cholong_be.api.common.service.UserService;
 import com.cholong.cholong_be.api.common.vo.UserVO;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +17,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    SendEmailService sendEmailService;
 
     @RequestMapping("/loginPage")
     public ModelAndView loginPage() {
@@ -71,5 +74,28 @@ public class UserController {
     public boolean login(@RequestBody UserVO userVO) {
 
         return userService.login(userVO);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/getId", method = RequestMethod.POST)
+    public String getId(@RequestBody UserVO userVO) {
+
+        return userService.getId(userVO);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/getPassword", method = RequestMethod.POST)
+    public String getPassword(@RequestBody UserVO userVO) {
+
+        String result = "success";
+        UserVO checkUser = userService.getUser(userVO);
+
+        if (checkUser != null) {
+            sendEmailService.mailSend(sendEmailService.createMailAndChargePassword(userVO));
+        } else {
+            result = "not found user";
+        }
+
+        return result;
     }
 }

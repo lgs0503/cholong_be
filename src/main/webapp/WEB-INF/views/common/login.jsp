@@ -64,7 +64,8 @@
                 jqueryAjax("/common/user/login", "POST", (result) => {
 
                     if (result) {
-                        location.href = "/mainPage";
+                        sessionStorage.setItem("loginId", param.userId);
+                        location.href = "/common/main/mainPage";
                     } else {
                         alert("아이디 및 비밀번호를 확인해주세요.");
                         $("#password").focus();

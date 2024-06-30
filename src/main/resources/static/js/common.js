@@ -11,7 +11,6 @@ const jqueryAjax = (
     let ajaxParam = {
         url: url,
         method: method,
-        dataType: 'JSON',
         contentType: "application/json",
         success: callback,
         error: function (e) {
@@ -39,7 +38,6 @@ const jqueryAjaxSync = (
     let ajaxParam = {
         url: url,
         method: method,
-        dataType: 'JSON',
         contentType: "application/json",
         success: callback,
         async: false,

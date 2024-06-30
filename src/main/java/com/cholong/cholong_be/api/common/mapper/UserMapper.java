@@ -12,7 +12,7 @@ public interface UserMapper {
 
     List<UserVO> getUserList(UserVO userVO);
 
-    UserVO getUser(@Param("idx") int idx);
+    UserVO getUser(UserVO userVO);
 
     int addUser(UserVO userVO);
 
@@ -23,4 +23,8 @@ public interface UserMapper {
     int userIdDuplicateChk(@Param("userId") String userId);
 
     String getPassword(@Param("userId") String userId);
+
+    String getId(UserVO userVO);
+
+    int updatePassword(UserVO userVO);
 }
