@@ -5,7 +5,6 @@
         <title>로그인</title>
         <link rel="stylesheet" href="/resources/static/css/reset.css"/>
         <link rel="stylesheet" href="/resources/static/css/common.css"/>
-        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
         <script type="text/javascript" src="/resources/static/js/common.js"></script>
         <script type="text/javascript" src="/resources/static/js/jquery-3.7.1.min.js"></script>
         <script type="text/javascript">
@@ -65,7 +64,7 @@
 
                     if (result) {
                         sessionStorage.setItem("loginId", param.userId);
-                        location.href = "/common/main/mainPage";
+                        location.href = "/common/main/mainPage?loginId=" + param.userId;
                     } else {
                         alert("아이디 및 비밀번호를 확인해주세요.");
                         $("#password").focus();

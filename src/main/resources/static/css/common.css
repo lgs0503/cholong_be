@@ -38,6 +38,7 @@
     width: 310px;
     margin-bottom: 20px;
     background-color: white;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 .login-form > fieldset > input,
 .find-id-pw-form > fieldset > input{
@@ -71,7 +72,8 @@
 }
 .register-form > fieldset {
     width: 100%;
-    padding: 30px 0;
+    margin: 30px 0;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 .register-form > fieldset > section:first-child {
     border-top: 1px solid var(--color-dark-blue);
@@ -115,8 +117,66 @@
 }
 
 /** 레이아웃 css **/
+.layout-header{
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid var(--color-charcoal);
+    justify-content: space-between;
+}
+.layout-header > .layout-header-title{
+    line-height: 25px;
+    color: var(--color-charcoal);
+    font-size: 25px;
+    font-weight: bold;
+}
+.layout-container {
+    width: 100%;
+    display: flex;
+    min-height: 500px;
+}
+.layout-container > .layout-left-menu{
+    display: inline-block;
+    height: 100%;
+    border-right:1px solid var(--color-charcoal);
+    color: var(--color-dark-blue);
+    font-weight: bold;
+    width: 200px;
+    min-height: 800px;
+}
+.layout-top-menu{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.layout-top-menu > ul > .layout-sub-menu{
+    color: var(--color-charcoal);
+    width: 200px;
+    height: 35px;
+    line-height: 35px;
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 14px;
+}
+.layout-top-menu > ul > .layout-sub-menu:hover{
+    cursor: pointer;
+    color: var(--color-blue);
+}
+.layout-container > section {
+    display: inline-block;
+    width: calc( 100% - 200px);
+    min-height: 800px;
+    background-color: var(--color-form-background-color);
 
+}
 
+.layout-footer{
+    border-top: solid 1px  var(--color-charcoal);
+    text-align: right;
+    font-weight: bold;
+    font-size: 13px;
+    height: 40px;
+    line-height: 40px;
+
+}
 
 /** 공통 css **/
 
