@@ -13,13 +13,20 @@ public class MainController  {
 
     @RequestMapping("/mainPage")
     public ModelAndView loginPage(
-            @RequestParam("loginId") String loginId,
+            @RequestParam(value = "loginId", defaultValue = "") String loginId,
             HttpServletRequest httpServletRequest
     ) {
 
-        HttpSession httpSession = httpServletRequest.getSession();
-        httpSession.setAttribute("loginId", loginId);
+        if (!loginId.equals("")) {
+            HttpSession httpSession = httpServletRequest.getSession();
+            httpSession.setAttribute("loginId", loginId);
+        }
 
         return new ModelAndView("common/main");
+    }
+
+    @RequestMapping("/myPage")
+    public ModelAndView myPage() {
+        return new ModelAndView("common/myPage");
     }
 }

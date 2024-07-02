@@ -64,7 +64,7 @@
 
                     if (result) {
                         sessionStorage.setItem("loginId", param.userId);
-                        location.href = "/common/main/mainPage?loginId=" + param.userId;
+                        goPage( "/common/main/mainPage?loginId=" + param.userId);
                     } else {
                         alert("아이디 및 비밀번호를 확인해주세요.");
                         $("#password").focus();

@@ -133,3 +133,10 @@ const enterSearch = (event, searchMethod) => {
         searchMethod();
     }
 }
+
+/**
+ * 페이지 이동
+ **/
+const goPage = (url) => {
+    location.href = url;
+}

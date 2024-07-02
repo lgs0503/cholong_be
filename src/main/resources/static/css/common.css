@@ -117,24 +117,16 @@
 }
 
 /** 레이아웃 css **/
-.layout-header{
-    display: flex;
-    padding: 20px;
-    border-bottom: 1px solid var(--color-charcoal);
-    justify-content: space-between;
-}
-.layout-header > .layout-header-title{
-    line-height: 25px;
-    color: var(--color-charcoal);
-    font-size: 25px;
-    font-weight: bold;
-}
 .layout-container {
     width: 100%;
     display: flex;
     min-height: 500px;
 }
+
+/** 레이아웃 - 네비게이션바 메뉴 **/
 .layout-container > .layout-left-menu{
+    transition-duration: 0.5s;
+    transition-property: width;
     display: inline-block;
     height: 100%;
     border-right:1px solid var(--color-charcoal);
@@ -144,6 +136,7 @@
     min-height: 800px;
 }
 .layout-top-menu{
+    width: 200px;
     margin-top: 20px;
     margin-left: 20px;
 }
@@ -155,19 +148,93 @@
     margin-top: 10px;
     margin-left: 20px;
     font-size: 14px;
+    font-weight: normal;
 }
 .layout-top-menu > ul > .layout-sub-menu:hover{
     cursor: pointer;
     color: var(--color-blue);
+    font-weight: bold;
 }
 .layout-container > section {
     display: inline-block;
     width: calc( 100% - 200px);
     min-height: 800px;
     background-color: var(--color-form-background-color);
-
+}
+/** 레이아웃 - 헤더 **/
+.layout-header{
+    display: flex;
+    height: 80px;
+    border-bottom: 3px solid var(--color-sunglow);
+    justify-content: space-between;
+    background-color: var(--color-charcoal);
+}
+.layout-header > .layout-header-left,
+.layout-header > .layout-header-right
+{
+    line-height: 80px;
+    display: flex;
+}
+.layout-header > .layout-header-left > .layout-header-title {
+    color: var(--color-charcoal);
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    border-right: 8px double var(--color-charcoal);
+    padding-right : 80px;
+    padding-left : 40px;
+    background-color:white;
+}
+.layout-header > .layout-header-left > .layout-header-menu-open {
+    padding-left: 20px;
+}
+.layout-header > .layout-header-left > .layout-header-menu-open > i{
+    line-height: 80px;
+    color: white;
+    font-size: 28px;
+}
+.layout-header > .layout-header-left > .layout-header-menu-open > i:hover{
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--color-sunglow);
+}
+.layout-header > .layout-header-right > .layout-header-userinfo {
+    width: 80px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+.layout-header-userinfo,
+.layout-header-userinfo > img{
+    text-align: center;
+    line-height: 80px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
+.layout-header-userinfo-popup {
+    position: absolute;
+    right:20px;
+    background-color:white;
+    top: 70px;
+    border: 1px solid var(--color-dark-purple);
+    border-radius: 4px;
+    font-size:14px;
+    display: none;
+}
+.layout-header-userinfo-popup > ul > li{
+    padding: 7px 20px;
+}
+.layout-header-userinfo-popup > ul > li:first-child{
+    border-bottom: 1px solid var(--color-dark-purple);
+}
+.layout-header-userinfo-popup > ul > li:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/** 레이아웃 - 푸터 **/
 .layout-footer{
     border-top: solid 1px  var(--color-charcoal);
     text-align: right;
@@ -176,6 +243,28 @@
     height: 40px;
     line-height: 40px;
 
+}
+
+/** 레이아웃 컨텐츠 (body) **/
+.layout-content{
+    padding: 30px;
+}
+.layout-content > .layout-content-title{
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-charcoal);
+}
+.layout-card {
+    padding: 20px;
+    border-radius: 3px;
+    border: 1px solid  var(--color-charcoal);
+    background-color: white;
+}
+.layout-content-page-go-button {
+    padding: 20px;
+    border-radius: 5px;
+    width: 100%;
 }
 
 /** 공통 css **/
@@ -228,10 +317,14 @@ button:hover {
 .width240 { width: 240px;}
 .width240 { width: 240px;}
 .width100p { width: 100%;}
-
+.width50p { width: 50%;}
+.shadow { box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);}
 .display-block { display: block; }
+.display-flex { display: flex }
 .display-none { display: none; }
 .display-inline-block { display: inline-block; }
+.gap10 { gap: 10px; }
+.mgb10 { margin-bottom: 10px;}
 
 .float-right { float:right; }
 .vertical-align-top{ vertical-align: top;}
@@ -264,4 +357,17 @@ button:hover {
     background: url(https://intranet.adef.co.kr/asset/images/ic_check.png) var(--color-light-dark-blue)
     no-repeat center;
     border:none;
+}
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/
+@media all and (max-width:700px) {
+    .layout-header-title {
+        display: none;
+    }
+    .layout-left-menu {
+        display: none !important;
+    }
+    .layout-container > section {
+        width: 100%;
+    }
 }

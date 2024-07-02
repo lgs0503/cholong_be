@@ -3,6 +3,8 @@ package com.cholong.cholong_be.api.common.controller;
 import com.cholong.cholong_be.api.common.service.SendEmailService;
 import com.cholong.cholong_be.api.common.service.UserService;
 import com.cholong.cholong_be.api.common.vo.UserVO;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -37,6 +39,17 @@ public class UserController {
     public ModelAndView findIdPasswordPage() {
 
         return new ModelAndView("common/findIdPassword");
+    }
+
+    @RequestMapping("/logout")
+    public ModelAndView logout(
+            HttpServletRequest httpServletRequest
+    ) {
+
+        HttpSession httpSession = httpServletRequest.getSession();
+        httpSession.removeAttribute("loginId");
+
+        return new ModelAndView("common/login");
     }
 
     @ResponseBody
