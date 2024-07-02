@@ -7,82 +7,51 @@
         <div class="layout-content">
             <div class="layout-content-title">
                 My Page
+                <button class="float-right">수정</button>
+                <button class="float-right mgr10">비밀번호 변경</button>
             </div>
-            <div class="layout-card shadow">
-                <div>
-                    <div class="register-row">
-                        <img src="#"/>
+            <div class="layout-card shadow display-flex">
+                <div class="myPage-left">
+                    <div class="myPage-image">
+                        <img src="/resources/static/image/userimage.jpg">
                     </div>
-                    <div class="register-row">
-                        <label class="register-input-label">아이디</label>
-                        <input id="userId" class="width210" type="text" maxlength="15" placeholder="영문, 숫자 (4자리 ~ 15자리)"/>
+                </div>
+                <div class="myPage-right">
+                    <div class="layout-row">
+                        <div class="layout-col layout-col-head">아이디</div>
+                        <div class="layout-col">lgs0503</div>
                     </div>
-                    <div class="register-row">
-                        <label class="register-input-label">이름</label>
-                        <input id="korName" class="width130" maxlength="10" type="text"/>
+                    <div class="layout-row">
+                        <div class="layout-col layout-col-head">이름</div>
+                        <div class="layout-col">이광석</div>
                     </div>
-                    <div class="register-row">
-                        <label class="register-input-label">닉네임</label>
-                        <input id="nickName"class="width130"  maxlength="15" type="text"/>
+                    <div class="layout-row">
+                        <div class="layout-col layout-col-head">영어 이름</div>
+                        <div class="layout-col">lee Gwang seok</div>
                     </div>
-                    <div class="register-row">
-                        <label class="register-input-label vertical-align-top">주소</label>
-                        <div class="regi-address-form">
-                            <div class="regi-address-row">
-                                <input id="zipCode" class="width110" maxlength="25" type="text" placeholder="우편번호" readonly/>
-                            </div>
-                            <div class="regi-address-row">
-                                <input id="address" class="width100p" maxlength="150" type="text" placeholder="기본주소" readonly/>
-                            </div>
-                            <div class="regi-address-row">
-                                <input id="addressDtl" class="width100p"  maxlength="500" type="text" placeholder="상세주소"/>
-                            </div>
-                        </div>
+                    <div class="layout-row">
+                        <div class="layout-col layout-col-head">닉네임</div>
+                        <div class="layout-col">뭉탱이</div>
                     </div>
-                    <div class="register-row">
-                        <label class="register-input-label">성별</label>
-                        <select id="gender">
-                            <option value="1">남자</option>
-                            <option value="2">여자</option>
-                        </select>
+                    <div class="layout-row">
+                        <div class="layout-col layout-col-head">성별</div>
+                        <div class="layout-col">남자</div>
                     </div>
-                    <div class="register-row">
-                        <label class="register-input-label">생년월일</label>
-                        <input id="birthday" type="date"/>
+                    <div class="layout-row">
+                        <div class="layout-col layout-col-head">생년월일</div>
+                        <div class="layout-col">1995-05-31</div>
                     </div>
-                    <div class="register-row">
-                        <label class="register-input-label">연락처</label>
-                        <select id="phoneNum1" class="width70">
-                            <option value="010">010</option>
-                            <option value="011">011</option>
-                            <option value="016">016</option>
-                            <option value="017">017</option>
-                            <option value="018">018</option>
-                            <option value="019">019</option>
-                        </select>
-                        <b>-</b>
-                        <input id="phoneNum2" type="text" maxlength="4" class="width80"
-                               oninput="onlyNumberInput(this)"/>
-                        <b>-</b>
-                        <input id="phoneNum3" type="text" maxlength="4" class="width80"
-                               oninput="onlyNumberInput(this)"/>
+                    <div class="layout-row">
+                        <div class="layout-col layout-col-head">주소</div>
+                        <div class="layout-col">서천동로</div>
                     </div>
-                    <div class="register-row">
-                        <label class="register-input-label"><strong>*</strong>&nbsp;이메일</label>
-                        <input id="email1" type="text" class="width100">
-                        <b>@</b>
-                        <input id="email2" type="text" readonly class="width120">
-                        <select id="email3" onchange="emailSelectChange(this)">
-                            <option value="">선택하세요</option>
-                            <option value="input">직접입력</option>
-                            <option value="naver.com">naver.com</option>
-                            <option value="daum.net">daum.net</option>
-                            <option value="nate.com">nate.com</option>
-                            <option value="gmail.com">gmail.com</option>
-                            <option value="hanmail.com">hanmail.com</option>
-                            <option value="hotmail.com">hotmail.com</option>
-                            <option value="yahoo.com">yahoo.com</option>
-                        </select>
+                    <div class="layout-row">
+                        <div class="layout-col layout-col-head">상세주소</div>
+                        <div class="layout-col">202호</div>
+                    </div>
+                    <div class="layout-row">
+                        <div class="layout-col layout-col-head">비고</div>
+                        <div class="layout-col"></div>
                     </div>
                 </div>
             </div>

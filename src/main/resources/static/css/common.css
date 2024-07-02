@@ -250,7 +250,7 @@
     padding: 30px;
 }
 .layout-content > .layout-content-title{
-    margin: 20px 0;
+    margin: 10px 0 20px 0;
     font-size: 24px;
     font-weight: bold;
     color: var(--color-charcoal);
@@ -266,9 +266,39 @@
     border-radius: 5px;
     width: 100%;
 }
-
+.layout-row{
+    display:flex;
+    width: 100%;
+    border-top: 1px solid var(--color-charcoal);
+}
+.layout-row:last-child{
+    border-bottom: 1px solid var(--color-charcoal);
+}
+.layout-row > .layout-col-head {
+    padding: 5px 10px;
+    background-color: var(--color-form-background-color);
+    color: var(--color-charcoal);
+    font-weight: bold;
+    width: 100px !important;
+}
+.layout-row > .layout-col {
+    width: calc( 100% - 100px);
+    padding: 10px;
+}
+.myPage-left {
+    width: 300px;
+    margin-right: 20px;
+}
+.myPage-right {
+    width: calc( 100% - 300px );
+}
+.myPage-image > img {
+    border: 1px solid var(--color-charcoal);
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
 /** 공통 css **/
-
 input[type='checkbox']{
     display: none;
 }
@@ -283,6 +313,7 @@ select {
     padding : 5px;
 }
 button {
+    border-radius: 3px;
     border: none;
     padding : 5px 13px;
     font-weight: bold;
@@ -324,7 +355,10 @@ button:hover {
 .display-none { display: none; }
 .display-inline-block { display: inline-block; }
 .gap10 { gap: 10px; }
+.mgt10 { margin-top: 10px;}
 .mgb10 { margin-bottom: 10px;}
+.mgl10 { margin-left: 10px;}
+.mgr10 { margin-right: 10px;}
 
 .float-right { float:right; }
 .vertical-align-top{ vertical-align: top;}
@@ -360,6 +394,20 @@ button:hover {
 }
 
 /* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/
+
+@media all and (max-width:900px) {
+    .myPage-left {
+        width: 100%;
+        margin-bottom : 20px;
+    }
+    .myPage-right {
+        width: 100%;
+    }
+    .myPage-image > img {
+        width: 200px;
+        height: 200px;
+    }
+}
 @media all and (max-width:700px) {
     .layout-header-title {
         display: none;
@@ -369,5 +417,11 @@ button:hover {
     }
     .layout-container > section {
         width: 100%;
+    }
+    .layout-content-item{
+        width: auto;
+    }
+    .layout-content > .display-flex {
+        flex-direction: column;
     }
 }
