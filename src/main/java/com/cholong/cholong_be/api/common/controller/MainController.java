@@ -27,6 +27,6 @@ public class MainController  {
 
     @RequestMapping("/myPage")
     public ModelAndView myPage() {
-        return new ModelAndView("common/myPage");
+        return new ModelAndView("common/myPage/myPage");
     }
 }

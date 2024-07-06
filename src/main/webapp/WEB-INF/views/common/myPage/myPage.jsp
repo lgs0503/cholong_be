@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <body>
-<jsp:include page="../layouts/header.jsp"/>
+<jsp:include page="../../layouts/header.jsp"/>
 <div class="layout-container">
-    <jsp:include page="../layouts/leftMenu.jsp"/>
+    <jsp:include page="../../layouts/leftMenu.jsp"/>
     <section>
         <div class="layout-content">
             <div class="layout-content-title">
@@ -58,5 +58,5 @@
         </div>
     </section>
 </div>
-<jsp:include page="../layouts/footer.jsp"/>
+<jsp:include page="../../layouts/footer.jsp"/>
 </body>

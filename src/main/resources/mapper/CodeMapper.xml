@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cholong.cholong_be.api.common.mapper.CodeMapper">
+    <select id="getCodeList" parameterType="codeVO" resultType="codeVO">
+        SELECT
+            IDX,
+            CODE,
+            CODE_NAME,
+            UPPER_CODE,
+            USE_YN,
+            DESCRIPTION,
+            REF1,
+            REF2,
+            REF3,
+            CREATE_USER,
+            TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE,
+            UPDATE_USER,
+            UPDATE_DATE
+        FROM COMMON_CODE
+        <where>
+            <if test="idx != null and idx != ''">
+                AND IDX = #{idx}
+            </if>
+            <if test="code != null and code != ''">
+                AND CODE = #{code}
+            </if>
+            <if test="codeName != null and codeName != ''">
+                AND CODE_NAME = #{codeName}
+            </if>
+            <if test="upperCode != null and upperCode != ''">
+                AND UPPER_CODE = #{upperCode}
+            </if>
+            <if test="upperCode == null or upperCode == ''">
+                AND UPPER_CODE IS NULL
+            </if>
+        </where>
+        ORDER BY CREATE_DATE DESC
+    </select>
+
+    <select id="getCode" parameterType="codeVO" resultType="codeVO">
+        SELECT
+            IDX,
+            CODE,
+            CODE_NAME,
+            UPPER_CODE,
+            USE_YN,
+            DESCRIPTION,
+            REF1,
+            REF2,
+            REF3,
+            CREATE_USER,
+            TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE,
+            UPDATE_USER,
+            TO_CHAR(UPDATE_DATE, 'YYYY-MM-DD') AS UPDATE_DATE
+        FROM COMMON_CODE
+        <where>
+            <if test="idx != null and idx != ''">
+                AND IDX = #{idx}
+            </if>
+        </where>
+    </select>
+
+    <insert id="addCode" parameterType="codeVO">
+        INSERT
+        INTO    COMMON_CODE
+        (
+            IDX,
+            CODE,
+            CODE_NAME,
+        <if test="upperCode != null and upperCode != ''">
+            UPPER_CODE,
+        </if>
+            USE_YN,
+            DESCRIPTION,
+            REF1,
+            REF2,
+            REF3,
+            CREATE_DATE
+            <if test="createUser != null and idx != ''">
+                ,CREATE_USER
+            </if>
+        )
+        VALUES
+        (
+            COMMON_CODE_SEQ.NEXTVAL,
+            #{code},
+            #{codeName},
+        <if test="upperCode != null and upperCode != ''">
+            #{upperCode},
+        </if>
+            'Y',
+            #{description},
+            #{ref1},
+            #{ref2},
+            #{ref3},
+            SYSDATE
+            <if test="createUser != null and idx != ''">
+                ,#{createUser}
+            </if>
+        )
+    </insert>
+
+    <update id="updateCode" parameterType="codeVO">
+        UPDATE  COMMON_CODE
+        SET     CODE = #{code},
+                CODE_NAME = #{codeName},
+        <if test="useYn != null and useYn != ''">
+                USE_YN = #{useYn},
+        </if>
+                DESCRIPTION = #{description},
+                REF1 = #{ref1},
+                REF2 = #{ref2},
+                REF3 = #{ref3},
+                UPDATE_USER = #{updateUser},
+                UPDATE_DATE = SYSDATE
+        <where>
+            <if test="idx != null and idx != ''">
+                AND IDX = #{idx}
+            </if>
+        </where>
+    </update>
+
+    <delete id="deleteCode" parameterType="java.util.ArrayList">
+        DELETE
+        FROM    COMMON_CODE
+        WHERE   IDX IN
+        <foreach item="item" collection="deleteList" separator="," open="(" close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <select id="codeDuplicateChk" parameterType="String" resultType="int">
+        SELECT  COUNT(*) AS CNT
+        FROM    COMMON_CODE
+        WHERE   CODE = #{code}
+    </select>
+</mapper>

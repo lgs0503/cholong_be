@@ -281,8 +281,12 @@
     font-weight: bold;
     width: 100px !important;
 }
+.layout-row > input[type=text]{
+    height: 30px;
+    margin-top: 3px;
+    margin-left: 5px;
+}
 .layout-row > .layout-col {
-    width: calc( 100% - 100px);
     padding: 10px;
 }
 .myPage-left {
@@ -326,6 +330,52 @@ button:hover {
     color:black;
 }
 
+.layout-table{
+    overflow-x: auto;
+}
+.layout-table > table{
+    width:100%; min-width: 1000px; max-height: 400px;
+}
+.layout-table > table > thead > tr > th{
+    background-color: var(--color-charcoal);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+.layout-table > table > tbody > tr > td{
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid var(--color-charcoal);
+}
+
+.layout-search-bar {
+    overflow-x: auto;
+}
+.layout-search-bar > .search-bar-item1 {
+    min-width: 235px;
+}
+.layout-search-bar > .search-bar-item2 {
+    min-width: 470px;
+}
+.layout-search-bar > .search-bar-item3 {
+    min-width: 705px;
+}
+.layout-search-bar > .search-bar-item4 {
+    min-width: 1000px;
+}
+.layout-search-bar > div > .search-bar-item {
+    font-weight: bold;
+    color: var(--color-charcoal);
+    margin-right: 20px;
+}
+.layout-search-bar > div >  .search-bar-item > input{
+    margin-left: 10px;
+    border: 1px solid var(--color-charcoal);
+    border-radius: 5px;
+    padding : 6px;
+    width: 150px;
+}
+
 .width50 {width: 50px;}
 .width60 {width: 60px;}
 .width70 {width: 70px;}
@@ -347,8 +397,11 @@ button:hover {
 .width230 { width: 230px;}
 .width240 { width: 240px;}
 .width240 { width: 240px;}
+.width500 { width: 500px;}
 .width100p { width: 100%;}
 .width50p { width: 50%;}
+.width25p { width: 25%;}
+.width12p { width: 12.5%;}
 .shadow { box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);}
 .display-block { display: block; }
 .display-flex { display: flex }
@@ -356,9 +409,17 @@ button:hover {
 .display-inline-block { display: inline-block; }
 .gap10 { gap: 10px; }
 .mgt10 { margin-top: 10px;}
+.mgt20 { margin-top: 20px;}
 .mgb10 { margin-bottom: 10px;}
 .mgl10 { margin-left: 10px;}
 .mgr10 { margin-right: 10px;}
+.mgl-auto { margin-left: auto; }
+.flex-end { justify-content: end;}
+.text-align { text-align: left;}
+.tar { text-align: right !important;}
+.tal { text-align: left !important;}
+.tac { text-align: center !important;}
+.cur-pointer { cursor: pointer;}
 
 .float-right { float:right; }
 .vertical-align-top{ vertical-align: top;}
@@ -393,7 +454,7 @@ button:hover {
     border:none;
 }
 
-/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/
+/* 모바일 해상도 */
 
 @media all and (max-width:900px) {
     .myPage-left {
@@ -421,7 +482,7 @@ button:hover {
     .layout-content-item{
         width: auto;
     }
-    .layout-content > .display-flex {
+    .layout-content > .flex-column {
         flex-direction: column;
     }
 }
