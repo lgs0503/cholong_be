@@ -5,6 +5,8 @@
 <script>
     const mode = "${mode}";
     const idx = "${idx}";
+    const upperCode = "${upperCode}";
+    const upperIdx = "${upperIdx}";
 
     $(document).ready(() => {
         getCode();
@@ -15,9 +17,9 @@
      * **/
     const getCode = () => {
         if (mode !== "add") {
-            jqueryAjax("/common/code/getCode?idx=" + idx, "GET", (result) => {
+            jqueryAjaxSync("/common/code/getCode?idx=" + idx, "GET", (result) => {
                 if (result) {
-                    if (mode === "detail") {
+                    if (mode === "detail" || mode === "subDetail") {
                         $("#codeDt").text(result.code);
                         $("#codeNameDt").text(result.codeName);
                         $("#descriptionDt").text(result.description);
@@ -28,6 +30,13 @@
                         $("#createUserDt").text(result.createUser);
                         $("#updateDateDt").text(result.updateDate);
                         $("#updateUserDt").text(result.updateUser);
+
+                        if (mode === "detail") {
+                            getSubCodeList(result.code);
+                        } else {
+                            $("#upperCodeDt").text(result.upperCode);
+                        }
+
                     } else {
                         $("#code").val(result.code);
                         $("#code").prop( "disabled", true );
@@ -40,6 +49,48 @@
                 }
             });
         }
+    }
+
+    /**
+     * 하위 코드 리스트를 조회한다.
+     * **/
+    const getSubCodeList = (upperCode) => {
+        jqueryAjaxSync("/common/code/getCodeList?upperCode=" + upperCode, "GET", (result) => {
+            $("#subCodeList").html("");
+
+            if (result.length === 0) {
+
+                let trTag = $("<tr>");
+                let tdTagEmpty = $("<td>", {colspan: 5, text: "데이터가 존재하지 않습니다."});
+
+                trTag.append(tdTagEmpty);
+                $("#subCodeList").append(trTag);
+
+            } else {
+                result.forEach((value, index) => {
+
+                    let trTag = $("<tr>", {class: "cur-pointer"});
+
+                    trTag.click(() => {
+                        goPage("/common/code/codeDetailPage?mode=subDetail&idx=" + value.idx + "&upperIdx=" + idx);
+                    });
+
+                    let tdTagIndex = $("<td>", {text: index + 1});
+                    let tdTagCode = $("<td>", {text: value.code, class: "tal"});
+                    let tdTagCodeName = $("<td>", {text: value.codeName, class: "tal"});
+                    let tdTagCreateDate = $("<td>", {text: value.createDate});
+                    let tdTagCreateUser = $("<td>", {text: value.createUser});
+
+                    trTag.append(tdTagIndex);
+                    trTag.append(tdTagCode);
+                    trTag.append(tdTagCodeName);
+                    trTag.append(tdTagCreateDate);
+                    trTag.append(tdTagCreateUser);
+
+                    $("#subCodeList").append(trTag);
+                });
+            }
+        });
     }
 
     /**
@@ -62,12 +113,25 @@
 
                 if (mode === "add") {
                     url = "/common/code/addCode";
-                    redirectUrl = "/common/code/codeMgrPage";
+                    param.createUser = sessionStorage.getItem("loginId");
+
+                    /** 하위 코드 저장 용 부모 코드 ID**/
+                    if (!isEmpty(upperCode)) {
+                        param.upperCode = upperCode;
+                        redirectUrl = "/common/code/codeDetailPage?mode=detail&idx=" + upperIdx;
+                    } else {
+                        redirectUrl = "/common/code/codeMgrPage";
+                    }
+
                 } else {
                     param.idx = idx;
                     param.updateUser = sessionStorage.getItem("loginId");
                     url = "/common/code/updateCode";
-                    redirectUrl = "/common/code/codeDetailPage?mode=detail&idx=" + idx;
+                    if (!isEmpty(upperIdx)) {
+                        redirectUrl = "/common/code/codeDetailPage?mode=detail&idx=" + upperIdx;
+                    } else {
+                        redirectUrl = "/common/code/codeDetailPage?mode=detail&idx=" + idx;
+                    }
                 }
 
                 jqueryAjax(url, "POST", (result) => {
@@ -123,24 +187,40 @@
         if (confirm("삭제 하시겠습니까?")) {
             jqueryAjax("/common/code/deleteCode", "POST", (result) => {
                 if (result === 1) {
-                    alert("삭제되었습니다..");
-                    goPage("/common/code/codeMgrPage");
+                    alert("삭제되었습니다.");
+
+                    if (isEmpty(upperIdx)) {
+                        goPage("/common/code/codeMgrPage");
+                    } else {
+                        goPage("/common/code/codeDetailPage?mode=detail&idx=" + upperIdx);
+                    }
                 }
             }, [idx]);
         }
     }
+
+    const goAddSubCodePage = () => {
+        goPage('/common/code/codeDetailPage?mode=add&upperCode=' + $("#codeDt").text() + "&upperIdx=" + idx);
+    }
+
 </script>
 <div class="layout-container">
     <jsp:include page="../../layouts/leftMenu.jsp"/>
     <section>
         <div class="layout-content">
             <div class="mgt10">
-                <button class="float-right mgl10" onclick="goPage(document.referrer);">취소</button>
                 <c:if test="${mode eq 'detail'}">
+                    <button class="float-right mgl10" onclick="goPage('/common/code/codeMgrPage');">뒤로가기</button>
                     <button class="float-right mgl10" onclick="deleteCode()">삭제</button>
                     <button class="float-right" onclick="goPage('/common/code/codeDetailPage?mode=update&idx=${idx}')">수정</button>
                 </c:if>
+                <c:if test="${mode eq 'subDetail'}">
+                    <button class="float-right mgl10" onclick="goPage('/common/code/codeDetailPage?mode=detail&idx=${upperIdx}');">뒤로가기</button>
+                    <button class="float-right mgl10" onclick="deleteCode()">삭제</button>
+                    <button class="float-right" onclick="goPage('/common/code/codeDetailPage?mode=update&idx=${idx}&upperIdx=${upperIdx}')">수정</button>
+                </c:if>
                 <c:if test="${mode eq 'add' || mode eq 'update'}">
+                    <button class="float-right mgl10" onclick="goPage('/common/code/codeMgrPage');">뒤로가기</button>
                     <button class="float-right" onclick="saveCode()">저장</button>
                 </c:if>
             </div>
@@ -151,7 +231,7 @@
                 <c:if test="${mode eq 'update'}">
                     코드 수정
                 </c:if>
-                <c:if test="${mode eq 'detail'}">
+                <c:if test="${mode eq 'detail' || mode eq 'subDetail'}">
                     코드 상세
                 </c:if>
             </div>
@@ -166,6 +246,12 @@
                         <label class="layout-col layout-col-head"><strong>*</strong> 코드명</label>
                         <input id="codeName" class="width210" type="text" maxlength="25"/>
                     </div>
+                    <c:if test="${upperCode ne ''}">
+                        <div class="layout-row">
+                            <label class="layout-col layout-col-head"><strong>*</strong>부모 코드</label>
+                            <input id="upperCodeId" class="width210" type="text" maxlength="25" value="${upperCode}" disabled/>
+                        </div>
+                    </c:if>
                     <div class="layout-row">
                         <label class="layout-col layout-col-head"><strong>*</strong> 설명</label>
                         <input id="description" class="width210" type="text" maxlength="100"/>
@@ -184,13 +270,23 @@
                     </div>
                 </div>
             </c:if>
-            <c:if test="${mode eq 'detail'}">
+            <c:if test="${mode eq 'detail' || mode eq 'subDetail'}">
                 <div class="layout-card">
                     <div class="layout-row">
-                        <label class="layout-col layout-col-head">코드</label>
-                        <label class="layout-col width25p" id="codeDt"></label>
-                        <label class="layout-col layout-col-head">코드명</label>
-                        <label class="layout-col width25p" id="codeNameDt"></label>
+                        <c:if test="${mode eq 'detail'}">
+                            <label class="layout-col layout-col-head">코드</label>
+                            <label class="layout-col width25p" id="codeDt"></label>
+                            <label class="layout-col layout-col-head">코드명</label>
+                            <label class="layout-col width25p" id="codeNameDt"></label>
+                        </c:if>
+                        <c:if test="${mode eq 'subDetail'}">
+                            <label class="layout-col layout-col-head">코드</label>
+                            <label class="layout-col width12p" id="codeDt"></label>
+                            <label class="layout-col layout-col-head">코드명</label>
+                            <label class="layout-col width12p" id="codeNameDt"></label>
+                            <label class="layout-col layout-col-head">부모코드</label>
+                            <label class="layout-col width12p" id="upperCodeDt"></label>
+                        </c:if>
                     </div>
                     <div class="layout-row">
                         <label class="layout-col layout-col-head">설명</label>
@@ -221,7 +317,7 @@
 
             <c:if test="${mode eq 'detail'}">
                 <div class="mgt20">
-                    <button class="float-right mgl10" onclick="goPage(document.referrer);">추가</button>
+                    <button class="float-right mgl10" onclick="goAddSubCodePage();">추가</button>
                 </div>
                 <div class="layout-content-title">
                     하위 코드
@@ -245,7 +341,7 @@
                                 <th>등록자</th>
                             </tr>
                             </thead>
-                            <tbody id="codeList">
+                            <tbody id="subCodeList">
                             </tbody>
                         </table>
                     </div>

@@ -66,11 +66,11 @@
                 <div class="search-bar-item4">
                     <label class="search-bar-item">
                         코드
-                        <input type="text" id="code">
+                        <input type="text" id="code" onkeydown="enterSearch(event, getCodeList)">
                     </label>
                     <label class="search-bar-item">
                         코드 명
-                        <input type="text" id="codeName">
+                        <input type="text" id="codeName" onkeydown="enterSearch(event, getCodeList)">
                     </label>
                 </div>
             </div>

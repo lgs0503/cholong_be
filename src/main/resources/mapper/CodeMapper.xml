@@ -23,10 +23,10 @@
                 AND IDX = #{idx}
             </if>
             <if test="code != null and code != ''">
-                AND CODE = #{code}
+                AND CODE LIKE '%' || #{code} || '%'
             </if>
             <if test="codeName != null and codeName != ''">
-                AND CODE_NAME = #{codeName}
+                AND CODE_NAME LIKE '%' || #{codeName} || '%'
             </if>
             <if test="upperCode != null and upperCode != ''">
                 AND UPPER_CODE = #{upperCode}
@@ -77,9 +77,9 @@
             REF2,
             REF3,
             CREATE_DATE
-            <if test="createUser != null and idx != ''">
-                ,CREATE_USER
-            </if>
+        <if test="createUser != null and createUser != ''">
+            ,CREATE_USER
+        </if>
         )
         VALUES
         (
@@ -95,9 +95,9 @@
             #{ref2},
             #{ref3},
             SYSDATE
-            <if test="createUser != null and idx != ''">
-                ,#{createUser}
-            </if>
+        <if test="createUser != null and createUser != ''">
+            ,#{createUser}
+        </if>
         )
     </insert>
 

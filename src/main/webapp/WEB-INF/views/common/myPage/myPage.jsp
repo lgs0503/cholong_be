@@ -10,7 +10,7 @@
                 <button class="float-right">수정</button>
                 <button class="float-right mgr10">비밀번호 변경</button>
             </div>
-            <div class="layout-card shadow display-flex">
+            <div class="layout-card shadow display-flex m-flex-warp">
                 <div class="myPage-left">
                     <div class="myPage-image">
                         <img src="/resources/static/image/userimage.jpg">

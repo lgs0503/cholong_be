@@ -347,6 +347,9 @@ button:hover {
     text-align: center;
     border-bottom: 1px solid var(--color-charcoal);
 }
+.layout-table > table > tbody > tr:hover{
+    background-color: var(--color-form-background-color);
+}
 
 .layout-search-bar {
     overflow-x: auto;
@@ -420,6 +423,7 @@ button:hover {
 .tal { text-align: left !important;}
 .tac { text-align: center !important;}
 .cur-pointer { cursor: pointer;}
+.flex-warp{flex-wrap: wrap;}
 
 .float-right { float:right; }
 .vertical-align-top{ vertical-align: top;}
@@ -470,6 +474,9 @@ button:hover {
     }
 }
 @media all and (max-width:700px) {
+    .m-flex-warp{
+        flex-wrap: wrap;
+    }
     .layout-header-title {
         display: none;
     }

@@ -26,7 +26,9 @@ public class CodeController {
     @RequestMapping("/codeDetailPage")
     public ModelAndView addCodePage(
             @RequestParam String mode,
-            @RequestParam(defaultValue = "") String idx
+            @RequestParam(defaultValue = "") String idx,
+            @RequestParam(defaultValue = "") String upperCode,
+            @RequestParam(defaultValue = "") String upperIdx
     ) {
 
         ModelAndView mv = new ModelAndView("common/code/detail");
@@ -35,6 +37,8 @@ public class CodeController {
         if (!mode.equals("add")) {
             mv.addObject("idx", idx);
         }
+        mv.addObject("upperCode", upperCode);
+        mv.addObject("upperIdx", upperIdx);
 
         return mv;
     }
@@ -50,6 +54,7 @@ public class CodeController {
         CodeVO codeVO = new CodeVO();
         codeVO.setCode(code);
         codeVO.setCodeName(codeName);
+        codeVO.setUpperCode(upperCode);
 
         return codeService.getCodeList(codeVO);
     }
