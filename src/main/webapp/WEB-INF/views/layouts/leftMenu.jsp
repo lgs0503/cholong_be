@@ -8,6 +8,7 @@
                 <li class="layout-sub-menu" onclick="goPage('/common/code/codeMgrPage')">코드관리</li>
                 <li class="layout-sub-menu" onclick="goPage('/common/menu/menuMgrPage')">메뉴관리</li>
                 <li class="layout-sub-menu" onclick="goPage('/common/role/roleMgrPage')">권한관리</li>
+                <li class="layout-sub-menu" onclick="goPage('/common/file/fileMgrPage')">파일관리</li>
             </ul>
         </li>
         <li class="layout-top-menu">
@@ -17,7 +18,6 @@
                 <li class="layout-sub-menu" onclick="goPage('/post/postMgrPage')">게시글관리</li>
                 <li class="layout-sub-menu" onclick="goPage('/content/contentMgrPage')">컨텐츠관리</li>
                 <li class="layout-sub-menu" onclick="goPage('/comment/commentMgrPage')">댓글관리</li>
-                <li class="layout-sub-menu" onclick="goPage('/file/fileMgrPage')">파일관리</li>
                 <li class="layout-sub-menu" onclick="goPage('/banner/bannerMgrPage')">배너관리</li>
                 <li class="layout-sub-menu" onclick="goPage('/popup/popupMgrPage')">팝업관리</li>
             </ul>

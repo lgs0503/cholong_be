@@ -1,25 +1,29 @@
 create table USER_INFO
 (
-    IDX         INT
+    IDX         NUMBER        not null
         constraint USER_INFO_PK
             primary key,
-    USER_ID     VARCHAR2(50),
-    PASSWORD    VARCHAR2(100),
-    KOR_NAME    VARCHAR2(20),
+    USER_ID     VARCHAR2(50)  not null,
+    PASSWORD    VARCHAR2(100) not null,
+    KOR_NAME    VARCHAR2(20)  not null,
     ENG_NAME    VARCHAR2(40),
     ADDRESS     VARCHAR2(300),
     ADDRESS_DTL VARCHAR2(1000),
     GENDER      VARCHAR2(10),
     BIRTHDAY    VARCHAR2(10),
-    PHONE_NUM   VARCHAR(50),
+    PHONE_NUM   VARCHAR2(50),
     EMAIL       VARCHAR2(200),
-    USE_YN      VARCHAR(10),
-    FILE_NO     INT,
+    USE_YN      VARCHAR2(10),
+    FILE_NO     NUMBER,
     REMARK      VARCHAR2(200),
     CREATE_USER VARCHAR2(50) default 'ADMIN',
     UPDATE_DATE DATE,
     UPDATE_USER VARCHAR2(50),
-    CREATE_DATE DATE         default SYSDATE
+    CREATE_DATE DATE         default SYSDATE,
+    NICK_NAME   VARCHAR2(30),
+    ZIP_CODE    VARCHAR2(50),
+    SMS_YN      VARCHAR2(10),
+    MAIL_YN     VARCHAR2(10)
 )
 /
 
@@ -81,29 +85,13 @@ comment on column USER_INFO.UPDATE_USER is '수정자아이디'
 comment on column USER_INFO.CREATE_DATE is '생성일'
 /
 
-alter table USER_INFO
-    add NICK_NAME VARCHAR2(30)
-/
-
 comment on column USER_INFO.NICK_NAME is '닉네임'
-/
-
-alter table USER_INFO
-    add ZIP_CODE VARCHAR2(50)
 /
 
 comment on column USER_INFO.ZIP_CODE is '우편번호'
 /
 
-alter table USER_INFO
-    add SMS_YN VARCHAR2(10)
-/
-
 comment on column USER_INFO.SMS_YN is 'SMS수신여부(Y/N)'
-/
-
-alter table USER_INFO
-    add MAIL_YN VARCHAR2(10)
 /
 
 comment on column USER_INFO.MAIL_YN is '메일수신여부(Y/N)'

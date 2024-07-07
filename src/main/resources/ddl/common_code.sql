@@ -1,8 +1,10 @@
 create table COMMON_CODE
 (
-    IDX         NUMBER,
-    CODE        VARCHAR2(50),
-    CODE_NAME   VARCHAR2(50),
+    IDX         NUMBER       not null
+        constraint COMMON_CODE_PK
+            primary key,
+    CODE        VARCHAR2(50) not null,
+    CODE_NAME   VARCHAR2(50) not null,
     UPPER_CODE  VARCHAR2(50),
     USE_YN      VARCHAR2(10),
     DESCRIPTION VARCHAR2(200),
