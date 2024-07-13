@@ -45,7 +45,7 @@ jobs:
         with:
           host: ${{ secrets.WAS_HOST }}
           username: ${{ secrets.WAS_USERNAME }}
-          key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC3sDXiHVrSKYysA3bFwlSomof7ykifcCDgRUZ80ugqWfiG/1av4JLResrpr7xy3FUpjqZOaofw8PugvN7wlEV83LJAftHwHAMeWB858BWAe/q1K6inWX3gyJ19aoTsMvN0H0QFAyTt0HXEymEaM/Ldmm/Lr5Rh2JDokCtoPXOeVofeLNCyOveFcL9cwPpGR3pBz0gafPzSSTJBIwWH7CXEgIIgF+Uclurra9qM+KUuTnSIAan2XVfmyzZWgajkAm1YWAtmXLeDL5WSq8eXrFsncyRLePZgJ4dVfIXavQ0dYWHDx1JxeeOZAESCIq2e1g28b1WyTMhT/pbzsome5Ps5Gp50+nHfmLQm8Vk2AAU8/0iUOtlGx2vkzvZWh3CY3UJODl1ahMMWaA3Ts/mhf+KEDFF7vdOmmx49EIr383ec4zowahfCKc/i1pG82MdtEjnpVHg3pbaxScFd3ZEKXnCQWgo1mPslqSqp04m8BxPpQ5MDFaJkC4TEef1xVuEbe42Bwjub433N/jgXRpfxR7MEht9lSSL5Z9cBR8wBzlBfThA/Etg9qyq3Bw2daMsLRRgByX9l2IrTMbpJSbXCIRxPyt8kRDiNX+IHdovyMKFuQqF5BtwAVYkH9JVCRCA9bHLwrTaM3cSkpL4Jez0Sqd2fSp8SCjG4I6grF4zy0qumAw== cholong
+          key: ${{ secrets.SSH_KEY }}
           port: 22
           script: | 
             sudo docker version
