@@ -24,7 +24,7 @@ jobs:
     - name: Set up Oracle Client
       run: |
         docker pull store/oracle/database-instantclient:latest
-        docker run --rm -it store/oracle/database-instantclient:latest
+        docker run --rm -d --name oracle_client store/oracle/database-instantclient:latest
         export ORACLE_HOME=/opt/oracle/instantclient
         export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME
 
