@@ -9,6 +9,7 @@
   * Mybatis
   * Swagger
 * Oracle
+* jsp
 
 ### Cloud 서버 정보 (구글클라우드)
 
