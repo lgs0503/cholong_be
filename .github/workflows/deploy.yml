@@ -20,6 +20,13 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+        
+    - name: Set up Oracle Client
+      uses: docker://oraclelinux:latest
+      with:
+        commands: |
+          export ORACLE_HOME=/opt/oracle/instantclient
+          export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
