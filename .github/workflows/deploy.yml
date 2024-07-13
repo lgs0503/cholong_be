@@ -48,7 +48,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 22
           script: | 
-            sudo docker version sudo docker version
+            sudo docker version
             sudo docker rm -f cholong_be || true
             sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/cholong_be:1.0.1
             sudo docker run -d --name cholong_be -p 8080:8080 ${{ secrets.DOCKERHUB_USERNAME }}/cholong_be:1.0.1 
