@@ -31,12 +31,12 @@ docker push lgs0503/cholong_be:1.0.1
 docker stop cholong_be
 
 #컨테이너 삭제
-docker rm lgs0503/cholong_be:1.0.1
+docker rm cholong_be
 
 #도커 이미지삭제
 docker rmi lgs0503/cholong_be:1.0.1
 #도커 풀
 docker pull lgs0503/cholong_be:1.0.1
 #도커 컨테이너 실행
-docker run -dit --name cholong_be -p 80:8080 lgs0503/cholong_be:1.0.1
+docker run -dit --name cholong_be -p 8080:8080 lgs0503/cholong_be:1.0.1
 ```
