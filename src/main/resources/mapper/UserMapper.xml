@@ -120,7 +120,7 @@
             #{address},
             #{addressDtl},
             #{gender},
-            TO_CHAR(TO_DATE(#{birthday}), 'YYYYMMDD'),
+            TO_CHAR(TO_DATE(#{birthday}, 'YYYY-MM-DD'), 'YYYYMMDD'),
             #{phoneNum},
             #{email},
             'Y',
