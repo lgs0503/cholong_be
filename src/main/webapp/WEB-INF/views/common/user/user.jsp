@@ -27,7 +27,7 @@
                     let trTag = $("<tr>", {class: "cur-pointer"});
 
                     trTag.click(() => {
-                        goPage("/common/user/userDetailPage?mode=detail&idx=" + value.idx);
+                        goPage("/common/user/userDetailPage");
                     });
 
                     let tdTagIndex = $("<td>", {text: index + 1});
@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="mgb10 display-flex flex-end">
-                <button onclick="goPage('/common/user/userDetailPage?mode=add')">추가</button>
+                <button onclick="goPage('/common/user/userDetailPage')">추가</button>
                 <button class="mgl10" onclick="getUserList();">조회</button>
             </div>
             <div class="layout-card shadow">

@@ -29,8 +29,8 @@ public class UserController {
         return new ModelAndView("common/user/user");
     }
 
-    @RequestMapping("/codeDetailPage")
-    public ModelAndView codeDetailPage() {
+    @RequestMapping("/userDetailPage")
+    public ModelAndView userDetailPage() {
 
         return new ModelAndView("common/user/detail");
     }
