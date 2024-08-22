@@ -9,12 +9,13 @@
   * Mybatis
   * Swagger
 * Oracle
+* jsp
 
 ### Cloud 서버 정보 (구글클라우드)
 
 * SSH 접속 (private key id_rsa_4096 필요)
 ```
-ssh -i ./id_rsa_4096 cholong@34.64.49.139
+ssh -i ./id_rsa_4096 cholong@34.64.245.234
 ```
 
 * DOCKER 
@@ -31,12 +32,15 @@ docker push lgs0503/cholong_be:1.0.1
 docker stop cholong_be
 
 #컨테이너 삭제
-docker rm lgs0503/cholong_be:1.0.1
+docker rm cholong_be
 
 #도커 이미지삭제
 docker rmi lgs0503/cholong_be:1.0.1
 #도커 풀
 docker pull lgs0503/cholong_be:1.0.1
 #도커 컨테이너 실행
-docker run -dit --name cholong_be -p 80:8080 lgs0503/cholong_be:1.0.1
+docker run -dit --name cholong_be -p 8080:8080 lgs0503/cholong_be:1.0.1
+
+#도커 컨테이너 로그 확인
+docker logs --tail 10 -f cholong_be 
 ```
