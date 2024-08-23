@@ -248,7 +248,7 @@
             }
         </script>
     </head>
-    <body>
+    <body class="register-body">
         <div class="register-form">
             <h1 class="register-title">회원가입</h1>
             <fieldset>
