@@ -24,19 +24,15 @@
                 </div>
                 <div class="layout-row">
                     <label class="layout-col layout-col-head">이름</label>
-                    <div class="layout-col"></div>
-                </div>
-                <div class="layout-row">
+                    <div class="layout-col width25p"></div>
                     <label class="layout-col layout-col-head">영어이름</label>
-                    <div class="layout-col"></div>
+                    <div class="layout-col width25p"></div>
                 </div>
                 <div class="layout-row">
                     <label class="layout-col layout-col-head">성별</label>
-                    <div class="layout-col"></div>
-                </div>
-                <div class="layout-row">
+                    <div class="layout-col width25p"></div>
                     <label class="layout-col layout-col-head">생년월일</label>
-                    <div class="layout-col"></div>
+                    <div class="layout-col width25p"></div>
                 </div>
                 <div class="layout-row">
                     <label class="layout-col layout-col-head">주소</label>
@@ -60,19 +56,15 @@
                 </div>
                 <div class="layout-row">
                     <label class="layout-col layout-col-head">생성일</label>
-                    <div class="layout-col"></div>
-                </div>
-                <div class="layout-row">
+                    <div class="layout-col width25p" id="createDateDt"></div>
                     <label class="layout-col layout-col-head">생성자</label>
-                    <div class="layout-col"></div>
+                    <div class="layout-col width25p" id="createUserDt"></div>
                 </div>
                 <div class="layout-row">
                     <label class="layout-col layout-col-head">수정일</label>
-                    <div class="layout-col"></div>
-                </div>
-                <div class="layout-row">
+                    <div class="layout-col width25p" id="updateDateDt"></div>
                     <label class="layout-col layout-col-head">수정자</label>
-                    <div class="layout-col"></div>
+                    <div class="layout-col width25p" id="updateUserDt"></div>
                 </div>
             </div>
         </div>
