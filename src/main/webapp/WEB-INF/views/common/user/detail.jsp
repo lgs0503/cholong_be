@@ -15,7 +15,7 @@
                 <button class="float-right">수정</button>
             </div>
             <div class="layout-content-title">
-                코드 상세
+                회원 상세
             </div>
             <div class="layout-card">
                 <div class="layout-row">
