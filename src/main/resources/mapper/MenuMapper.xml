@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cholong.cholong_be.api.common.mapper.MenuMapper">
+    <select id="getMenuList" parameterType="menuVO" resultType="menuVO">
+        SELECT
+            IDX, MENU_NAME,
+            DESCRIPTION,
+            UPPER_MENU_IDX,
+            MENU_TYPE,
+            URL,
+            MAPPING_IDX,
+            ORD,
+            LEVEL,
+            USE_YN,
+            CREATE_USER,
+            TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE,
+            UPDATE_USER,
+            TO_CHAR(UPDATE_DATE, 'YYYY-MM-DD') AS UPDATE_DATE
+        FROM MENU_INFO
+        START WITH UPPER_MENU_IDX IS NULL
+        CONNECT BY PRIOR IDX = UPPER_MENU_IDX
+    </select>
+
+    <select id="getMenu" parameterType="menuVO" resultType="menuVO">
+        SELECT
+            IDX, MENU_NAME,
+            DESCRIPTION,
+            UPPER_MENU_IDX,
+            MENU_TYPE,
+            URL,
+            MAPPING_IDX,
+            ORD,
+            USE_YN,
+            CREATE_USER,
+            TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE,
+            UPDATE_USER,
+            TO_CHAR(UPDATE_DATE, 'YYYY-MM-DD') AS UPDATE_DATE
+        FROM MENU_INFO
+        <where>
+            <if test="idx != null and idx != ''">
+                AND IDX = #{idx}
+            </if>
+        </where>
+    </select>
+
+    <insert id="addMenu" parameterType="menuVO">
+        INSERT
+        INTO    MENU_INFO
+        (
+            IDX,
+            MENU_NAME,
+            DESCRIPTION,
+            UPPER_MENU_IDX,
+            MENU_TYPE,
+            URL,
+            MAPPING_IDX,
+            ORD,
+            USE_YN,
+            CREATE_DATE
+        <if test="createUser != null and createUser != ''">
+            ,CREATE_USER
+        </if>
+        )
+        VALUES
+        (
+            MENU_INFO_SEQ.NEXTVAL,
+            #{menuName},
+            #{desciption},
+            #{upperMenuIdx},
+            #{menuType},
+            #{url},
+            #{mappingIdx},
+            #{ord},
+            'Y',
+            SYSDATE
+        <if test="createUser != null and createUser != ''">
+            ,#{createUser}
+        </if>
+        )
+    </insert>
+
+    <update id="updateMenu" parameterType="menuVO">
+        UPDATE  MENU_INFO
+        SET     MENU_NAME = #{menuName},
+                DESCRIPTION = #{description},
+                UPPER_MENU_IDX = #{upperMenuIdx},
+                MENU_TYPE = #{menuType},
+                URL = #{url},
+                MAPPING_IDX = #{mappingIdx},
+                ORD = #{ord},
+                <if test="updateUser != null and updateUser != ''">
+                    UPDATE_USER = #{updateUser},
+                </if>
+                <if test="useYn != null and useYn != ''">
+                        USE_YN = #{useYn},
+                </if>
+                UPDATE_DATE = SYSDATE
+        <where>
+            <if test="idx != null and idx != ''">
+                AND IDX = #{idx}
+            </if>
+        </where>
+    </update>
+
+    <delete id="deleteMenu" parameterType="java.util.ArrayList">
+        DELETE
+        FROM    MENU_INFO
+        WHERE   IDX IN
+        <foreach item="item" collection="deleteList" separator="," open="(" close=")">
+            #{item}
+        </foreach>
+    </delete>
+</mapper>
