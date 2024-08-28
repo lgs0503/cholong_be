@@ -2,7 +2,41 @@
 
 <body>
 <jsp:include page="../../layouts/header.jsp"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
 <script>
+
+    $(document).ready(() => {
+
+        var jsonData = [
+            { "id" : "test1", "parent" : "#", "text" : "One Directory" },
+            { "id" : "test2", "parent" : "#", "text" : "Node Directory" },
+            { "id" : "test3", "parent" : "test2", "text" : "Child 1" },
+            { "id" : "test4", "parent" : "test2", "text" : "Child 2" }
+        ];
+
+        $("#menu").jstree({
+            'core' : {
+                data : jsonData,
+                "cehck_callback" : true,
+                'themes' : {
+                    "theme" : "default",
+                    "dots" : false,
+                    "icons" : false
+                }
+            },
+            'types' : {
+                "root" : {
+                    "icon" : { "image" : "http://static.jstree.com/v.1.0rc/_docs/_drive.png" }
+                }
+            },
+            'plugins' : [
+                'dnd', 'search', 'types', 'themes'
+            ]
+        }).on('loaded.jstree', function(event, data){
+            $("#menu").jstree('open_all');
+        });
+    });
 </script>
 <div class="layout-container">
     <jsp:include page="../../layouts/leftMenu.jsp"/>
@@ -20,7 +54,7 @@
             </div>
             <div class="display-flex">
                 <div class="layout-card shadow menu-master mgr10">
-                    <div>메뉴 트리</div>
+                    <div id="menu"></div>
                 </div>
                 <div class="layout-card shadow menu-detail">
                     <div class="sub-title mgb10">
