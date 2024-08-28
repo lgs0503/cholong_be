@@ -140,3 +140,19 @@ const enterSearch = (event, searchMethod) => {
 const goPage = (url) => {
     location.href = url;
 }
+
+/**
+ * 모달 팝업 열기
+ **/
+const openModal = (id) => {
+    $("#" + id).show();
+    $(".modal-background").show();
+}
+
+/**
+ * 모달 팝업 닫기
+ **/
+const closeModal = (id) => {
+    $("#" + id).hide();
+    $(".modal-background").hide();
+}

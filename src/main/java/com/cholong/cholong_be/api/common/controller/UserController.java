@@ -23,6 +23,18 @@ public class UserController {
     @Autowired
     SendEmailService sendEmailService;
 
+    @RequestMapping("/userMgrPage")
+    public ModelAndView userMgrPage() {
+
+        return new ModelAndView("common/user/user");
+    }
+
+    @RequestMapping("/userDetailPage")
+    public ModelAndView userDetailPage() {
+
+        return new ModelAndView("common/user/detail");
+    }
+
     @RequestMapping("/loginPage")
     public ModelAndView loginPage() {
 

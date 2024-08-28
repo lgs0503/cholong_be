@@ -59,10 +59,14 @@
 }
 
 /** 회원가입 css **/
+.register-body{
+    background-color: var(--color-form-background-color);
+}
 .register-form{
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 60px 100px 150px 100px;
     font-size: 14px;
-    background-color: var(--color-form-background-color);
 }
 .register-form > .register-title {
     text-align: center;
@@ -249,7 +253,7 @@
 .layout-content{
     padding: 30px;
 }
-.layout-content > .layout-content-title{
+.layout-content-title{
     margin: 10px 0 20px 0;
     font-size: 24px;
     font-weight: bold;
@@ -346,6 +350,7 @@ button:hover {
     padding: 10px;
     text-align: center;
     border-bottom: 1px solid var(--color-charcoal);
+    border-right: 1px solid var(--color-charcoal);
 }
 .layout-table > table > tbody > tr:hover{
     background-color: var(--color-form-background-color);
@@ -378,6 +383,11 @@ button:hover {
     padding : 6px;
     width: 150px;
 }
+.sub-title{
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-charcoal);
+}
 
 .width50 {width: 50px;}
 .width60 {width: 60px;}
@@ -400,7 +410,13 @@ button:hover {
 .width230 { width: 230px;}
 .width240 { width: 240px;}
 .width240 { width: 240px;}
+.width300 { width: 300px;}
+.width400 { width: 400px;}
 .width500 { width: 500px;}
+.width600 { width: 600px;}
+.width700 { width: 700px;}
+.width800 { width: 800px;}
+.width1000 { width: 1000px;}
 .width100p { width: 100%;}
 .width50p { width: 50%;}
 .width25p { width: 25%;}
@@ -418,12 +434,19 @@ button:hover {
 .mgr10 { margin-right: 10px;}
 .mgl-auto { margin-left: auto; }
 .flex-end { justify-content: end;}
+.flex-space-between { justify-content: space-between;}
 .text-align { text-align: left;}
 .tar { text-align: right !important;}
 .tal { text-align: left !important;}
 .tac { text-align: center !important;}
 .cur-pointer { cursor: pointer;}
 .flex-warp{flex-wrap: wrap;}
+.z-index100{z-index: 100;}
+.z-index200{z-index: 200;}
+.z-index300{z-index: 300;}
+.line-height30{line-height: 25px;}
+.line-height30{line-height: 30px;}
+.line-height35{line-height: 35px;}
 
 .float-right { float:right; }
 .vertical-align-top{ vertical-align: top;}
@@ -458,6 +481,17 @@ button:hover {
     border:none;
 }
 
+.menu-master{
+    overflow: auto;
+}
+.menu-master > div {
+    width:200px;
+}
+
+.menu-detail{
+    width:calc( 100% - 200px );
+}
+
 /* 모바일 해상도 */
 
 @media all and (max-width:900px) {
@@ -474,6 +508,9 @@ button:hover {
     }
 }
 @media all and (max-width:700px) {
+    .register-form{
+        padding: 60px 10px 150px 10px;
+    }
     .m-flex-warp{
         flex-wrap: wrap;
     }
@@ -492,4 +529,37 @@ button:hover {
     .layout-content > .flex-column {
         flex-direction: column;
     }
+}
+
+.popup-modal{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-form-background-color);
+}
+.popup-modal > .popup-title {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-charcoal);
+}
+.popup-modal > .popup-title > h2 {
+    color: var(--color-form-background-color);
+    font-weight: bold;
+    font-size: 20px;
+}
+.popup-modal > section {
+    padding:20px;
+}
+.modal-background{
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 80%);
+    z-index: 99;
 }
