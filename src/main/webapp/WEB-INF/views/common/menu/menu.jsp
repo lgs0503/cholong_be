@@ -125,6 +125,7 @@
                                 <col style="">
                                 <col style="">
                                 <col style="width:200px">
+                                <col style="width:200px">
                             </colgroup>
                             <thead>
                             <tr>
@@ -132,6 +133,7 @@
                                 <th>권한명</th>
                                 <th>등록일</th>
                                 <th>등록자</th>
+                                <th>삭제</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -140,12 +142,14 @@
                                     <td>1</td>
                                     <td>1</td>
                                     <td>1</td>
+                                    <td><button>삭제</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
                                     <td>1</td>
                                     <td>1</td>
                                     <td>1</td>
+                                    <td><button>삭제</button></td>
                                 </tr>
                             </tbody>
                         </table>
