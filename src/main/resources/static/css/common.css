@@ -253,7 +253,7 @@
 .layout-content{
     padding: 30px;
 }
-.layout-content > .layout-content-title{
+.layout-content-title{
     margin: 10px 0 20px 0;
     font-size: 24px;
     font-weight: bold;
@@ -383,6 +383,11 @@ button:hover {
     padding : 6px;
     width: 150px;
 }
+.sub-title{
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-charcoal);
+}
 
 .width50 {width: 50px;}
 .width60 {width: 60px;}
@@ -429,6 +434,7 @@ button:hover {
 .mgr10 { margin-right: 10px;}
 .mgl-auto { margin-left: auto; }
 .flex-end { justify-content: end;}
+.flex-space-between { justify-content: space-between;}
 .text-align { text-align: left;}
 .tar { text-align: right !important;}
 .tal { text-align: left !important;}
@@ -438,6 +444,9 @@ button:hover {
 .z-index100{z-index: 100;}
 .z-index200{z-index: 200;}
 .z-index300{z-index: 300;}
+.line-height30{line-height: 25px;}
+.line-height30{line-height: 30px;}
+.line-height35{line-height: 35px;}
 
 .float-right { float:right; }
 .vertical-align-top{ vertical-align: top;}
@@ -470,6 +479,17 @@ button:hover {
     background: url(https://intranet.adef.co.kr/asset/images/ic_check.png) var(--color-light-dark-blue)
     no-repeat center;
     border:none;
+}
+
+.menu-master{
+    overflow: auto;
+}
+.menu-master > div {
+    width:200px;
+}
+
+.menu-detail{
+    width:calc( 100% - 200px );
 }
 
 /* 모바일 해상도 */
