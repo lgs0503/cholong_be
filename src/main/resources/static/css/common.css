@@ -11,6 +11,8 @@
     --color-sunglow: #FFC857;
     --color-dark-purple: #412234;
     --color-form-background-color: #f7f8ff;
+
+    --color-td-hover: #c1cad0;
 }
 /** 로그인 css **/
 /** 아이디 비밀번호 찾기 css **/
@@ -353,7 +355,7 @@ button:hover {
     border-right: 1px solid var(--color-charcoal);
 }
 .layout-table > table > tbody > tr:hover{
-    background-color: var(--color-form-background-color);
+    background-color: var(--color-td-hover);
 }
 
 .layout-search-bar {
