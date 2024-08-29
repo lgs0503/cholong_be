@@ -1,0 +1,162 @@
+/** css 변수 **/
+:root {
+    --color-dark-blue: #00072D;
+    --color-dark-light-blue: #001C55;
+    --color-blue: #0A2472;
+    --color-light-dark-blue: #2E4052;
+    --color-light-blue: #A6E1FA;
+
+    --color-tea-green: #BDD9BF;
+    --color-charcoal: #2E4052;
+    --color-sunglow: #FFC857;
+    --color-dark-purple: #412234;
+    --color-form-background-color: #f7f8ff;
+}
+
+.width30 {width: 30px;}
+.width50 {width: 50px;}
+.width60 {width: 60px;}
+.width70 {width: 70px;}
+.width80 {width: 80px;}
+.width90 {width: 90px;}
+.width100 { width: 100px;}
+.width110 { width: 110px;}
+.width120 { width: 120px;}
+.width130 { width: 130px;}
+.width140 { width: 140px;}
+.width150 { width: 150px;}
+.width160 { width: 160px;}
+.width170 { width: 170px;}
+.width180 { width: 180px;}
+.width190 { width: 190px;}
+.width200 { width: 200px;}
+.width210 { width: 210px;}
+.width220 { width: 220px;}
+.width230 { width: 230px;}
+.width240 { width: 240px;}
+.width240 { width: 240px;}
+.width300 { width: 300px;}
+.width400 { width: 400px;}
+.width500 { width: 500px;}
+.width600 { width: 600px;}
+.width700 { width: 700px;}
+.width800 { width: 800px;}
+.width900 { width: 900px;}
+.width1000 { width: 1000px;}
+.width1500 { width: 1500px;}
+.width2000 { width: 2000px;}
+
+.width100p { width: 100%;}
+.width50p { width: 50%;}
+.width33p { width: 33.3%;}
+.width25p { width: 25%;}
+.width12p { width: 12.5%;}
+.width10p { width: 10%;}
+
+.height100p { height: 100%; }
+.height50p { height: 50%; }
+.height25p { height: 25%; }
+
+.gap10 { gap: 10px; }
+.gap20 { gap:20px; }
+
+.mgt10 { margin-top: 10px;}
+.mgt20 { margin-top: 20px;}
+.mgt30 { margin-top: 30px;}
+.mgb10 { margin-bottom: 10px;}
+.mgb20 { margin-bottom: 20px;}
+.mgb30 { margin-bottom: 30px;}
+.mgl10 { margin-left: 10px;}
+.mgl20 { margin-left: 20px;}
+.mgl30 { margin-left: 30px;}
+.mgr10 { margin-right: 10px;}
+.mgr20 { margin-right: 20px;}
+.mgr30 { margin-right: 30px;}
+.mg10 { margin: 10px;}
+.mg20 { margin: 20px;}
+.mg30 { margin: 30px;}
+.mgl-auto { margin-left: auto; }
+
+.pdt10 { padding-top: 10px;}
+.pdt20 { padding-top: 20px;}
+.pdt30 { padding-top: 30px;}
+.pdb10 { padding-bottom: 10px;}
+.pdb20 { padding-bottom: 20px;}
+.pdb30 { padding-bottom: 30px;}
+.pdl10 { padding-left: 10px;}
+.pdl20 { padding-left: 20px;}
+.pdl30 { padding-left: 30px;}
+.pdr10 { padding-right: 10px;}
+.pdr20 { padding-right: 20px;}
+.pdr30 { padding-right: 30px;}
+.pd10 { padding: 10px;}
+.pd20 { padding: 20px;}
+.pd30 { padding: 30px;}
+
+.display-block { display: block; }
+.display-flex { display: flex }
+.display-none { display: none; }
+.display-inline-block { display: inline-block; }
+
+.flex-end { justify-content: end;}
+.flex-space-between { justify-content: space-between;}
+.flex-warp{ flex-wrap: wrap;}
+
+.tar { text-align: right !important;}
+.tal { text-align: left !important;}
+.tac { text-align: center !important;}
+
+.overflow-x-auto{ overflow-x: auto; }
+.overflow-y-auto{ overflow-y: auto; }
+.overflow-auto{ overflow: auto; }
+.overflow-x-hidden{ overflow-x: hidden; }
+.overflow-y-hidden{ overflow-y: hidden; }
+.overflow-hidden{ overflow: hidden; }
+
+.cur-pointer { cursor: pointer; }
+.shadow { box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);}
+
+.z-index100{ z-index: 100; }
+.z-index200{ z-index: 200; }
+.z-index300{ z-index: 300; }
+.z-index400{ z-index: 400; }
+.z-index500{ z-index: 500; }
+.z-index600{ z-index: 600; }
+
+.line-height10{line-height: 10px;}
+.line-height12{line-height: 12px;}
+.line-height13{line-height: 13px;}
+.line-height15{line-height: 15px;}
+.line-height18{line-height: 18px;}
+.line-height20{line-height: 20px;}
+.line-height22{line-height: 22px;}
+.line-height25{line-height: 25px;}
+.line-height25{line-height: 25px;}
+.line-height25{line-height: 25px;}
+.line-height30{line-height: 30px;}
+.line-height35{line-height: 35px;}
+
+.float-left { float:left; }
+.float-right { float:right; }
+
+.vertical-align-top{ vertical-align: top;}
+.pos-re{position: relative;}
+.pos-ab{position: absolute;}
+
+.font10{ font-size:10px; }
+.font13{ font-size:13px; }
+.font15{ font-size:15px; }
+.font18{ font-size:18px; }
+.font20{ font-size:20px; }
+.font22{ font-size:22px; }
+.font25{ font-size:25px; }
+.font30{ font-size:30px; }
+.font-bold{ font-weight: bold; }
+
+/* 모바일 해상도 */
+@media all and (max-width:900px) {
+    .mb-width10p{width:10% !important;}
+    .mb-width25p{width:25% !important;}
+    .mb-width50p{width:50% !important;}
+    .mb-width100p{width:100% !important;}
+}
