@@ -63,16 +63,14 @@
                 코드 관리
             </div>
             <div class="layout-search-bar layout-card shadow display-flex mgb10">
-                <div class="search-bar-item4">
-                    <label class="search-bar-item">
-                        코드
-                        <input type="text" id="code" onkeydown="enterSearch(event, getCodeList)">
-                    </label>
-                    <label class="search-bar-item">
-                        코드 명
-                        <input type="text" id="codeName" onkeydown="enterSearch(event, getCodeList)">
-                    </label>
-                </div>
+                <label class="search-bar-item">
+                    코드
+                    <input type="text" id="code" onkeydown="enterSearch(event, getCodeList)">
+                </label>
+                <label class="search-bar-item">
+                    코드 명
+                    <input type="text" id="codeName" onkeydown="enterSearch(event, getCodeList)">
+                </label>
             </div>
             <div class="mgb10 display-flex flex-end">
                 <button onclick="goPage('/common/code/codeDetailPage?mode=add')">추가</button>

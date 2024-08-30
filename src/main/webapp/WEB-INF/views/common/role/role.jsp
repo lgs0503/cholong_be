@@ -12,12 +12,10 @@
                 권한 관리
             </div>
             <div class="layout-search-bar layout-card shadow display-flex mgb10">
-                <div class="search-bar-item4">
-                    <label class="search-bar-item">
-                        권한명
-                        <input type="text">
-                    </label>
-                </div>
+                <label class="search-bar-item">
+                    권한명
+                    <input type="text">
+                </label>
             </div>
             <div class="mgb10 display-flex flex-end">
                 <button onclick="goPage('/common/role/roleDetailPage')">추가</button>
@@ -41,19 +39,19 @@
                             </tr>
                         </thead>
                         <tbody id="roleList">
-                            <tr>
+                            <tr class="cur-pointer">
                                 <td>1</td>
                                 <td>ADMIN</td>
                                 <td>2024-08-23</td>
                                 <td>ADMIN</td>
                             </tr>
-                            <tr>
+                            <tr class="cur-pointer">
                                 <td>2</td>
                                 <td>USER</td>
                                 <td>2024-08-23</td>
                                 <td>ADMIN</td>
                             </tr>
-                            <tr>
+                            <tr class="cur-pointer">
                                 <td>3</td>
                                 <td>MANAGER</td>
                                 <td>2024-08-23</td>

@@ -144,6 +144,14 @@
 .vertical-align-top{ vertical-align: top;}
 .pos-re{position: relative;}
 .pos-ab{position: absolute;}
+.r20 {right:20px;}
+.r40 {right:40px;}
+.r80 {right:80px;}
+.t20 {top:20px;}
+.t25 {top:25px;}
+.t40 {top:40px;}
+.t80 {top:80px;}
+.t115 {top:115px;}
 
 .font10{ font-size:10px; }
 .font13{ font-size:13px; }
@@ -154,6 +162,7 @@
 .font25{ font-size:25px; }
 .font30{ font-size:30px; }
 .font-bold{ font-weight: bold; }
+
 
 /* 모바일 해상도 */
 @media all and (max-width:900px) {
