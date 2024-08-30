@@ -239,7 +239,6 @@
 /** 레이아웃 컨텐츠 (body) **/
 .layout-content{
     padding: 30px;
-    border-left: 1px solid var(--color-charcoal);
 }
 .layout-content-title{
     margin: 10px 0 20px 0;
@@ -493,6 +492,7 @@ button:hover {
     }
     .layout-container > section {
         width: 100%;
+        border-left: 1px solid var(--color-charcoal);
     }
     .layout-content-item{
         width: auto;
