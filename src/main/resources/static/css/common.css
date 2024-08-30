@@ -413,13 +413,15 @@ button:hover {
     border:none;
 }
 
+.menu-container{
+    display: flex;
+}
 .menu-master{
     overflow: auto;
 }
 .menu-master > div {
     width:200px;
 }
-
 .menu-detail{
     width:calc( 100% - 200px );
 }
@@ -460,6 +462,19 @@ button:hover {
     .layout-content > .flex-column {
         flex-direction: column;
     }
+    .menu-container{
+        display: block;
+    }
+    .menu-master{
+        margin-bottom:10px;
+        margin-right: 0;
+    }
+    .menu-master > div {
+        height: 150px;
+    }
+    .menu-detail{
+        width: auto;
+    }
 }
 
 .popup-modal{
@@ -493,4 +508,19 @@ button:hover {
     height: 100vh;
     background-color: rgba(0, 0, 0, 80%);
     z-index: 99;
+}
+
+.scrollbar {
+    overflow-y: scroll;
+}
+.scrollbar::-webkit-scrollbar {
+    width: 10px;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-charcoal);
+    border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background: var(--color-light-blue)
 }

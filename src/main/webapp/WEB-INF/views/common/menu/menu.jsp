@@ -12,13 +12,29 @@
             { "id" : "test1", "parent" : "#", "text" : "One Directory" },
             { "id" : "test2", "parent" : "#", "text" : "Node Directory" },
             { "id" : "test3", "parent" : "test2", "text" : "Child 1" },
-            { "id" : "test4", "parent" : "test2", "text" : "Child 2" }
+            { "id" : "test4", "parent" : "test2", "text" : "Child 2" },
+            { "id" : "test3", "parent" : "test2", "text" : "Child 1" },
+            { "id" : "test4", "parent" : "test2", "text" : "Child 2" },
+            { "id" : "test3", "parent" : "test2", "text" : "Child 1" },
+            { "id" : "test4", "parent" : "test2", "text" : "Child 2" },
+            { "id" : "test3", "parent" : "test2", "text" : "Child 1" },
+            { "id" : "test4", "parent" : "test2", "text" : "Child 2" },
+            { "id" : "test3", "parent" : "test2", "text" : "Child 1" },
+            { "id" : "test4", "parent" : "test2", "text" : "Child 2" },
+            { "id" : "test3", "parent" : "test2", "text" : "Child 1" },
+            { "id" : "test4", "parent" : "test2", "text" : "Child 2" },
+            { "id" : "test3", "parent" : "test2", "text" : "Child 1" },
+            { "id" : "test4", "parent" : "test2", "text" : "Child 2" },
+            { "id" : "test3", "parent" : "test2", "text" : "Child 1" },
+            { "id" : "test4", "parent" : "test2", "text" : "Child 2" },
+            { "id" : "test1", "parent" : "#", "text" : "One Directory" },
+            { "id" : "test1", "parent" : "#", "text" : "One Directory" },
         ];
 
         $("#menu").jstree({
             'core' : {
                 data : jsonData,
-                "cehck_callback" : true,
+                "check_callback" : true,
                 'themes' : {
                     "theme" : "default",
                     "dots" : false,
@@ -52,7 +68,7 @@
                     <button class="mgl10" onclick="">삭제</button>
                 </div>
             </div>
-            <div class="display-flex">
+            <div class="menu-container">
                 <div class="layout-card shadow menu-master mgr10">
                     <div id="menu"></div>
                 </div>
