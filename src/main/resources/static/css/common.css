@@ -328,7 +328,7 @@ button:hover {
     overflow-x: auto;
 }
 .layout-table > table{
-    width:100%; min-width: 500px;
+    width:100%;
 }
 .layout-table > table > thead > tr > th{
     font-size:13px;
@@ -337,6 +337,9 @@ button:hover {
     font-weight: bold;
     padding: 10px;
     border-right: 1px solid white;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .layout-table > table > tbody > tr > td{
     height: 25px;
@@ -346,6 +349,9 @@ button:hover {
     text-align: center;
     border-bottom: 1px solid var(--color-charcoal);
     border-right: 1px solid var(--color-charcoal);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .layout-table > table > tbody > tr > td:first-child{
     border-left: 1px solid var(--color-charcoal);
@@ -356,25 +362,14 @@ button:hover {
 
 .layout-search-bar {
     overflow-x: auto;
+    white-space: nowrap;
 }
-.layout-search-bar > .search-bar-item1 {
-    min-width: 235px;
-}
-.layout-search-bar > .search-bar-item2 {
-    min-width: 470px;
-}
-.layout-search-bar > .search-bar-item3 {
-    min-width: 705px;
-}
-.layout-search-bar > .search-bar-item4 {
-    min-width: 1000px;
-}
-.layout-search-bar > div > .search-bar-item {
+.layout-search-bar > .search-bar-item {
     font-weight: bold;
     color: var(--color-charcoal);
     margin-right: 20px;
 }
-.layout-search-bar > div >  .search-bar-item > input{
+.layout-search-bar >  .search-bar-item > input{
     margin-left: 10px;
     border: 1px solid var(--color-charcoal);
     border-radius: 5px;

@@ -56,16 +56,14 @@
                 회원 관리
             </div>
             <div class="layout-search-bar layout-card shadow display-flex mgb10">
-                <div class="search-bar-item4">
-                    <label class="search-bar-item">
-                        아이디
-                        <input type="text" id="userId" onkeydown="enterSearch(event, getUserList)">
-                    </label>
-                    <label class="search-bar-item">
-                        이름
-                        <input type="text" id="korName" onkeydown="enterSearch(event, getUserList)">
-                    </label>
-                </div>
+                <label class="search-bar-item">
+                    아이디
+                    <input type="text" id="userId" onkeydown="enterSearch(event, getUserList)">
+                </label>
+                <label class="search-bar-item">
+                    이름
+                    <input type="text" id="korName" onkeydown="enterSearch(event, getUserList)">
+                </label>
             </div>
             <div class="mgb10 display-flex flex-end">
                 <button onclick="goPage('/common/user/userDetailPage')">추가</button>
