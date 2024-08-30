@@ -441,6 +441,9 @@ button:hover {
     }
 }
 @media all and (max-width:700px) {
+    .layout-content{
+        padding: 10px;
+    }
     .register-form{
         padding: 60px 10px 150px 10px;
     }
