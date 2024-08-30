@@ -125,7 +125,7 @@
     color: var(--color-dark-blue);
     font-weight: bold;
     width: 200px;
-    min-height: 800px;
+    min-height: calc(100vh - 130px);
 }
 .layout-top-menu{
     width: 200px;
@@ -150,7 +150,7 @@
 .layout-container > section {
     display: inline-block;
     width: calc( 100% - 200px);
-    min-height: 800px;
+    min-height: calc(100vh - 130px);
     background-color: var(--color-form-background-color);
 }
 /** 레이아웃 - 헤더 **/
