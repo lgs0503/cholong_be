@@ -151,6 +151,7 @@
     width: calc( 100% - 200px);
     min-height: calc(100vh - 130px);
     background-color: var(--color-form-background-color);
+    border-left: 1px solid var(--color-charcoal);
 }
 /** 레이아웃 - 헤더 **/
 .layout-header{
@@ -492,7 +493,6 @@ button:hover {
     }
     .layout-container > section {
         width: 100%;
-        border-left: 1px solid var(--color-charcoal);
     }
     .layout-content-item{
         width: auto;
