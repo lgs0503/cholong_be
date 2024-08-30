@@ -39,19 +39,19 @@
                             </tr>
                         </thead>
                         <tbody id="roleList">
-                            <tr>
+                            <tr class="cur-pointer">
                                 <td>1</td>
                                 <td>ADMIN</td>
                                 <td>2024-08-23</td>
                                 <td>ADMIN</td>
                             </tr>
-                            <tr>
+                            <tr class="cur-pointer">
                                 <td>2</td>
                                 <td>USER</td>
                                 <td>2024-08-23</td>
                                 <td>ADMIN</td>
                             </tr>
-                            <tr>
+                            <tr class="cur-pointer">
                                 <td>3</td>
                                 <td>MANAGER</td>
                                 <td>2024-08-23</td>
