@@ -121,7 +121,6 @@
     transition-property: width;
     display: inline-block;
     height: 100%;
-    border-right:1px solid var(--color-charcoal);
     color: var(--color-dark-blue);
     font-weight: bold;
     width: 200px;
@@ -240,6 +239,7 @@
 /** 레이아웃 컨텐츠 (body) **/
 .layout-content{
     padding: 30px;
+    border-left: 1px solid var(--color-charcoal);
 }
 .layout-content-title{
     margin: 10px 0 20px 0;
@@ -424,6 +424,41 @@ button:hover {
 }
 .menu-detail{
     width:calc( 100% - 200px );
+}
+.post-title{
+    background-color: var(--color-form-background-color);
+    color: var(--color-charcoal);
+    font-weight: bold;
+    padding: 10px;
+    font-size: 13px;
+    border-top: 1px solid var(--color-charcoal);
+    border-bottom: 1px solid var(--color-charcoal);
+}
+.post-content{
+    min-height: 250px;
+}
+.post-comment{
+    border: 1px solid var(--color-charcoal);
+    padding: 10px;
+    position: relative;
+    margin-top: 10px;
+}
+.post-comment-content{
+    width: calc(100% - 110px);
+    margin: 10px;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 24px;
+    overflow-y: auto;
+}
+.post-comment-content > p{
+    height: 100px;
+}
+.post-comment-input{
+    margin: 10px 10px 0 10px;
+}
+.post-comment-input > input{
+    width: calc(100% - 60px);
 }
 
 /* 모바일 해상도 */

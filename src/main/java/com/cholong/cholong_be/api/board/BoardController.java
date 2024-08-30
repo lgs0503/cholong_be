@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class BoardController {
 
     @RequestMapping("/boardMgrPage")
-    public ModelAndView menuMgrPage() {
+    public ModelAndView boardMgrPage() {
 
         return new ModelAndView("board/board");
     }
