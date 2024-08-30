@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <body>
-<jsp:include page="../../layouts/header.jsp"/>
+<jsp:include page="../layouts/header.jsp"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
 <script>
@@ -55,12 +55,12 @@
     });
 </script>
 <div class="layout-container">
-    <jsp:include page="../../layouts/leftMenu.jsp"/>
+    <jsp:include page="../layouts/leftMenu.jsp"/>
     <section>
         <div class="layout-content">
             <div class="display-flex flex-space-between">
                 <div class="layout-content-title">
-                    시스템 메뉴 관리(관리자 페이지 메뉴)
+                    메뉴 관리(개인 블로그 메뉴)
                 </div>
                 <div class="mgb10 display-flex flex-end mgt20">
                     <button onclick="">추가</button>
@@ -126,57 +126,10 @@
                             <div class="layout-col width25p" id="updateUserDt"></div>
                         </div>
                     </div>
-                    <div class="display-flex flex-space-between">
-                        <div class="sub-title mgt10 line-height35">
-                            메뉴 권한
-                        </div>
-                        <div class="mgt10 mgb10 display-flex flex-end">
-                            <button class="float-right mgl10" onclick="openModal('menuModal');">추가</button>
-                        </div>
-                    </div>
-                    <div class="layout-table">
-                        <table>
-                            <colgroup>
-                                <col style="width:10px">
-                                <col style="">
-                                <col style="">
-                                <col style="width:200px">
-                                <col style="width:200px">
-                            </colgroup>
-                            <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>권한명</th>
-                                <th>등록일</th>
-                                <th>등록자</th>
-                                <th>삭제</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td><button>삭제</button></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td><button>삭제</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 </div>
-
-<jsp:include page="menuModal.jsp"/>
-
-<jsp:include page="../../layouts/footer.jsp"/>
+<jsp:include page="../layouts/footer.jsp"/>
 </body>

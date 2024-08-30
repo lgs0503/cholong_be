@@ -12,20 +12,19 @@
                 파일 관리
             </div>
             <div class="layout-search-bar layout-card shadow display-flex mgb10">
-                <div class="search-bar-item4">
-                    <label class="search-bar-item">
-                        파일명
-                        <input type="text" id="code" onkeydown="enterSearch(event, getCodeList)">
-                    </label>
-                    <label class="search-bar-item">
-                        매핑타입
-                        <select>
-                            <option>게시글</option>
-                            <option>프로팔사진</option>
-                            <option>기타</option>
-                        </select>
-                    </label>
-                </div>
+                <label class="search-bar-item">
+                    파일명
+                    <input type="text" id="code" onkeydown="enterSearch(event, getCodeList)">
+                </label>
+                <label class="search-bar-item">
+                    매핑타입
+                    <select>
+                        <option>선택</option>
+                        <option>게시글</option>
+                        <option>프로팔사진</option>
+                        <option>기타</option>
+                    </select>
+                </label>
             </div>
             <div class="mgb10 display-flex flex-end">
                 <button class="mgl10" onclick="">조회</button>

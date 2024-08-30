@@ -6,18 +6,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/common/menu")
-public class MenuController {
+public class SystemMenuController {
 
     @RequestMapping("/menuMgrPage")
     public ModelAndView menuMgrPage() {
 
         return new ModelAndView("common/menu/menu");
-    }
-
-    @RequestMapping("/menuDetailPage")
-    public ModelAndView menuDetailPage(
-    ) {
-        ModelAndView mv = new ModelAndView("common/menu/detail");
-        return mv;
     }
 }
