@@ -461,6 +461,10 @@ button:hover {
     width: calc(100% - 60px);
 }
 
+.comment-scroll-height{
+    height:500px;
+}
+
 /* 모바일 해상도 */
 @media all and (max-width:900px) {
     .myPage-left {
