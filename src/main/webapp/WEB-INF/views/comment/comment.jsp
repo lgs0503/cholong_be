@@ -13,7 +13,7 @@
             </div>
             <div class="layout-search-bar layout-card shadow display-flex mgb10">
                 <label class="search-bar-item">
-                    내용 명
+                    내용
                     <input type="text" onkeydown="enterSearch(event, getCodeList)">
                 </label>
                 <label class="search-bar-item">
