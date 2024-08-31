@@ -405,7 +405,7 @@ button:hover {
 .radio_icon::before {
     border-radius: 50px;
 }
-/* checked */
+
 .checkbox_label input:checked + .checkbox_icon::before,
 .radio_label input:checked + .radio_icon::before{
     background: url(https://intranet.adef.co.kr/asset/images/ic_check.png) var(--color-light-dark-blue)
@@ -436,6 +436,7 @@ button:hover {
 }
 .post-content{
     min-height: 250px;
+    padding: 15px;
 }
 .post-comment{
     border: 1px solid var(--color-charcoal);
@@ -459,6 +460,9 @@ button:hover {
 }
 .post-comment-input > input{
     width: calc(100% - 60px);
+}
+.comment-scroll-height{
+    height:500px;
 }
 
 /* 모바일 해상도 */

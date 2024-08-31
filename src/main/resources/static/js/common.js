@@ -156,3 +156,25 @@ const closeModal = (id) => {
     $("#" + id).hide();
     $(".modal-background").hide();
 }
+
+/**
+ * 댓글 답글 오픈
+ **/
+const commentInputToggle = (ele) => {
+
+    const input = $(ele).next().next();
+
+    if (input.is(':visible') === false) {
+        input.show();
+    } else {
+        input.hide();
+    }
+}
+
+
+/**
+ * 오늘날짜 반환 input date type value 에 활용
+ **/
+const getToday = () => {
+    return new Date().toISOString().substring(0,10);
+}

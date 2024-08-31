@@ -26,8 +26,8 @@
         <li class="layout-top-menu">
             기타
             <ul>
-                <li class="layout-sub-menu" onclick="goPage('/loginHis/loginHisPage')">로그인이력</li>
-                <li class="layout-sub-menu" onclick="goPage('/')">통계</li>
+                <li class="layout-sub-menu" onclick="goPage('/history/loginHisPage')">로그인 이력</li>
+                <li class="layout-sub-menu" onclick="goPage('/history/menuUseHisPage')">메뉴 사용 이력</li>
             </ul>
         </li>
     </ul>
