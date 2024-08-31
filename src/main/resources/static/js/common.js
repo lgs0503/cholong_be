@@ -170,3 +170,11 @@ const commentInputToggle = (ele) => {
         input.hide();
     }
 }
+
+
+/**
+ * 오늘날짜 반환 input date type value 에 활용
+ **/
+const getToday = () => {
+    return new Date().toISOString().substring(0,10);
+}
