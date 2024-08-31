@@ -69,9 +69,9 @@
                                 댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1
                             </p>
                         </div>
-                        <button class="pos-ab r20 t80">답글</button>
+                        <button class="pos-ab r20 t80" onclick="commentInputToggle(this)">답글</button>
                         <button class="pos-ab r20 t115">삭제</button>
-                        <div class="post-comment-input">
+                        <div class="post-comment-input display-none">
                             <input type="text"/>
                             <button>저장</button>
                         </div>
@@ -87,9 +87,9 @@
                                     대댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1
                                 </p>
                             </div>
-                            <button class="pos-ab r20 t80">답글</button>
+                            <button class="pos-ab r20 t80" onclick="commentInputToggle(this)">답글</button>
                             <button class="pos-ab r20 t115">삭제</button>
-                            <div class="post-comment-input">
+                            <div class="post-comment-input display-none">
                                 <input type="text"/>
                                 <button>저장</button>
                             </div>
@@ -107,9 +107,9 @@
                                 대댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1
                             </p>
                         </div>
-                        <button class="pos-ab r20 t80">답글</button>
+                        <button class="pos-ab r20 t80" onclick="commentInputToggle(this)">답글</button>
                         <button class="pos-ab r20 t115">삭제</button>
-                        <div class="post-comment-input">
+                        <div class="post-comment-input display-none">
                             <input type="text"/>
                             <button>저장</button>
                         </div>
