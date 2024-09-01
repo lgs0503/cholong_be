@@ -553,16 +553,15 @@ button:hover {
 }
 
 .scrollbar {
-    overflow-y: scroll;
+    overflow: auto;
 }
 .scrollbar::-webkit-scrollbar {
     width: 10px;
 }
 .scrollbar::-webkit-scrollbar-thumb {
     background: var(--color-charcoal);
-    border-radius: 10px;
 }
 
 .scrollbar::-webkit-scrollbar-track {
-    background: var(--color-light-blue)
+    background: var(--color-scroll-track)
 }

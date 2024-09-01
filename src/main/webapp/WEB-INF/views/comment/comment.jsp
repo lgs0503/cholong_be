@@ -11,7 +11,7 @@
             <div class="layout-content-title">
                  댓글 관리
             </div>
-            <div class="layout-search-bar layout-card shadow display-flex mgb10">
+            <div class="layout-search-bar layout-card shadow display-flex mgb10 scrollbar">
                 <label class="search-bar-item">
                     내용
                     <input type="text" onkeydown="enterSearch(event, getCodeList)">
@@ -29,7 +29,7 @@
                 <button class="mgl10" onclick="">조회</button>
             </div>
 
-            <div class="layout-card shadow overflow-y-auto">
+            <div class="layout-card shadow overflow-y-auto scrollbar">
                 <div class="comment-scroll-height">
                     <div class="post-comment">
                         <div class="layout-row">
@@ -40,7 +40,7 @@
                             <label class="layout-col layout-col-head">작성일</label>
                             <div class="layout-col width25p"></div>
                         </div>
-                        <div class="post-comment-content">
+                        <div class="post-comment-content scrollbar">
                             <p>
                                 대댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1
                             </p>
@@ -61,7 +61,7 @@
                             <label class="layout-col layout-col-head">작성일</label>
                             <div class="layout-col width25p"></div>
                         </div>
-                        <div class="post-comment-content">
+                        <div class="post-comment-content scrollbar">
                             <p>
                                 대댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1
                             </p>
@@ -82,7 +82,7 @@
                             <label class="layout-col layout-col-head">작성일</label>
                             <div class="layout-col width25p"></div>
                         </div>
-                        <div class="post-comment-content">
+                        <div class="post-comment-content scrollbar">
                             <p>
                                 대댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1
                             </p>
@@ -103,7 +103,7 @@
                             <label class="layout-col layout-col-head">작성일</label>
                             <div class="layout-col width25p"></div>
                         </div>
-                        <div class="post-comment-content">
+                        <div class="post-comment-content scrollbar">
                             <p>
                                 대댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1
                             </p>

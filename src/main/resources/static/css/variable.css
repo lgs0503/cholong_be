@@ -11,8 +11,9 @@
     --color-sunglow: #FFC857;
     --color-dark-purple: #412234;
     --color-form-background-color: #f7f8ff;
+    --color-form-background-color: #f7f8ff;
 
-    --color-td-hover: #c1cad0;
+    --color-scroll-track: #c1c6ca;
 }
 
 .width30 {width: 30px;}
