@@ -10,9 +10,9 @@
     <section>
         <div class="layout-content">
             <div class="mgt10">
-                <button class="float-right mgl10">뒤로가기</button>
-                <button class="float-right mgl10">삭제</button>
-                <button class="float-right">수정</button>
+                <button class="btn-primary float-right mgl10">뒤로가기</button>
+                <button class="btn-primary float-right mgl10">삭제</button>
+                <button class="btn-primary float-right">수정</button>
             </div>
             <div class="layout-content-title">
                 회원 상세

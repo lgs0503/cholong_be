@@ -63,9 +63,9 @@
                     시스템 메뉴 관리(관리자 페이지 메뉴)
                 </div>
                 <div class="mgb10 display-flex flex-end mgt20">
-                    <button onclick="">추가</button>
-                    <button class="mgl10" onclick="">저장</button>
-                    <button class="mgl10" onclick="">삭제</button>
+                    <button class="btn-primary" onclick="">추가</button>
+                    <button class="btn-primary mgl10" onclick="">저장</button>
+                    <button class="btn-primary mgl10" onclick="">삭제</button>
                 </div>
             </div>
             <div class="menu-container">
@@ -131,7 +131,7 @@
                             메뉴 권한
                         </div>
                         <div class="mgt10 mgb10 display-flex flex-end">
-                            <button class="float-right mgl10" onclick="openModal('menuModal');">추가</button>
+                            <button class="btn-primary float-right mgl10" onclick="openModal('menuModal');">추가</button>
                         </div>
                     </div>
                     <div class="layout-table">
@@ -158,14 +158,14 @@
                                     <td>1</td>
                                     <td>1</td>
                                     <td>1</td>
-                                    <td><button>삭제</button></td>
+                                    <td><button class="pd2 btn-primary">삭제</button></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
                                     <td>1</td>
                                     <td>1</td>
                                     <td>1</td>
-                                    <td><button>삭제</button></td>
+                                    <td><button class="pd2 btn-primary">삭제</button></td>
                                 </tr>
                             </tbody>
                         </table>

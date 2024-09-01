@@ -9,9 +9,9 @@
     <section>
         <div class="layout-content">
             <div class="mgt10">
-                <button class="float-right mgl10" onclick="">뒤로가기</button>
-                <button class="float-right mgl10" onclick="">삭제</button>
-                <button class="float-right" onclick="">수정</button>
+                <button class="btn-primary float-right mgl10" onclick="">뒤로가기</button>
+                <button class="btn-primary float-right mgl10" onclick="">삭제</button>
+                <button class="btn-primary float-right" onclick="">수정</button>
             </div>
             <div class="layout-content-title">
                 팝업 상세정보
