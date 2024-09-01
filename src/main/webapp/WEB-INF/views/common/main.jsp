@@ -11,16 +11,16 @@
             <div class="display-flex gap10 mgb10 flex-column">
                 <div class="layout-card layout-content-item width50p shadow">
                     <h2>메모</h2>
-                    <button>수정</button>
+                    <button class="btn-primary">수정</button>
                     <div>Welcome Cho Long Admin</div>
                 </div>
                 <div class="layout-card layout-content-item width50p shadow">
                     <h2>최근활동</h2>
                     <ul>
-                        <li class="layout-card mgb10">게시글1<button class="float-right">바로가기</button></li>
-                        <li class="layout-card mgb10">댓글<button class="float-right">바로가기</button></li>
-                        <li class="layout-card mgb10">게시글1<button class="float-right">바로가기</button></li>
-                        <li class="layout-card mgb10">댓글<button class="float-right">바로가기</button></li>
+                        <li class="layout-card mgb10">게시글1<button class="btn-primary float-right">바로가기</button></li>
+                        <li class="layout-card mgb10">댓글<button class="btn-primary float-right">바로가기</button></li>
+                        <li class="layout-card mgb10">게시글1<button class="btn-primary float-right">바로가기</button></li>
+                        <li class="layout-card mgb10">댓글<button class="btn-primary float-right">바로가기</button></li>
                     </ul>
                 </div>
             </div>
@@ -28,12 +28,12 @@
                 <div class="layout-card layout-content-item shadow width50p">
                     <h2>자주찾는메뉴</h2>
                     <div class="display-flex gap10 mgb10">
-                        <button class="layout-content-page-go-button">공지사항</button>
-                        <button class="layout-content-page-go-button">게시글관리</button>
+                        <button class="btn-primary layout-content-page-go-button">공지사항</button>
+                        <button class="btn-primary layout-content-page-go-button">게시글관리</button>
                     </div>
                     <div class="display-flex gap10">
-                        <button class="layout-content-page-go-button">댓글관리</button>
-                        <button class="layout-content-page-go-button">파일관리</button>
+                        <button class="btn-primary layout-content-page-go-button">댓글관리</button>
+                        <button class="btn-primary layout-content-page-go-button">파일관리</button>
                     </div>
                 </div>
                 <div class="layout-card layout-content-item shadow width50p">

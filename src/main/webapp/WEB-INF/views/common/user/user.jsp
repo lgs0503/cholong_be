@@ -58,16 +58,16 @@
             <div class="layout-search-bar layout-card shadow display-flex mgb10">
                 <label class="search-bar-item">
                     아이디
-                    <input type="text" id="userId" onkeydown="enterSearch(event, getUserList)">
+                    <input class="comm-input" type="text" id="userId" onkeydown="enterSearch(event, getUserList)">
                 </label>
                 <label class="search-bar-item">
                     이름
-                    <input type="text" id="korName" onkeydown="enterSearch(event, getUserList)">
+                    <input class="comm-input" type="text" id="korName" onkeydown="enterSearch(event, getUserList)">
                 </label>
             </div>
             <div class="mgb10 display-flex flex-end">
-                <button onclick="goPage('/common/user/userDetailPage')">추가</button>
-                <button class="mgl10" onclick="getUserList();">조회</button>
+                <button class="btn-primary" onclick="goPage('/common/user/userDetailPage')">추가</button>
+                <button class="btn-primary mgl10" onclick="getUserList();">조회</button>
             </div>
             <div class="layout-card shadow">
                 <div class="layout-table">

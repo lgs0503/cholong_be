@@ -14,11 +14,11 @@
             <div class="layout-search-bar layout-card shadow display-flex mgb10">
                 <label class="search-bar-item">
                     게시판명
-                    <input type="text" id="code" onkeydown="enterSearch(event, getCodeList)">
+                    <input class="comm-input" type="text" id="code" onkeydown="enterSearch(event, getCodeList)">
                 </label>
                 <label class="search-bar-item">
                     사용여부
-                    <select>
+                    <select class="comm-select">
                         <option>선택</option>
                         <option>사용</option>
                         <option>미사용</option>
@@ -26,8 +26,8 @@
                 </label>
             </div>
             <div class="mgb10 display-flex flex-end">
-                <button onclick="goPage('/board/boardDetailPage')">추가</button>
-                <button class="mgl10" onclick="">조회</button>
+                <button class="btn-primary" onclick="goPage('/board/boardDetailPage')">추가</button>
+                <button class="btn-primary mgl10" onclick="">조회</button>
             </div>
             <div class="layout-card shadow">
                 <div class="layout-table">

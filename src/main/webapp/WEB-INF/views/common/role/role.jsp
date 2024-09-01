@@ -14,12 +14,12 @@
             <div class="layout-search-bar layout-card shadow display-flex mgb10">
                 <label class="search-bar-item">
                     권한명
-                    <input type="text">
+                    <input class="comm-input" type="text">
                 </label>
             </div>
             <div class="mgb10 display-flex flex-end">
-                <button onclick="goPage('/common/role/roleDetailPage')">추가</button>
-                <button class="mgl10" onclick="getCodeList();">조회</button>
+                <button class="btn-primary" onclick="goPage('/common/role/roleDetailPage')">추가</button>
+                <button class="btn-primary mgl10" onclick="getCodeList();">조회</button>
             </div>
             <div class="layout-card shadow">
                 <div class="layout-table">

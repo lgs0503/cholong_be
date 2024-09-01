@@ -110,32 +110,32 @@
         <div class="find-id-pw-form">
             <h1 class="find-id-pw-title">아이디 / 비밀번호 찾기</h1>
             <fieldset id="selectItem">
-                <button onclick="selectIdOrPassword('ID')">아이디 찾기</button>
-                <button onclick="selectIdOrPassword('PASSWORD')">비밀번호 찾기</button>
+                <button class="btn-primary" onclick="selectIdOrPassword('ID')">아이디 찾기</button>
+                <button class="btn-primary" onclick="selectIdOrPassword('PASSWORD')">비밀번호 찾기</button>
             </fieldset>
             <fieldset id="findId" class="display-none">
-                <input type="text" id="korNameFindId" placeholder="이름">
-                <input type="text" id="emailFindId" placeholder="이메일">
-                <button onclick="findId()">아이디 찾기</button>
-                <button onclick="selectIdOrPassword('BACK')">뒤로가기</button>
+                <input class="comm-input" type="text" id="korNameFindId" placeholder="이름">
+                <input class="comm-input" type="text" id="emailFindId" placeholder="이메일">
+                <button class="btn-primary" onclick="findId()">아이디 찾기</button>
+                <button class="btn-primary" onclick="selectIdOrPassword('BACK')">뒤로가기</button>
             </fieldset>
 
             <fieldset id="findIdResult" class="display-none">
                 <div class="find-result-text" id="findIdResultText"></div>
-                <button onclick="selectIdOrPassword('BACK')">뒤로가기</button>
+                <button class="btn-primary" onclick="selectIdOrPassword('BACK')">뒤로가기</button>
             </fieldset>
 
             <fieldset id="findPw"  class="display-none">
-                <input type="text" id="userIdFindPw" placeholder="아이디">
-                <input type="text" id="korNameFindPw" placeholder="이름">
-                <input type="text" id="emailFindPw" placeholder="이메일">
-                <button onclick="findPassword()">비밀번호 찾기</button>
-                <button onclick="selectIdOrPassword('BACK')">뒤로가기</button>
+                <input class="comm-input" type="text" id="userIdFindPw" placeholder="아이디">
+                <input class="comm-input" type="text" id="korNameFindPw" placeholder="이름">
+                <input class="comm-input" type="text" id="emailFindPw" placeholder="이메일">
+                <button class="btn-primary" onclick="findPassword()">비밀번호 찾기</button>
+                <button class="btn-primary" onclick="selectIdOrPassword('BACK')">뒤로가기</button>
             </fieldset>
 
             <fieldset id="findPwResult" class="display-none">
                 <div class="find-result-text" id="findPwResultText"></div>
-                <button onclick="selectIdOrPassword('BACK')">뒤로가기</button>
+                <button class="btn-primary" onclick="selectIdOrPassword('BACK')">뒤로가기</button>
             </fieldset>
 
             <aside id="login-info">

@@ -210,18 +210,18 @@
         <div class="layout-content">
             <div class="mgt10">
                 <c:if test="${mode eq 'detail'}">
-                    <button class="float-right mgl10" onclick="goPage('/common/code/codeMgrPage');">뒤로가기</button>
-                    <button class="float-right mgl10" onclick="deleteCode()">삭제</button>
-                    <button class="float-right" onclick="goPage('/common/code/codeDetailPage?mode=update&idx=${idx}')">수정</button>
+                    <button class="btn-primary float-right mgl10" onclick="goPage('/common/code/codeMgrPage');">뒤로가기</button>
+                    <button class="btn-primary float-right mgl10" onclick="deleteCode()">삭제</button>
+                    <button class="btn-primary float-right" onclick="goPage('/common/code/codeDetailPage?mode=update&idx=${idx}')">수정</button>
                 </c:if>
                 <c:if test="${mode eq 'subDetail'}">
-                    <button class="float-right mgl10" onclick="goPage('/common/code/codeDetailPage?mode=detail&idx=${upperIdx}');">뒤로가기</button>
-                    <button class="float-right mgl10" onclick="deleteCode()">삭제</button>
-                    <button class="float-right" onclick="goPage('/common/code/codeDetailPage?mode=update&idx=${idx}&upperIdx=${upperIdx}')">수정</button>
+                    <button class="btn-primary float-right mgl10" onclick="goPage('/common/code/codeDetailPage?mode=detail&idx=${upperIdx}');">뒤로가기</button>
+                    <button class="btn-primary float-right mgl10" onclick="deleteCode()">삭제</button>
+                    <button class="btn-primary float-right" onclick="goPage('/common/code/codeDetailPage?mode=update&idx=${idx}&upperIdx=${upperIdx}')">수정</button>
                 </c:if>
                 <c:if test="${mode eq 'add' || mode eq 'update'}">
-                    <button class="float-right mgl10" onclick="goPage('/common/code/codeMgrPage');">뒤로가기</button>
-                    <button class="float-right" onclick="saveCode()">저장</button>
+                    <button class="btn-primary float-right mgl10" onclick="goPage('/common/code/codeMgrPage');">뒤로가기</button>
+                    <button class="btn-primary float-right" onclick="saveCode()">저장</button>
                 </c:if>
             </div>
             <div class="layout-content-title">
@@ -240,33 +240,33 @@
                     <input id="idx" type="hidden"/>
                     <div class="layout-row">
                         <label class="layout-col layout-col-head"><strong>*</strong> 코드</label>
-                        <input id="code" class="width210" type="text" maxlength="25"/>
+                        <input id="code" class="comm-input width210" type="text" maxlength="25"/>
                     </div>
                     <div class="layout-row">
                         <label class="layout-col layout-col-head"><strong>*</strong> 코드명</label>
-                        <input id="codeName" class="width210" type="text" maxlength="25"/>
+                        <input id="codeName" class="comm-input width210" type="text" maxlength="25"/>
                     </div>
                     <c:if test="${upperCode ne ''}">
                         <div class="layout-row">
                             <label class="layout-col layout-col-head"><strong>*</strong>부모 코드</label>
-                            <input id="upperCodeId" class="width210" type="text" maxlength="25" value="${upperCode}" disabled/>
+                            <input id="upperCodeId" class="comm-input width210" type="text" maxlength="25" value="${upperCode}" disabled/>
                         </div>
                     </c:if>
                     <div class="layout-row">
                         <label class="layout-col layout-col-head"><strong>*</strong> 설명</label>
-                        <input id="description" class="width210" type="text" maxlength="100"/>
+                        <input id="description" class="comm-input width210" type="text" maxlength="100"/>
                     </div>
                     <div class="layout-row">
                         <label class="layout-col layout-col-head">참조1</label>
-                        <input id="ref1" class="width210" type="text" maxlength="25"/>
+                        <input id="ref1" class="comm-input width210" type="text" maxlength="25"/>
                     </div>
                     <div class="layout-row">
                         <label class="layout-col layout-col-head">참조2</label>
-                        <input id="ref2" class="width210" type="text" maxlength="25"/>
+                        <input id="ref2" class="comm-input width210" type="text" maxlength="25"/>
                     </div>
                     <div class="layout-row">
                         <label class="layout-col layout-col-head">참조3</label>
-                        <input id="ref3" class="width210" type="text" maxlength="25"/>
+                        <input id="ref3" class="comm-input width210" type="text" maxlength="25"/>
                     </div>
                 </div>
             </c:if>
@@ -317,7 +317,7 @@
 
             <c:if test="${mode eq 'detail'}">
                 <div class="mgt20">
-                    <button class="float-right mgl10" onclick="goAddSubCodePage();">추가</button>
+                    <button class="btn-primary float-right mgl10" onclick="goAddSubCodePage();">추가</button>
                 </div>
                 <div class="layout-content-title">
                     하위 코드

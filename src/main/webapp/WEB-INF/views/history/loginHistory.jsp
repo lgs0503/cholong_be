@@ -14,19 +14,19 @@
             <div class="layout-search-bar layout-card shadow display-flex mgb10">
                 <label class="search-bar-item">
                     아이디
-                    <input type="text" onkeydown="enterSearch(event, getCodeList)">
+                    <input class="comm-input" type="text" onkeydown="enterSearch(event, getCodeList)">
                 </label>
                 <label class="search-bar-item">
                     시작일
-                    <input type="date" onkeydown="enterSearch(event, getCodeList)">
+                    <input class="comm-input" type="date" onkeydown="enterSearch(event, getCodeList)">
                 </label>
                 <label class="search-bar-item">
                     종료일
-                    <input type="date"  onkeydown="enterSearch(event, getCodeList)">
+                    <input class="comm-input" type="date"  onkeydown="enterSearch(event, getCodeList)">
                 </label>
             </div>
             <div class="mgb10 display-flex flex-end">
-                <button class="mgl10" onclick="">조회</button>
+                <button class="btn-primary mgl10" onclick="">조회</button>
             </div>
             <div class="layout-card shadow">
                 <div class="layout-table">
