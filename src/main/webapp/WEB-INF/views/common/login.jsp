@@ -77,11 +77,11 @@
         <div class="login-form">
             <h1 class="login-title">로그인</h1>
             <fieldset>
-                <input type="text" id="userId" placeholder="아이디" onkeyup="userIdKeyup()" onkeydown="enterSearch(event, login)">
-                <input type="password" id="password" placeholder="비밀번호" onkeydown="enterSearch(event, login)">
-                <button onclick="login()">로그인</button>
+                <input type="text" id="userId" class="comm-input" placeholder="아이디" onkeyup="userIdKeyup()" onkeydown="enterSearch(event, login)">
+                <input type="password" id="password" class="comm-input" placeholder="비밀번호" onkeydown="enterSearch(event, login)">
+                <button class="btn-primary" onclick="login()">로그인</button>
                 <label class="checkbox_label">
-                    <input id="checkId" type="checkbox" onchange="checkIdChange()"/>
+                    <input type="checkbox" id="checkId" class="comm-checkbox" onchange="checkIdChange()"/>
                     <span class="checkbox_icon"></span>
                     <span class="checkbox_text">아이디저장</span>
                 </label>

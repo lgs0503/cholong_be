@@ -14,15 +14,15 @@
             <div class="layout-search-bar layout-card shadow display-flex mgb10">
                 <label class="search-bar-item">
                     제목
-                    <input type="text" onkeydown="enterSearch(event, getCodeList)">
+                    <input class="comm-input" type="text" onkeydown="enterSearch(event, getCodeList)">
                 </label>
                 <label class="search-bar-item">
                     글쓴이
-                    <input type="text" onkeydown="enterSearch(event, getCodeList)">
+                    <input class="comm-input" type="text" onkeydown="enterSearch(event, getCodeList)">
                 </label>
                 <label class="search-bar-item">
                     카테고리
-                    <select>
+                    <select class="comm-select">
                         <option>선택</option>
                         <option>공지사항</option>
                         <option>사진</option>
@@ -30,8 +30,8 @@
                 </label>
             </div>
             <div class="mgb10 display-flex flex-end">
-                <button onclick="goPage('/post/postDetailPage')">추가</button>
-                <button class="mgl10" onclick="">조회</button>
+                <button class="btn-primary" onclick="goPage('/post/postDetailPage')">추가</button>
+                <button class="btn-primary mgl10" onclick="">조회</button>
             </div>
             <div class="layout-card shadow">
                 <div class="layout-table">

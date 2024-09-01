@@ -9,9 +9,9 @@
     <section>
         <div class="layout-content">
             <div class="mgt10">
-                <button class="float-right mgl10" onclick="">뒤로가기</button>
-                <button class="float-right mgl10" onclick="">삭제</button>
-                <button class="float-right" onclick="">수정</button>
+                <button class="btn-primary float-right mgl10" onclick="">뒤로가기</button>
+                <button class="btn-primary float-right mgl10" onclick="">삭제</button>
+                <button class="btn-primary float-right" onclick="">수정</button>
             </div>
             <div class="layout-content-title">
                 권한 상세
@@ -38,7 +38,7 @@
             </div>
 
             <div class="mgt20">
-                <button class="float-right mgl10" onclick="openModal('roleModal');">추가</button>
+                <button class="btn-primary float-right mgl10" onclick="openModal('roleModal');">추가</button>
             </div>
             <div class="layout-content-title">
                 권한 등록 계정
@@ -70,7 +70,7 @@
                                 <td>이광석</td>
                                 <td>2024-08-23</td>
                                 <td>ADMIN</td>
-                                <td><button>삭제</button></td>
+                                <td><button class="btn-primary pd2">삭제</button></td>
                             </tr>
                             <tr>
                                 <td>2</td>
@@ -78,7 +78,7 @@
                                 <td>이광석2</td>
                                 <td>2024-08-23</td>
                                 <td>ADMIN</td>
-                                <td><button>삭제</button></td>
+                                <td><button class="btn-primary pd2">삭제</button></td>
                             </tr>
                             <tr>
                                 <td>3</td>
@@ -86,7 +86,7 @@
                                 <td>이광석3</td>
                                 <td>2024-08-23</td>
                                 <td>ADMIN</td>
-                                <td><button>삭제</button></td>
+                                <td><button class="btn-primary pd2">삭제</button></td>
                             </tr>
                         </tbody>
                     </table>

@@ -14,11 +14,11 @@
             <div class="layout-search-bar layout-card shadow display-flex mgb10">
                 <label class="search-bar-item">
                     배너명
-                    <input type="text" onkeydown="enterSearch(event, getCodeList)">
+                    <input class="comm-input" type="text" onkeydown="enterSearch(event, getCodeList)">
                 </label>
                 <label class="search-bar-item">
                     타입
-                    <select>
+                    <select class="comm-select">
                         <option>선택</option>
                         <option>IMAGE</option>
                         <option>HTML</option>
@@ -26,16 +26,16 @@
                 </label>
                 <label class="search-bar-item">
                     시작일
-                    <input type="date" onkeydown="enterSearch(event, getCodeList)">
+                    <input class="comm-input"  type="date" onkeydown="enterSearch(event, getCodeList)">
                 </label>
                 <label class="search-bar-item">
                     종료일
-                    <input type="date"  onkeydown="enterSearch(event, getCodeList)">
+                    <input class="comm-input"  type="date"  onkeydown="enterSearch(event, getCodeList)">
                 </label>
             </div>
             <div class="mgb10 display-flex flex-end">
-                <button onclick="goPage('/banner/bannerDetailPage')">추가</button>
-                <button class="mgl10" onclick="">조회</button>
+                <button class="btn-primary" onclick="goPage('/banner/bannerDetailPage')">추가</button>
+                <button class="btn-primary mgl10" onclick="">조회</button>
             </div>
             <div class="layout-card shadow">
                 <div class="layout-table">

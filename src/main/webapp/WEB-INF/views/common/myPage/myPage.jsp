@@ -7,8 +7,8 @@
         <div class="layout-content">
             <div class="layout-content-title">
                 My Page
-                <button class="float-right">수정</button>
-                <button class="float-right mgr10" onclick="openModal('myPageModal');">비밀번호 변경</button>
+                <button class="btn-primary float-right">수정</button>
+                <button class="btn-primary float-right mgr10" onclick="openModal('myPageModal');">비밀번호 변경</button>
             </div>
             <div class="layout-card shadow display-flex m-flex-warp">
                 <div class="myPage-left">

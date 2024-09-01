@@ -11,8 +11,8 @@
     --color-sunglow: #FFC857;
     --color-dark-purple: #412234;
     --color-form-background-color: #f7f8ff;
-
     --color-td-hover: #c1cad0;
+    --color-scroll-track: #c1c6ca;
 }
 
 .width30 {width: 30px;}
@@ -91,6 +91,9 @@
 .pdr10 { padding-right: 10px;}
 .pdr20 { padding-right: 20px;}
 .pdr30 { padding-right: 30px;}
+.pd2 { padding: 2px !important;}
+.pd3 { padding: 3px !important;}
+.pd5 { padding: 5px !important;}
 .pd10 { padding: 10px;}
 .pd20 { padding: 20px;}
 .pd30 { padding: 30px;}

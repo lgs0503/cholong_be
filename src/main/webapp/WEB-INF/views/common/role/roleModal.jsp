@@ -3,12 +3,25 @@
 <script>
 </script>
 
-<div id="roleModal" class="popup-modal width500 z-index300">
+<div id="roleModal" class="popup-modal width600 z-index300">
     <div class="popup-title">
         <h2>회원조회</h2>
-        <button onclick="closeModal('roleModal');">x</button>
+        <button class="popup-modal-close" onclick="closeModal('roleModal');">✖</button>
     </div>
     <section>
+        <div class="layout-search-bar layout-card shadow display-flex mgb10">
+            <label class="search-bar-item">
+                아이디
+                <input class="comm-input" type="text" id="userId" onkeydown="enterSearch(event, getUserList)">
+            </label>
+            <label class="search-bar-item">
+                이름
+                <input class="comm-input" type="text" id="korName" onkeydown="enterSearch(event, getUserList)">
+            </label>
+        </div>
+        <div class="mgb10 display-flex flex-end">
+            <button class="btn-primary mgl10" onclick="getUserList();">조회</button>
+        </div>
         <div class="layout-table">
             <table>
                 <colgroup>

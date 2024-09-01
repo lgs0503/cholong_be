@@ -63,9 +63,9 @@
                     메뉴 관리(개인 블로그 메뉴)
                 </div>
                 <div class="mgb10 display-flex flex-end mgt20">
-                    <button onclick="">추가</button>
-                    <button class="mgl10" onclick="">저장</button>
-                    <button class="mgl10" onclick="">삭제</button>
+                    <button class="btn-primary" onclick="">추가</button>
+                    <button class="btn-primary mgl10" onclick="">저장</button>
+                    <button class="btn-primary mgl10" onclick="">삭제</button>
                 </div>
             </div>
             <div class="menu-container">

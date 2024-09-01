@@ -8,12 +8,12 @@
         <h2>비밀번호 변경</h2>
     </div>
     <section class="mgb10">
-        <input class="width100p mgb10" type="password" placeholder="현재 비밀번호"/>
-        <input class="width100p mgb10" type="password" placeholder="수정 비밀번호"/>
-        <input class="width100p mgb10" type="password" placeholder="수정 비밀번호 확인"/>
+        <input class="comm-input width100p mgb10" type="password" placeholder="현재 비밀번호"/>
+        <input class="comm-input width100p mgb10" type="password" placeholder="수정 비밀번호"/>
+        <input class="comm-input width100p mgb10" type="password" placeholder="수정 비밀번호 확인"/>
         <div class="width100p mgb10">
-            <button class="float-right mgl10" onclick="closeModal('myPageModal');">취소</button>
-            <button class="float-right">변경</button>
+            <button class="btn-primary float-right mgl10" onclick="closeModal('myPageModal');">취소</button>
+            <button class="btn-primary float-right">변경</button>
         </div>
     </section>
 </div>

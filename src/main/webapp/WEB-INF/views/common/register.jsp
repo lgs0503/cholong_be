@@ -258,14 +258,14 @@
                         <div class="register-row">
                             <label>회원가입 약관에 모두 동의합니다</label>
                             <label class="checkbox_label float-right">
-                                <input id="regiAllChk" type="checkbox" onchange="registerAllCheck()"/>
+                                <input id="regiAllChk" class="comm-checkbox" type="checkbox" onchange="registerAllCheck()"/>
                                 <span class="checkbox_icon"></span>
                             </label>
                         </div>
                         <div class="register-row">
                             <label for="regiChk2">이용약관 동의 <strong>(필수)</strong></label>
                             <label class="checkbox_label float-right">
-                                <input id="regiChk1" type="checkbox" name="regiChkList"/>
+                                <input id="regiChk1" class="comm-checkbox" type="checkbox" name="regiChkList"/>
                                 <span class="checkbox_icon"></span>
                             </label>
                         </div>
@@ -275,7 +275,7 @@
                         <div class="register-row">
                             <label for="regiChk2">개인정보 수집 및 이용 동의 <strong>(필수)</strong></label>
                             <label class="checkbox_label float-right">
-                                <input id="regiChk2" type="checkbox" name="regiChkList"/>
+                                <input id="regiChk2" class="comm-checkbox" type="checkbox" name="regiChkList"/>
                                 <span class="checkbox_icon"></span>
                             </label>
                         </div>
@@ -289,53 +289,53 @@
                     <div>
                         <div class="register-row">
                             <label class="register-input-label"><strong>*</strong>&nbsp;아이디</label>
-                            <input id="userId" class="width210" type="text" maxlength="15" placeholder="영문, 숫자 (4자리 ~ 15자리)"/>
+                            <input id="userId" class="comm-input width210" type="text" maxlength="15" placeholder="영문, 숫자 (4자리 ~ 15자리)"/>
                         </div>
                         <div class="register-row">
                             <label class="register-input-label"><strong>*</strong>&nbsp;비밀번호</label>
-                            <input id="password" class="width240" maxlength="50" type="password" placeholder="영문 + 숫자 + 특수문자 (8자리 이상)"/>
+                            <input id="password" class="comm-input width240" maxlength="50" type="password" placeholder="영문 + 숫자 + 특수문자 (8자리 이상)"/>
                         </div>
                         <div class="register-row">
                             <label class="register-input-label"><strong>*</strong>&nbsp;비밀번호 확인</label>
-                            <input id="passwordChk" class="width240" maxlength="50" type="password"/>
+                            <input id="passwordChk" class="comm-input width240" maxlength="50" type="password"/>
                         </div>
                         <div class="register-row">
                             <label class="register-input-label"><strong>*</strong>&nbsp;이름</label>
-                            <input id="korName" class="width130" maxlength="10" type="text"/>
+                            <input id="korName" class="comm-input width130" maxlength="10" type="text"/>
                         </div>
                         <div class="register-row">
                             <label class="register-input-label"><strong>*</strong>&nbsp;닉네임</label>
-                            <input id="nickName"class="width130"  maxlength="15" type="text"/>
+                            <input id="nickName" class="comm-input width130"  maxlength="15" type="text"/>
                         </div>
                         <div class="register-row">
                             <label class="register-input-label vertical-align-top"><strong>*</strong>&nbsp;주소</label>
                             <div class="regi-address-form">
                                 <div class="regi-address-row">
-                                    <input id="zipCode" class="width110" maxlength="25" type="text" placeholder="우편번호" readonly/>
-                                    <button class="float-right" onclick="openAddressPopup()">주소검색</button>
+                                    <input id="zipCode" class="comm-input width110" maxlength="25" type="text" placeholder="우편번호" readonly/>
+                                    <button class="float-right btn-primary" onclick="openAddressPopup()">주소검색</button>
                                 </div>
                                 <div class="regi-address-row">
-                                    <input id="address" class="width100p" maxlength="150" type="text" placeholder="기본주소" readonly/>
+                                    <input id="address" class="comm-input width100p" maxlength="150" type="text" placeholder="기본주소" readonly/>
                                 </div>
                                 <div class="regi-address-row">
-                                    <input id="addressDtl" class="width100p"  maxlength="500" type="text" placeholder="상세주소"/>
+                                    <input id="addressDtl" class="comm-input width100p"  maxlength="500" type="text" placeholder="상세주소"/>
                                 </div>
                             </div>
                         </div>
                         <div class="register-row">
                             <label class="register-input-label"><strong>*</strong>&nbsp;성별</label>
-                            <select id="gender">
+                            <select id="gender" class="comm-select">
                                 <option value="1">남자</option>
                                 <option value="2">여자</option>
                             </select>
                         </div>
                         <div class="register-row">
                             <label class="register-input-label"><strong>*</strong>&nbsp;생년월일</label>
-                            <input id="birthday" type="date"/>
+                            <input id="birthday" class="comm-input" type="date"/>
                         </div>
                         <div class="register-row">
                             <label class="register-input-label"><strong>*</strong>&nbsp;연락처</label>
-                            <select id="phoneNum1" class="width70">
+                            <select id="phoneNum1" class="comm-select width70">
                                 <option value="010">010</option>
                                 <option value="011">011</option>
                                 <option value="016">016</option>
@@ -344,19 +344,19 @@
                                 <option value="019">019</option>
                             </select>
                             <b>-</b>
-                            <input id="phoneNum2" type="text" maxlength="4" class="width80"
+                            <input id="phoneNum2" type="text" maxlength="4" class="comm-input width80"
                                    oninput="onlyNumberInput(this)"/>
                             <b>-</b>
-                            <input id="phoneNum3" type="text" maxlength="4" class="width80"
+                            <input id="phoneNum3" type="text" maxlength="4" class="comm-input width80"
                                    oninput="onlyNumberInput(this)"/>
-                            <button class="float-right">본인확인</button>
+                            <button class="float-right btn-primary">본인확인</button>
                         </div>
                         <div class="register-row">
                             <label class="register-input-label"><strong>*</strong>&nbsp;이메일</label>
-                            <input id="email1" type="text" class="width100">
+                            <input id="email1" type="text" class="comm-input width100">
                             <b>@</b>
-                            <input id="email2" type="text" readonly class="width120">
-                            <select id="email3" onchange="emailSelectChange(this)">
+                            <input id="email2" type="text" readonly class="comm-input width120">
+                            <select id="email3" onchange="emailSelectChange(this)" class="comm-select">
                                 <option value="">선택하세요</option>
                                 <option value="input">직접입력</option>
                                 <option value="naver.com">naver.com</option>
@@ -376,7 +376,7 @@
                         <div class="register-row">
                             <label class="register-input-label">SMS 수신동의</label>
                             <label class="checkbox_label">
-                                <input id="smsYn" type="checkbox" checked/>
+                                <input id="smsYn" class="comm-checkbox" type="checkbox" checked/>
                                 <span class="checkbox_icon"></span>
                                 <span class="checkbox_text">동의함</span>
                             </label>
@@ -384,7 +384,7 @@
                         <div class="register-row">
                             <label class="register-input-label">메일 수신동의</label>
                             <label class="checkbox_label">
-                                <input id="mailYn" type="checkbox" checked/>
+                                <input id="mailYn" class="comm-checkbox" type="checkbox" checked/>
                                 <span class="checkbox_icon"></span>
                                 <span class="checkbox_text">동의함</span>
                             </label>
@@ -393,8 +393,8 @@
                 </section>
             </fieldset>
             <aside class="float-right">
-                <button onclick="register()">회원가입</button>
-                <button onclick="goLoginPage();">취소</button>
+                <button class="btn-primary" onclick="register()">회원가입</button>
+                <button class="btn-primary" onclick="goLoginPage();">취소</button>
             </aside>
         </div>
     </body>

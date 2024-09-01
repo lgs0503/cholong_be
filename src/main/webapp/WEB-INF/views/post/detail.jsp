@@ -9,9 +9,9 @@
     <section>
         <div class="layout-content">
             <div class="mgt10">
-                <button class="float-right mgl10" onclick="">뒤로가기</button>
-                <button class="float-right mgl10" onclick="">삭제</button>
-                <button class="float-right" onclick="">수정</button>
+                <button class="btn-primary float-right mgl10" onclick="">뒤로가기</button>
+                <button class="btn-primary float-right mgl10" onclick="">삭제</button>
+                <button class="btn-primary float-right" onclick="">수정</button>
             </div>
             <div class="layout-content-title">
                 게시글 상세정보
@@ -69,11 +69,11 @@
                                 댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1
                             </p>
                         </div>
-                        <button class="pos-ab r20 t80" onclick="commentInputToggle(this)">답글</button>
-                        <button class="pos-ab r20 t115">삭제</button>
+                        <button class="btn-primary pos-ab r20 t80" onclick="commentInputToggle(this)">답글</button>
+                        <button class="btn-primary pos-ab r20 t115">삭제</button>
                         <div class="post-comment-input display-none">
-                            <input type="text"/>
-                            <button>저장</button>
+                            <input class="comm-input" type="text"/>
+                            <button class="btn-primary">저장</button>
                         </div>
                         <div class="post-comment">
                             <div class="layout-row">
@@ -87,11 +87,11 @@
                                     대댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1
                                 </p>
                             </div>
-                            <button class="pos-ab r20 t80" onclick="commentInputToggle(this)">답글</button>
-                            <button class="pos-ab r20 t115">삭제</button>
+                            <button class="btn-primary pos-ab r20 t80" onclick="commentInputToggle(this)">답글</button>
+                            <button class="btn-primary pos-ab r20 t115">삭제</button>
                             <div class="post-comment-input display-none">
-                                <input type="text"/>
-                                <button>저장</button>
+                                <input class="comm-input" type="text"/>
+                                <button class="btn-primary">저장</button>
                             </div>
                         </div>
                     </div>
@@ -107,16 +107,16 @@
                                 대댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1
                             </p>
                         </div>
-                        <button class="pos-ab r20 t80" onclick="commentInputToggle(this)">답글</button>
-                        <button class="pos-ab r20 t115">삭제</button>
+                        <button class="btn-primary pos-ab r20 t80" onclick="commentInputToggle(this)">답글</button>
+                        <button class="btn-primary pos-ab r20 t115">삭제</button>
                         <div class="post-comment-input display-none">
-                            <input type="text"/>
-                            <button>저장</button>
+                            <input class="comm-input" type="text"/>
+                            <button class="btn-primary">저장</button>
                         </div>
                     </div>
                     <div class="post-comment-input">
-                        <input type="text"/>
-                        <button>저장</button>
+                        <input class="comm-input" type="text"/>
+                        <button class="btn-primary">저장</button>
                     </div>
                 </div>
             </div>
