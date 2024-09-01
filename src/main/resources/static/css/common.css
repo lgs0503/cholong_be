@@ -296,21 +296,21 @@
     height: 300px;
     border-radius: 10px;
 }
-/** 공통 css **/
-input[type='checkbox']{
+
+.comm-checkbox{
     display: none;
 }
-strong{
+.comm-strong{
     color:red;
 }
-input {
+.comm-input{
     padding : 5px;
     color: var(--color-charcoal);
 }
-select {
+.comm-select{
     padding : 5px;
 }
-button {
+.btn-primary{
     border-radius: 3px;
     border: none;
     padding : 5px 13px;
@@ -318,7 +318,7 @@ button {
     background-color: var(--color-light-dark-blue);
     color: white;
 }
-button:hover {
+.btn-primary:hover{
     background-color: var(--color-sunglow);
     cursor: pointer;
     color:black;
@@ -480,6 +480,10 @@ button:hover {
     }
 }
 @media all and (max-width:700px) {
+    .popup-modal {
+        width: 100%;
+        height: 100%;
+    }
     .layout-content{
         padding: 10px;
     }
@@ -550,6 +554,16 @@ button:hover {
     height: 100vh;
     background-color: rgba(0, 0, 0, 80%);
     z-index: 99;
+}
+.popup-modal-close{
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+.popup-modal-close:hover{
+    color:black;
 }
 
 .scrollbar {
