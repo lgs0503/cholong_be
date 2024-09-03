@@ -49,11 +49,16 @@
 .width2000 { width: 2000px;}
 
 .width100p { width: 100%;}
+.width75p { width: 75%;}
 .width50p { width: 50%;}
 .width33p { width: 33.3%;}
 .width25p { width: 25%;}
 .width12p { width: 12.5%;}
 .width10p { width: 10%;}
+
+.height110 {height: 110px;}
+.height250 {height: 250px;}
+.height268 {height: 268px;}
 
 .height100p { height: 100%; }
 .height50p { height: 50%; }
@@ -65,6 +70,7 @@
 .mgt10 { margin-top: 10px;}
 .mgt20 { margin-top: 20px;}
 .mgt30 { margin-top: 30px;}
+.mgb5 { margin-bottom: 5px;}
 .mgb10 { margin-bottom: 10px;}
 .mgb20 { margin-bottom: 20px;}
 .mgb30 { margin-bottom: 30px;}
@@ -91,12 +97,13 @@
 .pdr10 { padding-right: 10px;}
 .pdr20 { padding-right: 20px;}
 .pdr30 { padding-right: 30px;}
+.pd0 { padding: 0 !important;}
 .pd2 { padding: 2px !important;}
 .pd3 { padding: 3px !important;}
 .pd5 { padding: 5px !important;}
-.pd10 { padding: 10px;}
-.pd20 { padding: 20px;}
-.pd30 { padding: 30px;}
+.pd10 { padding: 10px !important;}
+.pd20 { padding: 20px !important;}
+.pd30 { padding: 30px !important;}
 
 .display-block { display: block; }
 .display-flex { display: flex }
@@ -165,7 +172,7 @@
 .font25{ font-size:25px; }
 .font30{ font-size:30px; }
 .font-bold{ font-weight: bold; }
-
+.white-space-nowrap {white-space: nowrap;}
 
 /* 모바일 해상도 */
 @media all and (max-width:900px) {

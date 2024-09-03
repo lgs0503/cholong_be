@@ -467,6 +467,12 @@
 
 /* 모바일 해상도 */
 @media all and (max-width:900px) {
+    .layout-content > .flex-column {
+        flex-direction: column;
+    }
+    .layout-content-item {
+        width: auto;
+    }
     .myPage-left {
         width: 100%;
         margin-bottom : 20px;
@@ -501,13 +507,14 @@
     }
     .layout-container > section {
         width: 100%;
+        border-left: none;
     }
-    .layout-content-item{
-        width: auto;
-    }
-    .layout-content > .flex-column {
-        flex-direction: column;
-    }
+    /*.layout-content-item{*/
+    /*    width: auto;*/
+    /*}*/
+    /*.layout-content > .flex-column {*/
+    /*    flex-direction: column;*/
+    /*}*/
     .menu-container{
         display: block;
     }
@@ -578,4 +585,51 @@
 
 .scrollbar::-webkit-scrollbar-track {
     background: var(--color-scroll-track)
+}
+
+/** dashboard **/
+.dashboard-title{
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-charcoal);
+}
+.dashboard-content-title {
+    display: inline-block;
+    width: calc(100% - 120px);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 13px;
+    line-height: 17px;
+}
+.dashboard-statistics{
+    width: 33.333%;
+    border: 1px solid var(--color-charcoal);
+    padding: 10px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    background-color: var(--color-form-background-color);
+}
+.dashboard-statistics > h3 {
+    text-align: center;
+    font-weight: bold;
+    color: var(--color-charcoal);
+    font-size: 16px;
+    margin-top:30px;
+    margin-bottom: 30px;
+}
+.dashboard-statistics-row {
+    display: flex;
+    justify-content: center;
+    gap:20px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size:13px;
+}
+.dashboard-statistics-row > label{
+    font-weight: bold;
+}
+.dashboard-statistics-row > div{
 }
