@@ -3,6 +3,7 @@
 <html>
     <head>
         <title>회원가입</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/resources/static/css/reset.css"/>
         <link rel="stylesheet" href="/resources/static/css/common.css"/>
         <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

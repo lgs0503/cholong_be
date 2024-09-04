@@ -3,6 +3,7 @@
 <html>
     <head>
         <title>비밀번호 찾기</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/resources/static/css/reset.css"/>
         <link rel="stylesheet" href="/resources/static/css/common.css"/>
         <script type="text/javascript" src="/resources/static/js/common.js"></script>

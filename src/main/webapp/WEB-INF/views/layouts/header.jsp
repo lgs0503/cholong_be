@@ -36,15 +36,29 @@
      * **/
     const leftMenuToggle = () => {
 
-        const leftMenuElement = $(".layout-left-menu");
-        const contentElement = $(".layout-container > section");
 
-        if (leftMenuElement.css("width") !== "0px") {
-            leftMenuElement.css("width", "0px");
-            contentElement.css("width", "100%");
+        var windowWidth = $(window).width();
+
+        /** 데스크탑 **/
+        if (windowWidth > 700) {
+            const leftMenuElement = $(".layout-left-menu");
+            const contentElement = $(".layout-container > section");
+
+            if (leftMenuElement.css("width") !== "0px") {
+                leftMenuElement.css("width", "0px");
+                contentElement.css("width", "100%");
+            } else {
+                leftMenuElement.css("width", "200px");
+                contentElement.css("width", "calc( 100% - 200px);");
+            }
         } else {
-            leftMenuElement.css("width", "200px");
-            contentElement.css("width", "calc( 100% - 200px);");
+            /** 모바일 **/
+            const mobileMenu = $(".layout-top-menu-mobile");
+            if (mobileMenu.is(':visible') === false) {
+                mobileMenu.show();
+            } else {
+                mobileMenu.hide();
+            }
         }
     }
 
