@@ -178,3 +178,45 @@ const commentInputToggle = (ele) => {
 const getToday = () => {
     return new Date().toISOString().substring(0,10);
 }
+
+/**
+* 공통 알림창
+ **/
+const commonAlert = (msg, callback = null) => {
+    $(".common-alert-confirm > .title").text("Alert");
+    $(".common-alert-confirm > .message").text(msg);
+    $("#common-cancel").hide();
+    $(".common-alert-confirm").show();
+    $(".modal-background").show();
+
+    $("#common-ok").click(() => {
+        $(".common-alert-confirm").hide();
+        $(".modal-background").hide();
+
+        if (callback) callback();
+    });
+}
+
+/**
+ * 공통 확인창
+ **/
+const commonConfirm = (msg, callback) => {
+    $(".common-alert-confirm > .title").text("Confirm");
+    $(".common-alert-confirm > .message").text(msg);
+    $("#common-cancel").show();
+    $(".common-alert-confirm").show();
+    $(".modal-background").show();
+
+    $("#common-ok").click(() => {
+
+        $(".common-alert-confirm").hide();
+        $(".modal-background").hide();
+
+        callback();
+    });
+
+    $("#common-cancel").click(() => {
+        $(".common-alert-confirm").hide();
+        $(".modal-background").hide();
+    });
+}

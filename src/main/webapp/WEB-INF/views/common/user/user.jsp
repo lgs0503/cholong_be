@@ -5,7 +5,6 @@
 <script>
     $(document).ready(() => {
         getUserList();
-        console.log("test");
     });
 
     const getUserList = () => {

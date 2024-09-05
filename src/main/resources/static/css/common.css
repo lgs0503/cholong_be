@@ -557,7 +557,7 @@
 
 .popup-modal{
     display: none;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -657,4 +657,23 @@
     font-weight: bold;
 }
 .dashboard-statistics-row > div{
+}
+
+/** 공통 메세지 알림창 **/
+.common-alert-confirm > .title {
+    padding: 15px 30px ;
+    width: 250px;
+    background-color: var(--color-charcoal);
+    color: white;
+    font-weight: bold;
+}
+.common-alert-confirm > .message {
+    padding: 15px 30px;
+    font-size: 13px;
+    width: 250px;
+    line-height: 20px;
+}
+.common-alert-confirm > .btn-container {
+    text-align: right;
+    border-top: 1px solid #c4c4c4;
 }
