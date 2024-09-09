@@ -220,3 +220,20 @@ const commonConfirm = (msg, callback) => {
         $(".modal-background").hide();
     });
 }
+
+/**
+ * 콤보박스 로드
+ * **/
+const comboLoad = (upperCode, selectId) => {
+
+    jqueryAjaxSync(
+        "/common/code/getCodeList?upperCode=" + upperCode,
+        "GET",
+        (result)=> {
+            if (result) {
+                result.forEach((value) => {
+                    $("#" + selectId).append($("<option>", {value: value.ref1, text:value.codeName}));
+                });
+            }
+    });
+}
