@@ -4,7 +4,7 @@
 <jsp:include page="../../layouts/header.jsp"/>
 <script>
     $(document).ready(() => {
-        getUserList()
+        getUserList();
     });
 
     const getUserList = () => {

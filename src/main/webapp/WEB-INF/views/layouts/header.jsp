@@ -7,6 +7,7 @@
     <script type="text/javascript" src="/resources/static/js/jquery-3.7.1.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </header>
+<jsp:include page="../common/utill/commAlertOrConfirm.jsp"/>
 <script>
     $(document).ready(() => {
 

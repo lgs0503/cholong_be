@@ -23,10 +23,8 @@
              *  회원가입
              *  **/
             const register = () => {
-                if (confirm("회원가입 하시겠습니까?")) {
-
+                commonConfirm("회원가입 하시겠습니까?", () => {
                     if (validationCheck()) {
-
                         const param = {
                             userId : $("#userId").val(),
                             password : $("#password").val(),
@@ -50,7 +48,7 @@
                             }
                         }, param);
                     }
-                }
+                });
             }
 
             /**
@@ -76,7 +74,7 @@
                 const checked2 = $("#regiChk2").is(":checked");
 
                 if (checked1 === false || checked2 === false) {
-                    alert("약관동의를 모두 진행하셔야합니다.");
+                    commonAlert("약관동의를 모두 진행하셔야합니다.");
                     return false;
                 }
 
@@ -145,8 +143,9 @@
 
                 /** 필수 입력 유효성 체크 **/
                 if (isEmpty(element.val())) {
-                    alert(msg);
-                    element.focus();
+                    commonAlert(msg, () => {
+                        element.focus();
+                    });
                     return false;
                 } else {
                     /** 그외 유효성 체크 **/
@@ -154,13 +153,13 @@
                         /** 아이디 영문, 숫자 4~15자리 정규식  **/
                         const pattern = /^[A-Za-z0-9]{4,15}$/
                         if ((!/[ㄱ-ㅎㅏ-ㅣ가-힣]/.test(element.val()) && pattern.test(element.val())) === false) {
-                            alert("유효하지 않는 아이디 입니다. 영문, 숫자 (4자리 ~ 15자리)");
+                            commonAlert("유효하지 않는 아이디 입니다. 영문, 숫자 (4자리 ~ 15자리)");
                             return false;
                         }
 
                         /** 아이디 DB 중복체크(PK) **/
                         if (userIdCheck() === false) {
-                            alert("중복된 아이디가 존재합니다.");
+                            commonAlert("중복된 아이디가 존재합니다.");
                             $("#userId").focus();
                             return false;
                         }
@@ -170,7 +169,7 @@
                         /** 비밀번호 영문 + 숫자 + 특수문자 + 8자리 이상 정규식 **/
                         const pattern = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[~@#$!%*?&])[a-zA-Z\d~@#$!%*?&]{8,}$/
                         if ((!/[ㄱ-ㅎㅏ-ㅣ가-힣]/.test(element.val()) && pattern.test(element.val())) === false) {
-                            alert("유효하지 않는 비밀번호 입니다. 영문 + 숫자 + 특수문자 (8자리 이상)");
+                            commonAlert("유효하지 않는 비밀번호 입니다. 영문 + 숫자 + 특수문자 (8자리 이상)");
                             element.focus();
                             return false;
                         }
@@ -179,7 +178,7 @@
 
                         /** 비밀번호 동일하게 입력했는지 확인 **/
                         if (passwordChkEle.val() !== element.val()) {
-                            alert("비밀번호가 일치하지 않습니다. 비밀번호를 확인해주세요.");
+                            commonAlert("비밀번호가 일치하지 않습니다. 비밀번호를 확인해주세요.");
                             passwordChkEle.focus();
                             return false;
                         }
@@ -249,6 +248,7 @@
             }
         </script>
     </head>
+    <jsp:include page="utill/commAlertOrConfirm.jsp"/>
     <body class="register-body">
         <div class="register-form">
             <h1 class="register-title">회원가입</h1>
