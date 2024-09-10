@@ -13,10 +13,11 @@
             REF1,
             REF2,
             REF3,
+            SORT,
             CREATE_USER,
             TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE,
             UPDATE_USER,
-            UPDATE_DATE
+            TO_CHAR(UPDATE_DATE, 'YYYY-MM-DD') AS UPDATE_DATE
         FROM COMMON_CODE
         <where>
             <if test="idx != null and idx != ''">
@@ -35,7 +36,7 @@
                 AND UPPER_CODE IS NULL
             </if>
         </where>
-        ORDER BY CREATE_DATE DESC
+        ORDER BY SORT ASC, CREATE_DATE DESC
     </select>
 
     <select id="getCode" parameterType="codeVO" resultType="codeVO">
@@ -76,10 +77,11 @@
             REF1,
             REF2,
             REF3,
-            CREATE_DATE
+            CREATE_DATE,
         <if test="createUser != null and createUser != ''">
-            ,CREATE_USER
+            CREATE_USER,
         </if>
+            SORT
         )
         VALUES
         (
@@ -94,10 +96,11 @@
             #{ref1},
             #{ref2},
             #{ref3},
-            SYSDATE
+            SYSDATE,
         <if test="createUser != null and createUser != ''">
-            ,#{createUser}
+            #{createUser},
         </if>
+            ${sort}
         )
     </insert>
 
@@ -113,7 +116,8 @@
                 REF2 = #{ref2},
                 REF3 = #{ref3},
                 UPDATE_USER = #{updateUser},
-                UPDATE_DATE = SYSDATE
+                UPDATE_DATE = SYSDATE,
+                SORT = #{sort}
         <where>
             <if test="idx != null and idx != ''">
                 AND IDX = #{idx}
