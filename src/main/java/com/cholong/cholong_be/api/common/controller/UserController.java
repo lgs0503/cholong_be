@@ -30,9 +30,15 @@ public class UserController {
     }
 
     @RequestMapping("/userDetailPage")
-    public ModelAndView userDetailPage() {
+    public ModelAndView userDetailPage(
+            @RequestParam String mode,
+            @RequestParam(defaultValue = "") String idx
+    ) {
+        ModelAndView mv = new ModelAndView("common/user/detail");
+        mv.addObject("mode", mode);
+        mv.addObject("idx", idx);
 
-        return new ModelAndView("common/user/detail");
+        return mv;
     }
 
     @RequestMapping("/loginPage")
@@ -68,6 +74,16 @@ public class UserController {
     @RequestMapping(value = "/getUserList", method = RequestMethod.GET)
     public List<UserVO> getUserList(UserVO userVO) {
         return userService.getUserList(userVO);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/getUser", method = RequestMethod.GET)
+    public UserVO getUser(@RequestParam(value = "idx") long idx) {
+
+        UserVO userVO = new UserVO();
+        userVO.setIdx(idx);
+
+        return userService.getUser(userVO);
     }
 
     @ResponseBody

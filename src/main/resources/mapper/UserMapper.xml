@@ -32,13 +32,13 @@
                 AND IDX = #{idx}
             </if>
             <if test="userId != null and userId != ''">
-                AND USER_ID = #{userId}
+                AND USER_ID LIKE '%' || #{userId} || '%'
             </if>
             <if test="email != null and email != ''">
                 AND EMAIL = #{email}
             </if>
             <if test="korName != null and korName != ''">
-                AND KOR_NAME = #{korName}
+                AND KOR_NAME LIKE '%' || #{korName} || '%'
             </if>
         </where>
     </select>
@@ -54,7 +54,7 @@
             ZIP_CODE,
             ADDRESS,
             ADDRESS_DTL,
-            GENDER,
+            DECODE(GENDER, '1', '남자', '2', '여자') AS GENDER,
             BIRTHDAY,
             PHONE_NUM,
             EMAIL,
