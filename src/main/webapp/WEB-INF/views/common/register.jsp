@@ -17,6 +17,11 @@
                     $("#terms1").val(data.terms1);
                     $("#terms2").val(data.terms2);
                 });
+
+                /** 콥보박스 셋팅 **/
+                comboLoad("GENDER", "gender");
+                comboLoad("EMAIL_LIST_DATA", "email3");
+                comboLoad("PHONE_NUM_FIRST", "phoneNum1");
             });
 
             /**
@@ -326,8 +331,6 @@
                         <div class="register-row">
                             <label class="register-input-label"><strong>*</strong>&nbsp;성별</label>
                             <select id="gender" class="comm-select">
-                                <option value="1">남자</option>
-                                <option value="2">여자</option>
                             </select>
                         </div>
                         <div class="register-row">
@@ -337,12 +340,6 @@
                         <div class="register-row">
                             <label class="register-input-label"><strong>*</strong>&nbsp;연락처</label>
                             <select id="phoneNum1" class="comm-select width70">
-                                <option value="010">010</option>
-                                <option value="011">011</option>
-                                <option value="016">016</option>
-                                <option value="017">017</option>
-                                <option value="018">018</option>
-                                <option value="019">019</option>
                             </select>
                             <b>-</b>
                             <input id="phoneNum2" type="text" maxlength="4" class="comm-input width80"
@@ -360,13 +357,6 @@
                             <select id="email3" onchange="emailSelectChange(this)" class="comm-select">
                                 <option value="">선택하세요</option>
                                 <option value="input">직접입력</option>
-                                <option value="naver.com">naver.com</option>
-                                <option value="daum.net">daum.net</option>
-                                <option value="nate.com">nate.com</option>
-                                <option value="gmail.com">gmail.com</option>
-                                <option value="hanmail.com">hanmail.com</option>
-                                <option value="hotmail.com">hotmail.com</option>
-                                <option value="yahoo.com">yahoo.com</option>
                             </select>
                         </div>
                     </div>
