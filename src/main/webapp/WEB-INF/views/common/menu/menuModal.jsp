@@ -9,7 +9,7 @@
         <button class="popup-modal-close" onclick="closeModal('menuModal');">✖</button>
     </div>
     <section>
-        <div class="layout-search-bar layout-card shadow display-flex mgb10">
+        <div class="layout-search-bar layout-card shadow display-flex mgb10 scrollbar">
             <label class="search-bar-item">
                 권한명
                 <input type="text">
@@ -18,7 +18,7 @@
         <div class="mgb10 display-flex flex-end">
             <button class="btn-primary mgl10">조회</button>
         </div>
-        <div class="layout-table">
+        <div class="layout-table scrollbar">
             <table>
                 <colgroup>
                     <col style="width:10px">

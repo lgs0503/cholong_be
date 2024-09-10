@@ -14,7 +14,8 @@ create table COMMON_CODE
     CREATE_USER VARCHAR2(50) default 'ADMIN',
     CREATE_DATE DATE,
     UPDATE_USER VARCHAR2(50),
-    UPDATE_DATE DATE
+    UPDATE_DATE DATE,
+    SORT        NUMBER
 )
 /
 
@@ -58,5 +59,8 @@ comment on column COMMON_CODE.UPDATE_USER is '수정자'
 /
 
 comment on column COMMON_CODE.UPDATE_DATE is '수정일'
+/
+
+comment on column COMMON_CODE.SORT is '정렬'
 /
 

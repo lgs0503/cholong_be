@@ -11,7 +11,7 @@
             <div class="layout-content-title">
                 파일 관리
             </div>
-            <div class="layout-search-bar layout-card shadow display-flex mgb10">
+            <div class="layout-search-bar layout-card shadow display-flex mgb10 scrollbar">
                 <label class="search-bar-item">
                     파일명
                     <input class="comm-input" type="text" id="code" onkeydown="enterSearch(event, getCodeList)">
@@ -21,7 +21,7 @@
                     <select class="comm-select">
                         <option>선택</option>
                         <option>게시글</option>
-                        <option>프로팔사진</option>
+                        <option>프로필사진</option>
                         <option>기타</option>
                     </select>
                 </label>
@@ -30,7 +30,7 @@
                 <button class="btn-primary mgl10" onclick="">조회</button>
             </div>
             <div class="layout-card shadow">
-                <div class="layout-table">
+                <div class="layout-table scrollbar">
                     <table>
                         <colgroup>
                             <col style="width:10px">

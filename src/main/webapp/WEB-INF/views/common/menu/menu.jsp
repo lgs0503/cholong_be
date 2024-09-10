@@ -60,7 +60,7 @@
         <div class="layout-content">
             <div class="display-flex flex-space-between">
                 <div class="layout-content-title">
-                    시스템 메뉴 관리(관리자 페이지 메뉴)
+                    시스템 메뉴 관리
                 </div>
                 <div class="mgb10 display-flex flex-end mgt20">
                     <button class="btn-primary" onclick="">추가</button>
@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="menu-container">
-                <div class="layout-card shadow menu-master mgr10">
+                <div class="layout-card shadow menu-master mgr10 scrollbar">
                     <div id="menu"></div>
                 </div>
                 <div class="layout-card shadow menu-detail">
@@ -134,7 +134,7 @@
                             <button class="btn-primary float-right mgl10" onclick="openModal('menuModal');">추가</button>
                         </div>
                     </div>
-                    <div class="layout-table">
+                    <div class="layout-table scrollbar">
                         <table>
                             <colgroup>
                                 <col style="width:10px">

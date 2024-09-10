@@ -253,7 +253,6 @@
             }
         </script>
     </head>
-    <jsp:include page="utill/commAlertOrConfirm.jsp"/>
     <body class="register-body">
         <div class="register-form">
             <h1 class="register-title">회원가입</h1>
@@ -276,7 +275,7 @@
                             </label>
                         </div>
                         <div class="register-row">
-                            <textarea id="terms1" readonly></textarea>
+                            <textarea class="scrollbar" id="terms1" readonly></textarea>
                         </div>
                         <div class="register-row">
                             <label for="regiChk2">개인정보 수집 및 이용 동의 <strong>(필수)</strong></label>
@@ -286,7 +285,7 @@
                             </label>
                         </div>
                         <div class="register-row">
-                            <textarea id="terms2"  readonly></textarea>
+                            <textarea class="scrollbar" id="terms2"  readonly></textarea>
                         </div>
                     </div>
                 </section>
@@ -388,5 +387,6 @@
                 <button class="btn-primary" onclick="goLoginPage();">취소</button>
             </aside>
         </div>
+        <jsp:include page="utill/commAlertOrConfirm.jsp"/>
     </body>
 </html>

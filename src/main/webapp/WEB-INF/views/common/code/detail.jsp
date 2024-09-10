@@ -30,6 +30,8 @@
                         $("#createUserDt").text(result.createUser);
                         $("#updateDateDt").text(result.updateDate);
                         $("#updateUserDt").text(result.updateUser);
+                        $("#sortDt").text(result.sort);
+
 
                         if (mode === "detail") {
                             getSubCodeList(result.code);
@@ -61,7 +63,7 @@
             if (result.length === 0) {
 
                 let trTag = $("<tr>");
-                let tdTagEmpty = $("<td>", {colspan: 5, text: "데이터가 존재하지 않습니다."});
+                let tdTagEmpty = $("<td>", {colspan: 6, text: "데이터가 존재하지 않습니다."});
 
                 trTag.append(tdTagEmpty);
                 $("#subCodeList").append(trTag);
@@ -80,12 +82,14 @@
                     let tdTagCodeName = $("<td>", {text: value.codeName, class: "tal"});
                     let tdTagCreateDate = $("<td>", {text: value.createDate});
                     let tdTagCreateUser = $("<td>", {text: value.createUser});
+                    let tdTagSort = $("<td>", {text: value.sort});
 
                     trTag.append(tdTagIndex);
                     trTag.append(tdTagCode);
                     trTag.append(tdTagCodeName);
                     trTag.append(tdTagCreateDate);
                     trTag.append(tdTagCreateUser);
+                    trTag.append(tdTagSort);
 
                     $("#subCodeList").append(trTag);
                 });
@@ -97,7 +101,7 @@
      * 코드 저장
      * **/
     const saveCode = () => {
-        if (confirm("저장 하시겠습니까?")) {
+        commonConfirm("저장 하시겠습니까?", () => {
             if (validationCheck()) {
                 const param = {
                     code: $("#code").val(),
@@ -105,7 +109,8 @@
                     description: $("#description").val(),
                     ref1: $("#ref1").val(),
                     ref2: $("#ref2").val(),
-                    ref3: $("#ref3").val()
+                    ref3: $("#ref3").val(),
+                    sort: $("#sort").val()
                 }
 
                 let url = "";
@@ -136,12 +141,13 @@
 
                 jqueryAjax(url, "POST", (result) => {
                     if (result === 1) {
-                        alert("저장되었습니다.");
-                        goPage(redirectUrl);
+                        commonAlert("저장되었습니다.", () => {
+                            goPage(redirectUrl);
+                        });
                     }
                 }, param);
             }
-        }
+        });
     }
 
     /**
@@ -150,7 +156,7 @@
     const validationCheck = () => {
 
         if (isEmpty($("#code").val())) {
-            alert("코드를 입력해주세요.");
+            commonAlert("코드를 입력해주세요.");
             return false;
         }
 
@@ -162,18 +168,18 @@
             });
 
             if (codeChk > 0) {
-                alert("중복된 코드가 존재합니다.");
+                commonAlert("중복된 코드가 존재합니다.");
                 return false;
             }
         }
 
         if (isEmpty($("#codeName").val())) {
-            alert("코드명을 입력해주세요.");
+            commonAlert("코드명을 입력해주세요.");
             return false;
         }
 
         if (isEmpty($("#description").val())) {
-            alert("설명을 입력해주세요.");
+            commonAlert("설명을 입력해주세요.");
             return false;
         }
 
@@ -184,10 +190,10 @@
      * 코드 삭제
      * **/
     const deleteCode = () => {
-        if (confirm("삭제 하시겠습니까?")) {
+        commonConfirm("삭제 하시겠습니까?", () => {
             jqueryAjax("/common/code/deleteCode", "POST", (result) => {
                 if (result === 1) {
-                    alert("삭제되었습니다.");
+                    commonAlert("삭제되었습니다.");
 
                     if (isEmpty(upperIdx)) {
                         goPage("/common/code/codeMgrPage");
@@ -196,7 +202,7 @@
                     }
                 }
             }, [idx]);
-        }
+        });
     }
 
     const goAddSubCodePage = () => {
@@ -268,6 +274,10 @@
                         <label class="layout-col layout-col-head">참조3</label>
                         <input id="ref3" class="comm-input width210" type="text" maxlength="25"/>
                     </div>
+                    <div class="layout-row">
+                        <label class="layout-col layout-col-head">순번</label>
+                        <input id="sort" class="comm-input width210" type="text" maxlength="25" oninput="onlyNumberInput(this)"/>
+                    </div>
                 </div>
             </c:if>
             <c:if test="${mode eq 'detail' || mode eq 'subDetail'}">
@@ -294,11 +304,15 @@
                     </div>
                     <div class="layout-row">
                         <label class="layout-col layout-col-head">참조1</label>
-                        <div class="layout-col width12p" id="ref1Dt"></div>
+                        <div class="layout-col width25p" id="ref1Dt"></div>
                         <label class="layout-col layout-col-head">참조2</label>
-                        <div class="layout-col width12p" id="ref2Dt"></div>
+                        <div class="layout-col width25p" id="ref2Dt"></div>
+                    </div>
+                    <div class="layout-row">
                         <label class="layout-col layout-col-head">참조3</label>
-                        <div class="layout-col width12p" id="ref3Dt"></div>
+                        <div class="layout-col width25p" id="ref3Dt"></div>
+                        <label class="layout-col layout-col-head">순번</label>
+                        <div class="layout-col width25p" id="sortDt"></div>
                     </div>
                     <div class="layout-row">
                         <label class="layout-col layout-col-head">생성일</label>
@@ -323,7 +337,7 @@
                     하위 코드
                 </div>
                 <div class="layout-card shadow">
-                    <div class="layout-table">
+                    <div class="layout-table scrollbar">
                         <table>
                             <colgroup>
                                 <col style="width:10px">
@@ -331,6 +345,7 @@
                                 <col style="">
                                 <col style="width:200px">
                                 <col style="width:200px">
+                                <col style="width:100px">
                             </colgroup>
                             <thead>
                             <tr>
@@ -339,6 +354,7 @@
                                 <th>코드명</th>
                                 <th>등록일</th>
                                 <th>등록자</th>
+                                <th>순번</th>
                             </tr>
                             </thead>
                             <tbody id="subCodeList">

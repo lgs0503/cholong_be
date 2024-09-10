@@ -44,7 +44,7 @@
                 권한 등록 계정
             </div>
             <div class="layout-card shadow">
-                <div class="layout-table">
+                <div class="layout-table scrollbar">
                     <table>
                         <colgroup>
                             <col style="width:10px">

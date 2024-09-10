@@ -26,4 +26,6 @@ public class CodeVO {
     private String updateUser;
     private String updateDate;
 
+    private long sort;
+
 }

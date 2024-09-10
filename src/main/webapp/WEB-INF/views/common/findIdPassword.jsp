@@ -40,12 +40,12 @@
                 const email = $("#emailFindId").val();
 
                 if (!korName) {
-                    alert("이름을 입력해주세요.");
+                    commonAlert("이름을 입력해주세요.");
                     return;
                 }
 
                 if (!email) {
-                    alert("이메일을 입력해주세요.");
+                    commonAlert("이메일을 입력해주세요.");
                     return;
                 }
 
@@ -56,7 +56,7 @@
 
                 jqueryAjax("/common/user/getId", "POST", (result) => {
                     if (isEmpty(result)) {
-                        alert("존재하지 않는 정보입니다. 이름 및 이메일을 확인해주세요.");
+                        commonAlert("존재하지 않는 정보입니다. 이름 및 이메일을 확인해주세요.");
                     } else {
                         $("#findId").hide();
                         $("#findIdResultText").html(korName + "님의 계정은 (" + result + ") 입니다.");
@@ -75,17 +75,17 @@
                 const email = $("#emailFindPw").val();
 
                 if (!userId) {
-                    alert("아이디를 입력해주세요.");
+                    commonAlert("아이디를 입력해주세요.");
                     return;
                 }
 
                 if (!korName) {
-                    alert("이름을 입력해주세요.");
+                    commonAlert("이름을 입력해주세요.");
                     return;
                 }
 
                 if (!email) {
-                    alert("이메일을 입력해주세요.");
+                    commonAlert("이메일을 입력해주세요.");
                     return;
                 }
 
@@ -97,7 +97,7 @@
 
                 jqueryAjax("/common/user/getPassword", "POST", (result) => {
                     if (result === "not found user") {
-                        alert("존재하지 않는 정보입니다. 아이디, 이름, 이메일을 확인해주세요.");
+                        commonAlert("존재하지 않는 정보입니다. 아이디, 이름, 이메일을 확인해주세요.");
                     } else {
                         $("#findPw").hide();
                         $("#findPwResultText").html(email + "</br>에 임시비밀번호를 발송하였습니다.</br> 메일 확인 후 비밀번호 변경 부탁드립니다.");
@@ -147,5 +147,6 @@
                 </div>
             </aside>
         </div>
+        <jsp:include page="utill/commAlertOrConfirm.jsp"/>
     </body>
 </html>

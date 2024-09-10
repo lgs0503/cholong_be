@@ -231,6 +231,7 @@
     border-radius: 4px;
     font-size:14px;
     display: none;
+    z-index: 1000;
 }
 .layout-header-userinfo-popup > ul > li{
     padding: 7px 20px;
@@ -603,6 +604,7 @@
 }
 .scrollbar::-webkit-scrollbar {
     width: 10px;
+    height: 10px;
 }
 .scrollbar::-webkit-scrollbar-thumb {
     background: var(--color-charcoal);
