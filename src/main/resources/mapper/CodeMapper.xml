@@ -53,7 +53,8 @@
             CREATE_USER,
             TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE,
             UPDATE_USER,
-            TO_CHAR(UPDATE_DATE, 'YYYY-MM-DD') AS UPDATE_DATE
+            TO_CHAR(UPDATE_DATE, 'YYYY-MM-DD') AS UPDATE_DATE,
+            SORT
         FROM COMMON_CODE
         <where>
             <if test="idx != null and idx != ''">
