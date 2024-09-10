@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="menu-container">
-                <div class="layout-card shadow menu-master mgr10">
+                <div class="layout-card shadow menu-master mgr10 scrollbar">
                     <div id="menu"></div>
                 </div>
                 <div class="layout-card shadow menu-detail">

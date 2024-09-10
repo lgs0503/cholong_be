@@ -64,7 +64,7 @@
                             <label class="layout-col layout-col-head">작성일</label>
                             <div class="layout-col width25p"></div>
                         </div>
-                        <div class="post-comment-content">
+                        <div class="post-comment-content scrollbar">
                             <p>
                                 댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1
                             </p>
@@ -82,7 +82,7 @@
                                 <label class="layout-col layout-col-head">작성일</label>
                                 <div class="layout-col width25p"></div>
                             </div>
-                            <div class="post-comment-content">
+                            <div class="post-comment-content scrollbar">
                                 <p>
                                     대댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1
                                 </p>
@@ -102,7 +102,7 @@
                             <label class="layout-col layout-col-head">작성일</label>
                             <div class="layout-col width25p"></div>
                         </div>
-                        <div class="post-comment-content">
+                        <div class="post-comment-content scrollbar">
                             <p>
                                 대댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1댓글 내용1
                             </p>

@@ -9,7 +9,7 @@
         <button class="popup-modal-close" onclick="closeModal('roleModal');">✖</button>
     </div>
     <section>
-        <div class="layout-search-bar layout-card shadow display-flex mgb10">
+        <div class="layout-search-bar layout-card shadow display-flex mgb10 scrollbar">
             <label class="search-bar-item">
                 아이디
                 <input class="comm-input" type="text" id="userId" onkeydown="enterSearch(event, getUserList)">
@@ -22,7 +22,7 @@
         <div class="mgb10 display-flex flex-end">
             <button class="btn-primary mgl10" onclick="getUserList();">조회</button>
         </div>
-        <div class="layout-table">
+        <div class="layout-table scrollbar">
             <table>
                 <colgroup>
                     <col style="width:10px">

@@ -97,7 +97,7 @@
      * 코드 저장
      * **/
     const saveCode = () => {
-        if (confirm("저장 하시겠습니까?")) {
+        commonConfirm("저장 하시겠습니까?", () => {
             if (validationCheck()) {
                 const param = {
                     code: $("#code").val(),
@@ -136,12 +136,12 @@
 
                 jqueryAjax(url, "POST", (result) => {
                     if (result === 1) {
-                        alert("저장되었습니다.");
+                        commonAlert("저장되었습니다.");
                         goPage(redirectUrl);
                     }
                 }, param);
             }
-        }
+        });
     }
 
     /**
@@ -150,7 +150,7 @@
     const validationCheck = () => {
 
         if (isEmpty($("#code").val())) {
-            alert("코드를 입력해주세요.");
+            commonAlert("코드를 입력해주세요.");
             return false;
         }
 
@@ -162,18 +162,18 @@
             });
 
             if (codeChk > 0) {
-                alert("중복된 코드가 존재합니다.");
+                commonAlert("중복된 코드가 존재합니다.");
                 return false;
             }
         }
 
         if (isEmpty($("#codeName").val())) {
-            alert("코드명을 입력해주세요.");
+            commonAlert("코드명을 입력해주세요.");
             return false;
         }
 
         if (isEmpty($("#description").val())) {
-            alert("설명을 입력해주세요.");
+            commonAlert("설명을 입력해주세요.");
             return false;
         }
 
@@ -184,10 +184,10 @@
      * 코드 삭제
      * **/
     const deleteCode = () => {
-        if (confirm("삭제 하시겠습니까?")) {
+        commonConfirm("삭제 하시겠습니까?", () => {
             jqueryAjax("/common/code/deleteCode", "POST", (result) => {
                 if (result === 1) {
-                    alert("삭제되었습니다.");
+                    commonAlert("삭제되었습니다.");
 
                     if (isEmpty(upperIdx)) {
                         goPage("/common/code/codeMgrPage");
@@ -196,7 +196,7 @@
                     }
                 }
             }, [idx]);
-        }
+        });
     }
 
     const goAddSubCodePage = () => {
@@ -323,7 +323,7 @@
                     하위 코드
                 </div>
                 <div class="layout-card shadow">
-                    <div class="layout-table">
+                    <div class="layout-table scrollbar">
                         <table>
                             <colgroup>
                                 <col style="width:10px">
