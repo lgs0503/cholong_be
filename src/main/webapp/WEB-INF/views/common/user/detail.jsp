@@ -10,6 +10,7 @@
         getUser();
     });
 
+
     const getUser = () => {
         jqueryAjaxSync("/common/user/getUser?idx=" + idx, "GET", (result) => {
             if(result) {
