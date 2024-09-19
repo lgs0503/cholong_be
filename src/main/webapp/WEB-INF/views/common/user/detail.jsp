@@ -10,29 +10,56 @@
         getUser();
     });
 
-
     const getUser = () => {
-        jqueryAjaxSync("/common/user/getUser?idx=" + idx, "GET", (result) => {
-            if(result) {
-                $("#idx").text(result.idx);
-                $("#userId").text(result.userId);
-                $("#password").text(result.password);
-                $("#korName").text(result.korName);
-                $("#engName").text(result.engName);
-                $("#address").text(result.address);
-                $("#addressDtl").text(result.addressDtl);
-                $("#gender").text(result.gender);
-                $("#birthday").text(result.birthday);
-                $("#phoneNum").text(result.phoneNum);
-                $("#email").text(result.email);
-                $("#remark").text(result.remark);
-                $("#createDate").text(result.createDate);
-                $("#updateDate").text(result.updateDate);
-                $("#createUser").text(result.createUser);
-                $("#updateUser").text(result.updateUser);
-                $("#nickName").text(result.nickName);
-            }
-        });
+        if (mode === "detail"){
+            jqueryAjaxSync("/common/user/getUser?idx=" + idx, "GET", (result) => {
+
+                if (result) {
+                    let birthday = result.birthday.replace(/(\d{4})(\d{2})(\d{2})/, "$1.$2.$3");
+                    let phoneNum = result.phoneNum.replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/,"$1-$2-$3");
+
+                    $("#idx").text(result.idx);
+                    $("#userId").text(result.userId);
+                    $("#password").text(result.password);
+                    $("#korName").text(result.korName);
+                    $("#engName").text(result.engName);
+                    $("#address").text(result.address);
+                    $("#addressDtl").text(result.addressDtl);
+                    $("#gender").text(result.gender);
+                    $("#birthday").text(birthday);
+                    $("#phoneNum").text(phoneNum);
+                    $("#email").text(result.email);
+                    $("#remark").text(result.remark);
+                    $("#createDate").text(result.createDate);
+                    $("#updateDate").text(result.updateDate);
+                    $("#createUser").text(result.createUser);
+                    $("#updateUser").text(result.updateUser);
+                    $("#nickName").text(result.nickName);
+                }
+            });
+        } else {
+            jqueryAjaxSync("/common/user/getUser?idx=" + idx, "GET", (result) => {
+                if (result) {
+                    $("#idx").text(result.idx);
+                    $("#userId").text(result.userId);
+                    $("#password").text(result.password);
+                    $("#korName").text(result.korName);
+                    $("#engName").text(result.engName);
+                    $("#address").text(result.address);
+                    $("#addressDtl").text(result.addressDtl);
+                    $("#gender").text(result.gender);
+                    $("#birthday").text(result.birthday);
+                    $("#phoneNum").text(result.phoneNum);
+                    $("#email").text(result.email);
+                    $("#remark").text(result.remark);
+                    $("#createDate").text(result.createDate);
+                    $("#updateDate").text(result.updateDate);
+                    $("#createUser").text(result.createUser);
+                    $("#updateUser").text(result.updateUser);
+                    $("#nickName").text(result.nickName);
+                }
+            });
+        }
     }
     /**
      * 수정
