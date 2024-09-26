@@ -18,23 +18,23 @@
                     let birthday = result.birthday.replace(/(\d{4})(\d{2})(\d{2})/, "$1.$2.$3");
                     let phoneNum = result.phoneNum.replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/,"$1-$2-$3");
 
-                    $("#idx").text(result.idx);
-                    $("#userId").text(result.userId);
-                    $("#password").text(result.password);
-                    $("#korName").text(result.korName);
-                    $("#engName").text(result.engName);
-                    $("#address").text(result.address);
-                    $("#addressDtl").text(result.addressDtl);
-                    $("#gender").text(result.gender);
-                    $("#birthday").text(birthday);
-                    $("#phoneNum").text(phoneNum);
-                    $("#email").text(result.email);
-                    $("#remark").text(result.remark);
-                    $("#createDate").text(result.createDate);
-                    $("#updateDate").text(result.updateDate);
-                    $("#createUser").text(result.createUser);
-                    $("#updateUser").text(result.updateUser);
-                    $("#nickName").text(result.nickName);
+                    $("#idxDt").text(result.idx);
+                    $("#userIdDt").text(result.userId);
+                    $("#passwordDt").text(result.password);
+                    $("#korNameDt").text(result.korName);
+                    $("#engNameDt").text(result.engName);
+                    $("#addressDt").text(result.address);
+                    $("#addressDtlDt").text(result.addressDtl);
+                    $("#genderDt").text(result.gender);
+                    $("#birthdayDt").text(birthday);
+                    $("#phoneNumDt").text(phoneNum);
+                    $("#emailDt").text(result.email);
+                    $("#remarkDt").text(result.remark);
+                    $("#createDateDt").text(result.createDate);
+                    $("#updateDateDt").text(result.updateDate);
+                    $("#createUserDt").text(result.createUser);
+                    $("#updateUserDt").text(result.updateUser);
+                    $("#nickNameDt").text(result.nickName);
                 }
             });
         } else {
@@ -57,21 +57,49 @@
                     $("#createUser").text(result.createUser);
                     $("#updateUser").text(result.updateUser);
                     $("#nickName").text(result.nickName);
+
+                    $("#idx").attr("value", result.idx);
+                    $("#userId").attr("value", result.userId);
+                    $("#password").attr("value", result.password);
+                    $("#korName").attr("value", result.korName);
+                    $("#engName").attr("value", result.engName);
+                    $("#address").attr("value", result.address);
+                    $("#addressDtl").attr("value", result.addressDtl);
+                    $("#gender").attr("value", result.gender);
+                    $("#birthday").attr("value", result.birthday);
+                    $("#phoneNum").attr("value", result.phoneNum);
+                    $("#email").attr("value", result.email);
+                    $("#remark").attr("value", result.remark);
+                    $("#createDate").attr("value", result.createDate);
+                    $("#updateDate").attr("value", result.updateDate);
+                    $("#createUser").attr("value", result.createUser);
+                    $("#updateUser").attr("value", result.updateUser);
+                    $("#nickName").attr("value", result.nickName);
                 }
             });
         }
     }
+
     /**
      * 수정
      */
     const saveUser = () => {
-        window.confirm("저장하시겠습니까?")
+        window.confirm("저장하시겠습니까?");
     }
+
     /**
      * 삭제
      */
     const deleteUser = () => {
-        window.confirm("삭제하시겠습니까?");
+        commonConfirm("삭제 하시겠습니까?", () => {
+        jqueryAjax("/common/user/deleteUser", "POST", (result) => {
+            if (result === 1) {
+                commonAlert("삭제되었습니다.");
+
+                goPage("/common/user/userMgrPage");
+            }
+        }, [idx]);
+    });
     }
 
 </script>
@@ -102,51 +130,51 @@
                     <div class="layout-card">
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">아이디</label>
-                            <label class="layout-col" id="userId"></label>
+                            <label class="layout-col" id="userIdDt"></label>
                         </div>
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">이름</label>
-                            <label class="layout-col width25p" id="korName"></label>
+                            <label class="layout-col width25p" id="korNameDt"></label>
                             <label class="layout-col layout-col-head">영어이름</label>
-                            <label class="layout-col width25p" id="engName"></label>
+                            <label class="layout-col width25p" id="engNameDt"></label>
                         </div>
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">성별</label>
-                            <label class="layout-col width25p" id="gender"></label>
+                            <label class="layout-col width25p" id="genderDt"></label>
                             <label class="layout-col layout-col-head">생년월일</label>
-                            <label class="layout-col width25p" id="birthday"></label>
+                            <label class="layout-col width25p" id="birthdayDt"></label>
                         </div>
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">주소</label>
-                            <label class="layout-col" id="address"></label>
+                            <label class="layout-col" id="addressDt"></label>
                         </div>
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">상세주소</label>
-                            <label class="layout-col" id="addressDtl"></label>
+                            <label class="layout-col" id="addressDtlDt"></label>
                         </div>
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">연락처</label>
-                            <label class="layout-col" id="phoneNum"></label>
+                            <label class="layout-col" id="phoneNumDt"></label>
                         </div>
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">이메일</label>
-                            <label class="layout-col" id="email"></label>
+                            <label class="layout-col" id="emailDt"></label>
                         </div>
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">비고</label>
-                            <label class="layout-col" id="remark"></label>
+                            <label class="layout-col" id="remarkDt"></label>
                         </div>
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">생성일</label>
-                            <label class="layout-col width25p" id="createDate"></label>
+                            <label class="layout-col width25p" id="createDateDt"></label>
                             <label class="layout-col layout-col-head">생성자</label>
-                            <label class="layout-col width25p" id="createUser"></label>
+                            <label class="layout-col width25p" id="createUserDt"></label>
                         </div>
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">수정일</label>
-                            <label class="layout-col width25p" id="updateDate"></label>
+                            <label class="layout-col width25p" id="updateDateDt"></label>
                             <label class="layout-col layout-col-head">수정자</label>
-                            <label class="layout-col width25p" id="updateUser"></label>
+                            <label class="layout-col width25p" id="updateUserDt"></label>
                         </div>
                     </div>
                 </c:if>
@@ -156,7 +184,7 @@
                     <div class="layout-card">
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">아이디</label>
-                            <input class="" id="userId" type="text"/>
+                            <input class="width50p" id="userId" type="text"/>
                         </div>
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">이름</label>
@@ -172,35 +200,35 @@
                         </div>
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">주소</label>
-                            <input class="width75p" id="address" type="text"/>
+                            <input class="width50p" id="address" type="text"/>
                         </div>
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">상세주소</label>
-                            <input class="width75p" id="addressDtl" type="text"/>
+                            <input class="width50p" id="addressDtl" type="text"/>
                         </div>
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">연락처</label>
-                            <input class="" id="phoneNum" type="text"/>
+                            <input class="width50p" id="phoneNum" type="text"/>
                         </div>
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">이메일</label>
-                            <input class="" id="email" type="text"/>
+                            <input class="width50p" id="email" type="text"/>
                         </div>
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">비고</label>
-                            <input class="comm-input" id="remark" type="text"/>
+                            <input class="width50p" id="remark" type="text"/>
                         </div>
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">생성일</label>
-                            <input class="width25p" id="createDate" type="text"/>
+                            <label class="layout-col width25p" id="createDate"></label>
                             <label class="layout-col layout-col-head">생성자</label>
-                            <input class="width25p" id="createUser" type="text"/>
+                            <label class="layout-col width25p" id="createUser"></label>
                         </div>
                         <div class="layout-row">
                             <label class="layout-col layout-col-head">수정일</label>
-                            <input class="width25p" id="updateDate" type="text"/>
+                            <label class="layout-col width25p" id="updateDate"></label>
                             <label class="layout-col layout-col-head">수정자</label>
-                            <input class="width25p" id="updateUser" type="text"/>
+                            <label class="layout-col width25p" id="updateUser"></label>
                         </div>
                     </div>
                 </c:if>
