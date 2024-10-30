@@ -3,15 +3,48 @@
 <body>
 <jsp:include page="../../layouts/header.jsp"/>
 <script>
+
+    const idx = "${idx}";
+
+    $(document).ready(() => {
+
+        jqueryAjax("/common/role/getRole?idx=${idx}", "GET", (result) => {
+            if (result) {
+                $("#roleName").text(result.roleName);
+                $("#description").text(result.description);
+                $("#useYn").text(result.useYn);
+                $("#createDate").text(result.createDate);
+                $("#createUser").text(result.createUser);
+                $("#updateDate").text(result.updateDate);
+                $("#updateUser").text(result.updateUser);
+            }
+        });
+
+    });
+
+    /**
+     * 권한 삭제
+     * **/
+    const deleteRole = () => {
+        if (confirm("삭제하시겠습니까?")) {
+
+            jqueryAjax("/common/role/deleteRole", "POST", (result) => {
+                if (result === 1) {
+                    alert("삭제되었습니다.");
+                    goPage("/common/role/roleMgrPage");
+                }
+            }, [idx]);
+        }
+    }
 </script>
 <div class="layout-container">
     <jsp:include page="../../layouts/leftMenu.jsp"/>
     <section>
         <div class="layout-content">
             <div class="mgt10">
-                <button class="btn-primary float-right mgl10" onclick="">뒤로가기</button>
-                <button class="btn-primary float-right mgl10" onclick="">삭제</button>
-                <button class="btn-primary float-right" onclick="">수정</button>
+                <button class="btn-primary float-right mgl10" onclick="goPage('/common/role/roleMgrPage')">뒤로가기</button>
+                <button class="btn-primary float-right mgl10" onclick="deleteRole();">삭제</button>
+                <button class="btn-primary float-right" onclick="goPage('/common/role/roleSavePage?mode=update&idx=${idx}')">수정</button>
             </div>
             <div class="layout-content-title">
                 권한 상세
@@ -19,21 +52,25 @@
             <div class="layout-card">
                 <div class="layout-row">
                     <label class="layout-col layout-col-head">권한명</label>
-                    <label class="layout-col width25p"></label>
+                    <div class="layout-col width25p" id="roleName"></div>
                     <label class="layout-col layout-col-head">사용여부</label>
-                    <label class="layout-col width25p"></label>
+                    <label class="layout-col width25p" id="useYn"></label>
+                </div>
+                <div class="layout-row">
+                    <label class="layout-col layout-col-head">설명</label>
+                    <div class="layout-col" id="description"></div>
                 </div>
                 <div class="layout-row">
                     <label class="layout-col layout-col-head">생성일</label>
-                    <div class="layout-col width25p" id="createDateDt"></div>
+                    <div class="layout-col width25p" id="createDate"></div>
                     <label class="layout-col layout-col-head">생성자</label>
-                    <div class="layout-col width25p" id="createUserDt"></div>
+                    <div class="layout-col width25p" id="createUser"></div>
                 </div>
                 <div class="layout-row">
                     <label class="layout-col layout-col-head">수정일</label>
-                    <div class="layout-col width25p" id="updateDateDt"></div>
+                    <div class="layout-col width25p" id="updateDate"></div>
                     <label class="layout-col layout-col-head">수정자</label>
-                    <div class="layout-col width25p" id="updateUserDt"></div>
+                    <div class="layout-col width25p" id="updateUser"></div>
                 </div>
             </div>
 
