@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cholong.cholong_be.api.common.mapper.RoleMapper">
+    <select id="getRoleList" parameterType="roleVO" resultType="roleVO">
+        SELECT
+            IDX,
+            ROLE_NAME,
+            USE_YN,
+            DESCRIPTION,
+            CREATE_USER,
+            TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE,
+            UPDATE_USER,
+            UPDATE_DATE
+        FROM ROLE_INFO
+        <where>
+            <if test="idx != null and idx != ''">
+                AND IDX = #{idx}
+            </if>
+            <if test="roleName != null and roleName != ''">
+                AND ROLE_NAME = #{roleName}
+            </if>
+        </where>
+        ORDER BY CREATE_DATE DESC
+    </select>
+
+    <select id="getRole" parameterType="roleVO" resultType="roleVO">
+        SELECT
+            IDX,
+            ROLE_NAME,
+            USE_YN,
+            DESCRIPTION,
+            CREATE_USER,
+            TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE,
+            UPDATE_USER,
+            TO_CHAR(UPDATE_DATE, 'YYYY-MM-DD') AS UPDATE_DATE
+        FROM ROLE_INFO
+        <where>
+            <if test="idx != null and idx != ''">
+                AND IDX = #{idx}
+            </if>
+        </where>
+    </select>
+
+    <insert id="addRole" parameterType="roleVO">
+        INSERT
+        INTO    ROLE_INFO
+        (
+            IDX,
+            ROLE_NAME,
+            USE_YN,
+            DESCRIPTION,
+            CREATE_DATE
+        <if test="createUser != null and createUser != ''">
+            ,CREATE_USER
+        </if>
+        )
+        VALUES
+        (
+            ROLE_INFO_SEQ.NEXTVAL,
+            #{roleName},
+            'Y',
+            #{description},
+            SYSDATE
+        <if test="createUser != null and createUser != ''">
+            ,#{createUser}
+        </if>
+        )
+    </insert>
+
+    <update id="updateRole" parameterType="roleVO">
+        UPDATE  ROLE_INFO
+        SET     ROLE_NAME = #{roleName},
+        <if test="useYn != null and useYn != ''">
+                USE_YN = #{useYn},
+        </if>
+                DESCRIPTION = #{description},
+                UPDATE_USER = #{updateUser},
+                UPDATE_DATE = SYSDATE
+        <where>
+            <if test="idx != null and idx != ''">
+                AND IDX = #{idx}
+            </if>
+        </where>
+    </update>
+
+    <delete id="deleteRole" parameterType="java.util.ArrayList">
+        DELETE
+        FROM    ROLE_INFO
+        WHERE   IDX IN
+        <foreach item="item" collection="deleteList" separator="," open="(" close=")">
+            #{item}
+        </foreach>
+    </delete>
+</mapper>
